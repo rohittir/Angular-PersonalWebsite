@@ -1,0 +1,17 @@
+
+
+.main-layout {
+    width: 100%;
+    text-align: center
+}
+
+
+.user {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    object-fit: cover;
+  }
+

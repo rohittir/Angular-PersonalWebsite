@@ -5,15 +5,41 @@
     @author: Rohit Tirmanwar
  -->
 
-<ng-container>
-    <div class="card" style="width: 100%">
-        <div class="card-header">
-            Welcome to my page!
+<ng-container *ngIf="userProfile">
+
+        <div class="card bg-light text-dark" style="width: 100%; text-align: center">
+            <div class="card-body" style="text-align: center">
+                <h4 class="card-title">Welcome to my website!</h4>
+                <br>
+
+                <p class="card-text">I'm glad for taking your time to visit my website. You will find here all the details about me.</p>
+
+                <br>
+
+                <div class="card" style="width: 400px; margin: auto">
+                    <img class="card-img-top" src="{{userProfile.displayImage}}" style="width:100%; height: 60%">
+                    <div class="card-body">
+                        <h4 class="card-title">{{userProfile.name}}</h4>
+                        <h6 class="card-title">{{userProfile.designation}}</h6><br>
+                        <p class="card-text"><span class="fa fa-map-marker"></span>
+                            <a href="{{userProfile.contact.address.locURL}}"
+                                target="_blank">{{userProfile.contact.address.name}}
+                            </a>
+                        </p>
+                        <p class="card-text"><span class="fa fa-phone"></span> {{userProfile.contact.phone[0]}}</p>
+                        <p class="card-text">
+                            <span class="fa fa-envelope"></span>
+                            <a href="mailto:{{userProfile.contact.email[0]}}">{{userProfile.contact.email[0]}}</a>
+                        </p>
+                        <a routerLink="/profile" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <br>
+
+                <p class="card-text">Today's inspiration:</p>
+                <p class="card-text"><i>Let us sacrifice our today so that our children can have better tomorrow.</i></p>
+                <p class="card-text">- Dr. A. P. J. Abdul Kalam (Former President of India)</p>
+                <br>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Thank you for taking time to visit my profile.</h5>
-            <p class="card-text">Some quotes.</p>
-            <a routerLink="/profile" class="btn btn-primary">Click here for detailed profile</a>
-        </div>
-    </div>
 </ng-container>

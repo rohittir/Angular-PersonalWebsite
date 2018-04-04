@@ -8,6 +8,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JSONDataService } from '../services/json-data.service';
 
 @Component({
   selector: 'app-header-menu',
@@ -25,7 +26,7 @@ export class HeaderMenuComponent implements OnInit {
     //
     // LIFECYCLE
     //
-    constructor(private _router: Router) {
+    constructor(private _router: Router, private _jsonDataService: JSONDataService) {
 
     }
 
@@ -40,9 +41,16 @@ export class HeaderMenuComponent implements OnInit {
     //
 
     isActive(routeAddress: string) {
-
         return this._router.url === routeAddress;
+    }
 
+    getHeaading(): string {
+        let data = this._jsonDataService.getJsonData();
+        if (data) {
+            return data.userData.profile.name;
+        }
+
+        return 'Loading...';
     }
 
 

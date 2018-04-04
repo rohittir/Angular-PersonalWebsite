@@ -8,6 +8,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { JSONDataService } from '../services/json-data.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -19,24 +20,47 @@ export class ProfilePageComponent implements OnInit {
     //
     // PROPERTIES
     //
+    jsonData = null;
+    profile = null;
+    skillList = null;
+    schoolList = null;
+    industryList = null;
 
 
     //
     // LIFECYCLE
     //
-    constructor() {
+    constructor(private _jsonDataService: JSONDataService) {
 
     }
 
 
     ngOnInit() {
-
+        this.populateData();
     }
 
 
     //
     // OPERATIONS
     //
+
+    populateData() {
+        this.jsonData = this._jsonDataService.getJsonData();
+
+        if(!this.jsonData) {
+            setTimeout(this.populateData.bind(this), 1000);
+            return;
+        }
+
+        this.profile = this.jsonData.userData.profile;
+        this.skillList = this.jsonData.userData.skills.keywords;
+        this.schoolList = this.jsonData.userData.education.schools;
+        this.industryList = this.jsonData.userData.experience.industries;
+
+    }
+
+
+
 
 
 

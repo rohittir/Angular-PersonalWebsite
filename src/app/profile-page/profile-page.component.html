@@ -4,59 +4,64 @@
     @author: Rohit Tirmanwar
  -->
 
-
+<ng-container *ngIf="jsonData">
 <div class="card" style="width:100%">
     <div class="card-header">
-        Profile with photo
+        About me!
     </div>
     <div class="card-body">
-        <h5 class="card-title">About myself!</h5>
-        <p class="card-text">Into</p>
+        <!-- <h5 class="card-title">About myself!</h5> -->
+        <p class="card-text" *ngFor="let absItem of profile.abstract">
+            {{absItem}}
+        </p>
     </div>
 </div>
 <br>
+<div class="card">
+    <div class="card-header">
+        <strong>Experience</strong>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let industry of industryList">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{industry.name}}</h5>
+                        <h6 class="card-text">{{industry.designation}}</h6>
+                        <p class="card-text">{{(industry.endDate)? industry.startDate + ' - ' + industry.endDate : 'Working since ' + industry.startDate}}</p>
+                        <h6 class="card-text">{{industry.address}}</h6>
+                        <a href="#" class="btn btn-primary">More Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+        <strong>Skills</strong>
+    </div>
+    <div class="card-body">
+        <h6 class="alert alert-primary" style="display: inline-block; margin: 2px" *ngFor="let skill of skillList">
+            <span>{{skill}}</span>
+        </h6>
+    </div>
+</div>
+<br>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6" *ngFor="let school of schoolList">
         <div class="card">
             <div class="card-header">
-                Education 1
+                <strong>{{school.course + ' in ' + school.major}}</strong>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Details</h5>
-                <p class="card-text">Courses</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                Education 2
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Details</h5>
-                <p class="card-text">Courses</p>
+                <h5 class="card-title">{{school.name}}</h5>
+                <h6 class="card-title">{{school.address}}</h6>
+                <p class="card-text">{{school.startDate + ' - ' + school.endDate}}</p>
             </div>
         </div>
     </div>
 </div>
-<br>
-<div class="card">
-    <div class="card-header">
-        Skills
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">List Here!</h5>
-        <p class="card-text">more about skills</p>
-    </div>
-</div>
-<br>
-<div class="card">
-    <div class="card-header">
-        Experience
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">List Here!</h5>
-        <p class="card-text">more about experience</p>
-    </div>
-</div>
+</ng-container>
