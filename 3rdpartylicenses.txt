@@ -151,11 +151,19 @@ SOFTWARE.
 MIT
 MIT
 
+@angular/http@5.2.9
+MIT
+MIT
+
 @angular/common@5.2.9
 MIT
 MIT
 
 @angular/router@5.2.9
+MIT
+MIT
+
+@types/q@0.0.32
 MIT
 MIT
 
