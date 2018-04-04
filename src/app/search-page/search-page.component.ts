@@ -1,3 +1,10 @@
+
+/**
+ * class: SearchPageComponent
+ * Directory: src/app/search-page
+ * @author Rohit Tirmanwar
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,6 +1,11 @@
 
 
 
+/**
+ * class: ProfilePageComponent
+ * Directory: src/app/profile-page
+ * @author Rohit Tirmanwar
+ */
 
 import { Component, OnInit } from '@angular/core';
 

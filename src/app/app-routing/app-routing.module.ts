@@ -1,5 +1,11 @@
 
 
+/**
+ * class: AppRoutingModule
+ * Directory: src/app/app-routing
+ * @author Rohit Tirmanwar
+ */
+
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

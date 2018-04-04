@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+
+
+/**
+ * class: AppComponent
+ * Directory: src/app/
+ * @author Rohit Tirmanwar
+ */
+
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Rohit\'s Website';
+export class AppComponent implements OnInit {
+
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+
+  }
+
+
+
+
 }

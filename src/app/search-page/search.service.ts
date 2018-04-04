@@ -1,6 +1,11 @@
+/**
+ * class: SearchService
+ * Directory: src/app/search-page
+ * @author Rohit Tirmanwar
+ */
+
+
 import { Injectable } from "@angular/core";
-
-
 
 
 @Injectable()

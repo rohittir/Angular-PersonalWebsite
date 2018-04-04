@@ -1,6 +1,10 @@
 
 
-
+/**
+ * class: HeaderMenuComponent
+ * Directory: src/app/header-menu
+ * @author Rohit Tirmanwar
+ */
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
