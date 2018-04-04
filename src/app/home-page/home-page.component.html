@@ -16,22 +16,34 @@
 
                 <br>
 
-                <div class="card" style="width: 400px; margin: auto">
-                    <img class="card-img-top" src="{{userProfile.displayImage}}" style="width:100%; height: 60%">
+                <div class="card" style="margin: auto; ">
                     <div class="card-body">
-                        <h4 class="card-title">{{userProfile.name}}</h4>
-                        <h6 class="card-title">{{userProfile.designation}}</h6><br>
-                        <p class="card-text"><span class="fa fa-map-marker"></span>
-                            <a href="{{userProfile.contact.address.locURL}}"
-                                target="_blank">{{userProfile.contact.address.name}}
-                            </a>
-                        </p>
-                        <p class="card-text"><span class="fa fa-phone"></span> {{userProfile.contact.phone[0]}}</p>
-                        <p class="card-text">
-                            <span class="fa fa-envelope"></span>
-                            <a href="mailto:{{userProfile.contact.email[0]}}">{{userProfile.contact.email[0]}}</a>
-                        </p>
-                        <a routerLink="/profile" class="btn btn-primary">See Profile</a>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-4">
+                                <img class="card-img-top pull-left rounded" src="{{userProfile.displayImage}}">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
+                                <h4 class="card-title">{{userProfile.name}}</h4>
+                                <h6 class="card-title">{{userProfile.designation}}</h6>
+                                <p class="card-text"><span class="fa fa-map-marker"></span>
+                                    <a href="{{userProfile.contact.address.locURL}}"
+                                        target="_blank">{{userProfile.contact.address.name}}
+                                    </a>
+                                </p>
+                                <a routerLink="/profile" class="btn btn-primary">See Profile</a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
+                                <h5 class="card-title">Contact Me</h5>
+                                <p class="card-text"><span class="fa fa-phone"></span> {{userProfile.contact.phone[0]}}</p>
+                                <p class="card-text">
+                                    <span class="fa fa-envelope"></span>
+                                    <a href="mailto:{{userProfile.contact.email[0]}}">{{userProfile.contact.email[0]}}</a>
+                                </p>
+
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <br>

@@ -8,10 +8,18 @@
 
 .user {
     display: inline-block;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-
     object-fit: cover;
   }
 
+.left-layout {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.right-layout {
+    margin-right: 10%;
+    margin-top: 5%;
+}

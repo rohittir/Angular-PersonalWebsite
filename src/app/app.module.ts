@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
+import { CollapseModule } from 'ngx-bootstrap/collapse/collapse.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -29,7 +30,8 @@ import { JSONDataService } from './services/json-data.service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    CollapseModule.forRoot()
   ],
   providers: [SearchService, JSONDataService],
   bootstrap: [AppComponent]

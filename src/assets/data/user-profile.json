@@ -15,7 +15,7 @@
                 ],
                 "address": {
                     "name": "Fairfax, VA",
-                    "locURL" : "https://www.google.com/maps/place/Fairfax,+VA/@38.8522392,-77.3368574,13z/data=!3m1!4b1!4m5!3m4!1s0x89b64e96394b91cd:0x72326e785448640!8m2!3d38.8462236!4d-77.3063733"
+                    "locURL" : "https://goo.gl/maps/egbUvebbTdn"
                 }
             },
             "abstract": [
@@ -23,6 +23,13 @@
                 "Also, skilled in Computational Geometry, CAD software development and NX customization using NXOpen, Ufunc and KF.",
                 "Strong research and development professional, graduating in May 2018 with masters degree in Software Engineering from George Mason University."
             ]
+        },
+
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/rohit-tirmanwar",
+            "github": "https://github.com/rohittir",
+            "facebook": "https://www.facebook.com/rohit.tir",
+            "twitter": "https://twitter.com/rohit_tir"
         },
 
         "skills" : {
