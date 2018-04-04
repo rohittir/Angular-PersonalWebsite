@@ -17,6 +17,21 @@
     </div>
 </div>
 <br>
+<div class="row">
+    <div class="col-md-6" *ngFor="let school of schoolList">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{school.course + ' in ' + school.major}}</strong>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{school.name}}</h5>
+                <h6 class="card-title">{{school.address}}</h6>
+                <p class="card-text">{{school.startDate + ' - ' + school.endDate}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
 <div class="card">
     <div class="card-header">
         <strong>Experience</strong>
@@ -49,19 +64,29 @@
         </h6>
     </div>
 </div>
+
 <br>
-<div class="row">
-    <div class="col-md-6" *ngFor="let school of schoolList">
-        <div class="card">
-            <div class="card-header">
-                <strong>{{school.course + ' in ' + school.major}}</strong>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{school.name}}</h5>
-                <h6 class="card-title">{{school.address}}</h6>
-                <p class="card-text">{{school.startDate + ' - ' + school.endDate}}</p>
+<div class="card">
+    <div class="card-header">
+        <strong>Academic Projects and Developments</strong>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let project of academicProjectList">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.name}}</h5>
+                        <h6 class="card-text">{{project.date}}</h6>
+                        <p class="card-text" *ngFor="let abItem of project.abstract">
+                            {{abItem}}
+                        </p>
+                        <a href="{{project.referenceLink}}" target="_blank" class="btn btn-primary">More Details</a>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
+
 </ng-container>

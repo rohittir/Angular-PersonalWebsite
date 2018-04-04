@@ -1,3 +1,12 @@
+
+
+/**
+ * class: FooterComponent
+ * Directory: src/app/footer
+ * @author Rohit Tirmanwar
+ */
+
+
 import { Component, OnInit } from '@angular/core';
 import { JSONDataService } from '../services/json-data.service';
 
@@ -14,7 +23,9 @@ export class FooterComponent implements OnInit {
   //
   socialDataLinks = null;
 
-  constructor(private _jsonDataService: JSONDataService) { }
+  constructor(private _jsonDataService: JSONDataService) {
+
+  }
 
   ngOnInit() {
     this.initData();

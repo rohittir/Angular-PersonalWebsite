@@ -25,6 +25,7 @@ export class ProfilePageComponent implements OnInit {
     skillList = null;
     schoolList = null;
     industryList = null;
+    academicProjectList = null;
 
 
     //
@@ -56,6 +57,7 @@ export class ProfilePageComponent implements OnInit {
         this.skillList = this.jsonData.userData.skills.keywords;
         this.schoolList = this.jsonData.userData.education.schools;
         this.industryList = this.jsonData.userData.experience.industries;
+        this.academicProjectList = this.jsonData.userData.academic.projects;
 
     }
 
