@@ -3,6 +3,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-menu',
@@ -15,11 +16,12 @@ export class HeaderMenuComponent implements OnInit {
     // PROPERTIES
     //
 
+    searchText: string = '';
 
     //
     // LIFECYCLE
     //
-    constructor() {
+    constructor(private _router: Router) {
 
     }
 
@@ -32,6 +34,21 @@ export class HeaderMenuComponent implements OnInit {
     //
     // OPERATIONS
     //
+
+    isActive(routeAddress: string) {
+
+        return this._router.url === routeAddress;
+
+    }
+
+
+    //
+    // EVENTS
+    //
+
+    onSearch() {
+        alert(this.searchText);
+    }
 
 
 
