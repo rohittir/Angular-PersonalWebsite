@@ -10,6 +10,7 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { SearchService } from './search-page/search.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SearchService } from './search-page/search.service';
     HomePageComponent,
     HeaderMenuComponent,
     ProfilePageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
