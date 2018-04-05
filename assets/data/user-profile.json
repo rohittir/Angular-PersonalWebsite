@@ -106,6 +106,7 @@
         "experience" : {
             "industries": [
                 {
+                    "label": "gmu",
                     "name": "George Mason University",
                     "address": "Fairfax, VA",
                     "startDate": "January 2017",
@@ -115,9 +116,22 @@
                         "Design and develop web application",
                         "Manage sprint plan using agile"
                     ],
-                    "detailedInfo": ""
+                    "detailedInfo": [
+                        "Designed and developed the front end of a web application which helps analyzing intelligence problems with collaboration of multiple users.",
+                        "Improved user experience by developing easy to understand and responsive interface which reduced to 70% of the time to analyze and solve the intelligence for the first time users.",
+                        "Implemented loosely coupled front-end components using Angular 2.0 framework, Typescript and JavaScript and used CSS and Bootstrap styles for consistent look and feel and responsiveness.",
+                        "Developed front-end code in a timely and high quality manner while ensuring high performance and security.",
+                        "Implemented service classes to interact with back end code through RESTful web services and exchanging data in JSON.",
+                        "Worked in agile and test driven development settings to plan features and release MVPs in short intervals.",
+                        "Implemented client side unit tests and integration tests using Karma and Jasmine in angular for testing optimization.",
+                        "Managed bi-weekly sprint plans and daily standup meetings with a team of 5 people."
+                    ],
+                    "technologies": [
+                        "Angular", "Typescript", "Javascript", "CSS3", "HTML5", "Agile", "Java", "Karma", "Jasmine", "Webpack", "VS Code"
+                    ]
                 },
                 {
+                    "label": "ge",
                     "name": "General Electric",
                     "address": "Bangalore, India",
                     "startDate": "August 2014",
@@ -127,9 +141,22 @@
                         "Design and develop software and web application",
                         "Participate in requirement gathering and project reviews with funtional team"
                     ],
-                    "detailedInfo": ""
+                    "detailedInfo": [
+                        "Worked on an internal application development to integrate over 200 design tools as part of a single system for better hand-offs with effective data transfer and communication.",
+                        "Implemented front end interface using JavaScript, jQuery, CSS3, SASS and HTML5.",
+                        "Created and implemented a custom CSS grid system, with CSS media queries for mobile responsiveness.",
+                        "Consulted and documented UI best practices and code standards to maintain and improve performance and security.",
+                        "Led a software project in alpha stage which was running late for more than 6 months and productionized by utilizing only 50% of the time under strict timelines following agile methodologies for planning and development.",
+                        "Participated in gathering functional requirements with US based stake-holders and effectively converted functional requirements to use cases and successful implementations.",
+                        "Served as primary point of contact for a small project in alpha stage, engaging in weekly meetings for requirements, implementation, testing plans and release plans.",
+                        "Improved performance of a critical parameter computation in a nacelle design tool by 4 times, using techniques like least square fitting algorithm and parallel computation."
+                    ],
+                    "technologies": [
+                        "Java", "C++", "Javascript", "CSS3", "HTML5", "Agile", "SVN", "JIRA", "Sprint Planning", "Jenkins", "Visual Studio", "Computational Geometry", "QT"
+                    ]
                 },
                 {
+                    "label": "geometric",
                     "name": "Geometric Limited",
                     "address": "Pune, India",
                     "startDate": "June 2011",
@@ -139,7 +166,17 @@
                         "Design and develop software application",
                         "Perform and document unit tests and design"
                     ],
-                    "detailedInfo": ""
+                    "detailedInfo": [
+                        "Designed and developed the graphical user interface using MFC and QT, to provide the best user experience.",
+                        "Worked on a CAD based software product development DFMPro using C++ and computational geometry techniques.",
+                        "Implemented logic for recognizing manufacturing features modeled on dumb geometry, which involves a great problem solving and algorithm skills.",
+                        "Developed a feature to pass a successful contract which helped increasing the product sales by more than 40%.",
+                        "Mentored team members about newly available APIs of NX by self-learning them in a short time.",
+                        "For the excellent performance, got appreciated with GeoChamp and Star Performer awards for the year 2013, which is presented each year to only one person in the entire section."
+                    ],
+                    "technologies": [
+                        "C++", "QT", "MFC", "Computational Geometry", "CAD Development", "Product Development", "NX Customization", "Visual Studio", "SVN", "JIRA", "QuickBuild"
+                    ]
                 }
             ]
         },
@@ -150,8 +187,8 @@
                     "name": "Chain Reaction",
                     "date": "December 2017",
                     "abstract": [
-                        "A secure online multiplayer game, built using javascript, node.js, MySQL, HTML and CSS technologies.",
-                        "Most care has been taken to make it maximum secure and minimum vulnerable.",
+                        "Designed architecture and developed a secure online multiplayer game using Node.js framework, CSS, HTML, JavaScript and MySQL.",
+                        "Maintained high quality of code for not compromising on security and ensured proper input validation, prepared statements to avoid vulnerabilities including XSS, CSRF and data injections",
                         "Best practices are used from OWSAP and concepts learned in Secure Software Engineering course at GMU."
                     ],
                     "referenceLink": "https://github.com/rohittir/chain-reaction"
@@ -161,6 +198,7 @@
                     "date": "May 2017",
                     "abstract": [
                         "A responsive and adpative interafce is designed and developed for a web based application that features virtual experience of restaurant booking, service and others.",
+                        "Designed and developed front end for online and mobile ordering of the food that could be served in the restaurant including features like table reservation, pre booking, pre ordering and continuous feedback.",
                         "Front end of the website is designed using the concept of UX those are learned through UI Design and Development course at GMU."
                     ],
                     "referenceLink": "https://github.com/rohittir/Restaurant-Service"
