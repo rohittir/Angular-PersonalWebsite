@@ -45,13 +45,15 @@
                 "Spring",
                 "JPA",
                 "J2EE",
+                "Hibernate",
                 "SQL",
                 "Node.js",
                 "jQuery",
                 "ES5",
                 "ES6",
                 "Mobile-First Strategy",
-                "CSS Media Query and Grid",
+                "CSS Media Query",
+                "CSS Grid",
                 "JUnit",
                 "Karma",
                 "Jasmine",
@@ -139,6 +141,31 @@
                     ],
                     "detailedInfo": ""
                 }
+            ]
+        },
+
+        "academic": {
+            "projects": [
+                {
+                    "name": "Chain Reaction",
+                    "date": "December 2017",
+                    "abstract": [
+                        "A secure online multiplayer game, built using javascript, node.js, MySQL, HTML and CSS technologies.",
+                        "Most care has been taken to make it maximum secure and minimum vulnerable.",
+                        "Best practices are used from OWSAP and concepts learned in Secure Software Engineering course at GMU."
+                    ],
+                    "referenceLink": "https://github.com/rohittir/chain-reaction"
+                },
+                {
+                    "name": "Virtual Restaurant Service",
+                    "date": "May 2017",
+                    "abstract": [
+                        "A responsive and adpative interafce is designed and developed for a web based application that features virtual experience of restaurant booking, service and others.",
+                        "Front end of the website is designed using the concept of UX those are learned through UI Design and Development course at GMU."
+                    ],
+                    "referenceLink": "https://github.com/rohittir/Restaurant-Service"
+                }
+
             ]
         }
 
