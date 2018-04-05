@@ -53,6 +53,7 @@ export class ProfileDetailsComponent implements OnInit {
       for (let i = 0; i < industries.length; i++) {
         if (industries[i].label === this.profileLabel) {
           this.industryInfo = industries[i];
+          break;
         }
       }
 

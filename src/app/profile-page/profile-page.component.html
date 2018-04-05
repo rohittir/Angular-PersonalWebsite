@@ -8,6 +8,18 @@
 <div class="card" style="width:100%">
     <div class="card-header">
         <strong>About me!</strong>
+
+        <!-- Download Resume -->
+        <div class="btn-group pull-right">
+            <a class="btn btn-primary" href="{{jsonData.userData.resume.pdf}}" target="_blank">Resume</a>
+            <!-- <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Download PDF</a>
+                <a class="dropdown-item" href="#">Download Word</a>
+            </div> -->
+        </div>
     </div>
     <div class="card-body">
         <!-- <h5 class="card-title">About myself!</h5> -->
@@ -24,6 +36,7 @@
                 <strong>{{school.course + ' in ' + school.major}}</strong>
             </div>
             <div class="card-body">
+                    <a href="{{school.websiteLink}}" target="_blank"><img class="pull-right" style="height: 40px;" src="{{school.logo}}"></a>
                 <h5 class="card-title">{{school.name}}</h5>
                 <h6 class="card-title">{{school.address}}</h6>
                 <p class="card-text">{{school.startDate + ' - ' + school.endDate}}</p>
@@ -41,6 +54,7 @@
             <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let industry of industryList">
                 <div class="card" style="margin-bottom: 5%">
                     <div class="card-body">
+                        <a href="{{industry.websiteLink}}" target="_blank"><img class="pull-right" style="height: 40px;" src="{{industry.logo}}"></a>
                         <h5 class="card-title">{{industry.name}}</h5>
                         <h6 class="card-text">{{industry.designation}}</h6>
                         <p class="card-text">{{(industry.endDate)? industry.startDate + ' - ' + industry.endDate : 'Working since ' + industry.startDate}}</p>

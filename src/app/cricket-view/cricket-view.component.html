@@ -20,7 +20,7 @@
           </div>
         <!-- MatchesList -->
         <!-- <div class="card-columns"> -->
-          <div class="card {{(match===selectedMatchInfo)? 'border-info':''}}"
+          <div class="card {{(match===selectedMatchInfo)? 'text-white bg-info':''}}"
             style="margin-bottom: 5%; cursor: pointer" (click)="showMatchInfo(match)"
             *ngFor="let match of _liveScoreService.matchesList">
               <div class="card-header">
@@ -40,7 +40,7 @@
 
 
         <!-- Matches With Commentary List -->
-        <div class="card {{(commentary===selectedCommentary)? 'border-info':''}}"
+        <div class="card {{(commentary===selectedCommentary)? 'text-white bg-info':''}}"
             style="margin-bottom: 5%; cursor: pointer" (click)="showCommentary(commentary)"
             *ngFor="let commentary of _liveScoreService.commentaryList">
             <div class="card-header">
@@ -89,7 +89,7 @@
           <h5 class="card-title">{{selectedCommentary.$.mchDesc}}</h5>
 
           <div *ngFor="let time of selectedCommentary.Tme">
-            <h6 class="card-text">Started on {{time.$.Dt}} at {{time.$.stTme}} GMT</h6>
+            <h6 class="card-text">Started on {{time.$.Dt}} at {{time.$.stTme}} Hrs GMT</h6>
             <h6 *ngIf="time.$?.enddt && selectedCommentary.$.type == 'TEST'" class="card-text">End date: {{time.$.enddt}}</h6>
           </div><hr>
 

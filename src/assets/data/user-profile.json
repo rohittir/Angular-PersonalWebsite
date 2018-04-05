@@ -32,6 +32,11 @@
             "twitter": "https://twitter.com/rohit_tir"
         },
 
+        "resume" : {
+            "pdf": "assets/data/Resume.pdf",
+            "word": "assets/data/Resume.docx"
+        },
+
         "skills" : {
             "keywords": [
                 "Java",
@@ -89,6 +94,8 @@
                     "major": "Software Engineering",
                     "startDate": "August 2016",
                     "endDate": "May 2018",
+                    "logo": "images/gmu-logo.jpg",
+                    "websiteLink": "https://www2.gmu.edu/",
                     "courseWork": []
                 },
                 {
@@ -98,6 +105,8 @@
                     "major": "Mechanical Engineering",
                     "startDate": "August 2007",
                     "endDate": "May 2011",
+                    "logo": "images/gcoea-logo.jpg",
+                    "websiteLink": "https://www.gcoea.ac.in",
                     "courseWork": []
                 }
             ]
@@ -112,6 +121,8 @@
                     "startDate": "January 2017",
                     "endDate": null,
                     "designation": "Graduate Research Assistant",
+                    "logo": "images/gmu-logo.jpg",
+                    "websiteLink": "https://www2.gmu.edu/",
                     "abstract": [
                         "Design and develop web application",
                         "Manage sprint plan using agile"
@@ -137,6 +148,8 @@
                     "startDate": "August 2014",
                     "endDate": "July 2016",
                     "designation": "Lead Engineer",
+                    "logo": "images/ge-logo.png",
+                    "websiteLink": "https://www.ge.com/",
                     "abstract": [
                         "Design and develop software and web application",
                         "Participate in requirement gathering and project reviews with funtional team"
@@ -162,6 +175,8 @@
                     "startDate": "June 2011",
                     "endDate": "August 2014",
                     "designation": "Software Engineer",
+                    "logo": "images/geometric-logo.png",
+                    "websiteLink": "https://geometricglobal.com/",
                     "abstract": [
                         "Design and develop software application",
                         "Perform and document unit tests and design"
