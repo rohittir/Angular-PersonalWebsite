@@ -14,6 +14,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { SearchService } from './search-page/search.service';
 import { FooterComponent } from './footer/footer.component';
 import { JSONDataService } from './services/json-data.service';
+import { CricketViewComponent } from './cricket-view/cricket-view.component';
+import { LiveScoreService } from './cricket-view/live-score.service';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { JSONDataService } from './services/json-data.service';
     HeaderMenuComponent,
     ProfilePageComponent,
     SearchPageComponent,
-    FooterComponent
+    FooterComponent,
+    CricketViewComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { JSONDataService } from './services/json-data.service';
     AlertModule.forRoot(),
     CollapseModule.forRoot()
   ],
-  providers: [SearchService, JSONDataService],
+  providers: [SearchService, JSONDataService, LiveScoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

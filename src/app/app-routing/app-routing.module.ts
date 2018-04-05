@@ -12,11 +12,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { ProfilePageComponent } from '../profile-page/profile-page.component';
 import { SearchPageComponent } from '../search-page/search-page.component';
+import { CricketViewComponent } from '../cricket-view/cricket-view.component';
 
 const routes: Routes = [
     {
         path: '',
         component: HomePageComponent,
+    },
+    {
+      path: 'home',
+      component: HomePageComponent,
     },
     {
       path: 'profile',
@@ -25,6 +30,10 @@ const routes: Routes = [
     {
       path: 'search',
       component: SearchPageComponent,
+    },
+    {
+      path: 'cricket',
+      component: CricketViewComponent,
     }
 ];
 

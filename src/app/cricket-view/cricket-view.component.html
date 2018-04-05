@@ -1,0 +1,58 @@
+
+
+
+
+<ng-container>
+
+  <div class="row">
+    <!-- MatchesList -->
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" *ngFor="let match of _liveScoreService.matchesList">
+      <div class="card">
+          <div class="card-header">
+              <strong>{{match.$.type}}: {{match.$.srs}} ({{match.$.mnum}})</strong>
+          </div>
+        <div class="card-body">
+          <h5 class="card-title">{{match.$.mchDesc}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted" *ngFor="let state of match.state"> {{state.$.status}}</h6>
+          <h6 *ngIf="match.$?.grnd" class="card-text">
+            {{match.$.grnd}}<span *ngIf="match.$?.vcity">, {{match.$.vcity}}</span><span *ngIf="match.$?.vcountry">, {{match.$.vcountry}}</span>
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matches With Commentary List -->
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" *ngFor="let commentary of _liveScoreService.commentaryList">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{commentary.$.type}}: {{commentary.$.srs}} ({{commentary.$.mnum}})</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{commentary.$.mchDesc}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted" *ngFor="let state of commentary.state">
+                {{state.$.status}} <br>
+                {{state.$.TW}} decided to {{state.$.decisn}} first
+              </h6>
+              <h6 *ngIf="commentary.$?.grnd" class="card-text">
+                {{commentary.$.grnd}}<span *ngIf="commentary.$?.vcity">, {{commentary.$.vcity}}</span><span *ngIf="commentary.$?.vcountry">, {{commentary.$.vcountry}}</span>
+              </h6>
+              <h6 class="card-text" *ngFor="let mom of commentary.manofthematch">
+                MOM: <span *ngFor="let mom1 of mom?.mom">{{mom1.$.Name}}</span>
+              </h6>
+              <h6 class="card-text" *ngFor="let mos of commentary.ManOftheSeries">
+                MOS: <span *ngFor="let mos1 of mos?.mos">{{mos1.$.Name}}</span>
+              </h6>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+
+
+
+</ng-container>
+
+
+
+
