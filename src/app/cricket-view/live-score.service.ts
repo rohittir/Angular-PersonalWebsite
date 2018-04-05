@@ -68,5 +68,13 @@ export class LiveScoreService {
 
     }
 
+    public fetchLiveScorecard(url: string, callback) {
+
+        this._http.get(url, { responseType: ResponseContentType.Text }).toPromise().then(res => {
+            parseString(res.text(), callback);
+        })
+        .catch(err => console.error(err));
+    }
+
 }
 

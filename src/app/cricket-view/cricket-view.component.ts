@@ -23,6 +23,8 @@ export class CricketViewComponent implements OnInit, OnDestroy {
   selectedMatchInfo = null;
   selectedCommentary = null;
 
+  selectedTab = 'Commentary';
+
   fetchInterval = null;
 
   constructor(public _liveScoreService: LiveScoreService) { }

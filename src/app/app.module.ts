@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { JSONDataService } from './services/json-data.service';
 import { CricketViewComponent } from './cricket-view/cricket-view.component';
 import { LiveScoreService } from './cricket-view/live-score.service';
+import { CricketScorecardComponent } from './cricket-view/cricket-scorecard/cricket-scorecard.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LiveScoreService } from './cricket-view/live-score.service';
     ProfilePageComponent,
     SearchPageComponent,
     FooterComponent,
-    CricketViewComponent
+    CricketViewComponent,
+    CricketScorecardComponent
   ],
   imports: [
     BrowserModule,
