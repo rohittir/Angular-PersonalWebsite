@@ -16,6 +16,7 @@ import { JSONDataService } from './services/json-data.service';
 import { CricketViewComponent } from './cricket-view/cricket-view.component';
 import { LiveScoreService } from './cricket-view/live-score.service';
 import { CricketScorecardComponent } from './cricket-view/cricket-scorecard/cricket-scorecard.component';
+import { ProfileDetailsComponent } from './profile-page/profile-details/profile-details.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CricketScorecardComponent } from './cricket-view/cricket-scorecard/cric
     SearchPageComponent,
     FooterComponent,
     CricketViewComponent,
-    CricketScorecardComponent
+    CricketScorecardComponent,
+    ProfileDetailsComponent
   ],
   imports: [
     BrowserModule,

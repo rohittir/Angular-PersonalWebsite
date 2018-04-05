@@ -45,7 +45,7 @@
                         <h6 class="card-text">{{industry.designation}}</h6>
                         <p class="card-text">{{(industry.endDate)? industry.startDate + ' - ' + industry.endDate : 'Working since ' + industry.startDate}}</p>
                         <h6 class="card-text">{{industry.address}}</h6>
-                        <a href="#" class="btn btn-primary">More Details</a>
+                        <a routerLink="/profile/{{industry.label}}" class="btn btn-primary">More Details</a>
                     </div>
                 </div>
             </div>
