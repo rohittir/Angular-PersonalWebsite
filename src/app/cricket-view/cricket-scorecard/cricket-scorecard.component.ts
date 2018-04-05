@@ -5,14 +5,14 @@
  */
 
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { LiveScoreService } from '../live-score.service';
 
 @Component({
   selector: 'app-cricket-scorecard',
   templateUrl: './cricket-scorecard.component.html'
 })
-export class CricketScorecardComponent implements OnInit {
+export class CricketScorecardComponent implements OnInit, OnChanges {
 
     //
     // INPUTS
@@ -33,13 +33,21 @@ export class CricketScorecardComponent implements OnInit {
 
 
     ngOnInit() {
+        this.initData();
+    }
 
+    ngOnChanges() {
+        this.initData();
+    }
+
+    initData() {
         if (!this.scorecardURL) {
             return;
         }
 
         this._liveScoreService.fetchLiveScorecard(this.scorecardURL, this.scorecardResults.bind(this));
     }
+
 
 
     //

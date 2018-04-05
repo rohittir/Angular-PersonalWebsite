@@ -19,7 +19,7 @@
 <br>
 <div class="row">
     <div class="col-md-6" *ngFor="let school of schoolList">
-        <div class="card">
+        <div class="card" style="margin-bottom: 2%">
             <div class="card-header">
                 <strong>{{school.course + ' in ' + school.major}}</strong>
             </div>
@@ -39,7 +39,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let industry of industryList">
-                <div class="card">
+                <div class="card" style="margin-bottom: 5%">
                     <div class="card-body">
                         <h5 class="card-title">{{industry.name}}</h5>
                         <h6 class="card-text">{{industry.designation}}</h6>
@@ -73,7 +73,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let project of academicProjectList">
-                <div class="card">
+                <div class="card" style="margin-bottom: 5%">
                     <div class="card-body">
                         <h5 class="card-title">{{project.name}}</h5>
                         <h6 class="card-text">{{project.date}}</h6>
