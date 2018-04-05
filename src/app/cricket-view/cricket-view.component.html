@@ -1,8 +1,13 @@
 
 
+<ng-container *ngIf="!selectedMatchInfo && !selectedCommentary">
+    <div class="alert alert-primary" role="alert">
+        <h6>Live cricket socores are coming soon. Keep an eye on this page.</h6>
+    </div>
+</ng-container>
 
 
-<ng-container>
+<ng-container *ngIf="selectedMatchInfo || selectedCommentary">
 
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
