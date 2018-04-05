@@ -22,21 +22,21 @@ export class LiveScoreService {
     public commentaryList = null;
 
     constructor(private _http: Http) {
-        setTimeout(this.fetchLiveMatches.bind(this), 2000);
+        this.fetchLiveMatches();
     }
 
     //
     // OPERATIONS
     //
 
-    fetchLiveMatches() {
+    public fetchLiveMatches() {
         this._http.get(this.liveScoreURL, { responseType: ResponseContentType.Text }).toPromise().then(res => {
             parseString(res.text(), this.setMatchList.bind(this));
         })
         .catch(err => console.error(err));
     }
 
-    setMatchList(err, result) {
+    private setMatchList(err, result) {
         if (!err && result) {
             this.matchesList = result.mchdata.match;
             this.commentaryList = [];
@@ -62,7 +62,7 @@ export class LiveScoreService {
         }
     }
 
-    setCommentary(err, result) {
+    private setCommentary(err, result) {
         this.commentaryList.push(result.mchDetails.match[0]);
         console.log(this.commentaryList);
 

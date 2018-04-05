@@ -7,6 +7,12 @@
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
 
+        <div class="alert alert-primary" role="alert">
+            <strong>Live Cricket Matches</strong>
+            <button class="btn btn-primary pull-right btn-sm" (click)="refreshScore()">
+              Refresh
+            </button>
+          </div>
         <!-- MatchesList -->
         <!-- <div class="card-columns"> -->
           <div class="card {{(match===selectedMatchInfo)? 'border-info':''}}"
@@ -126,7 +132,7 @@
           <hr *ngIf="selectedCommentary.manofthematch?.length > 0 || selectedCommentary.ManOftheSeries?.length > 0">
           <!-- Commentry -->
           <div *ngFor="let commentry of selectedCommentary.comm">
-            <div class="alert alert-primary" role="alert" *ngFor="let comStmnt of commentry.c">
+            <div class="alert alert-info" role="alert" *ngFor="let comStmnt of commentry.c">
               {{comStmnt}}
             </div>
           </div>

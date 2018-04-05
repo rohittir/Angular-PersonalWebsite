@@ -8,11 +8,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" routerLink="/">{{getHeaading()}}</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+aria-controls="navbarSupportedContent" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
     <li class="{{isActive('/')? 'nav-item active':'nav-item' }}">
         <a class="nav-link" routerLink="/">Home
@@ -40,9 +41,9 @@
         <a class="nav-link disabled" href="#">Disabled</a>
     </li> -->
     </ul>
-    <div class="form-inline my-2 my-lg-0">
+    <!-- <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onSearch()">Search</button>
-    </div>
+    </div> -->
 </div>
 </nav>

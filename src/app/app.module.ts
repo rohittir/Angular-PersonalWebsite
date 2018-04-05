@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AlertModule } from 'ngx-bootstrap';
-import { CollapseModule } from 'ngx-bootstrap/collapse/collapse.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -33,8 +32,7 @@ import { LiveScoreService } from './cricket-view/live-score.service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AlertModule.forRoot(),
-    CollapseModule.forRoot()
+    NgbModule.forRoot()
   ],
   providers: [SearchService, JSONDataService, LiveScoreService],
   bootstrap: [AppComponent]

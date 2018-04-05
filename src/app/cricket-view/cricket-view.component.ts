@@ -6,7 +6,7 @@
  */
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LiveScoreService } from './live-score.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { LiveScoreService } from './live-score.service';
   templateUrl: './cricket-view.component.html',
   styleUrls: ['./cricket-view.component.css']
 })
-export class CricketViewComponent implements OnInit {
+export class CricketViewComponent implements OnInit, OnDestroy {
 
 
   //
@@ -23,17 +23,30 @@ export class CricketViewComponent implements OnInit {
   selectedMatchInfo = null;
   selectedCommentary = null;
 
-  constructor(private _liveScoreService: LiveScoreService) { }
+  fetchInterval = null;
+
+  constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
     this.initSettings();
+
+    // this.fetchInterval = setInterval(() => {
+    //   this._liveScoreService.fetchLiveMatches();
+    // }, 5000);
+  }
+
+  ngOnDestroy() {
+    if (this.fetchInterval) {
+      clearInterval(this.fetchInterval);
+      this.fetchInterval = null;
+    }
   }
 
   //
   // OPERATIONS
   //
 
-  initSettings() {
+  private initSettings() {
 
     if (!this._liveScoreService.commentaryList && !this._liveScoreService.matchesList) {
       setTimeout(this.initSettings.bind(this), 1000);
@@ -62,6 +75,10 @@ export class CricketViewComponent implements OnInit {
   showMatchInfo(match) {
     this.selectedMatchInfo = match;
     this.selectedCommentary = null;
+  }
+
+  refreshScore() {
+    this._liveScoreService.fetchLiveMatches();
   }
 
 
