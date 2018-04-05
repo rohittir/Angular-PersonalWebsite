@@ -15,7 +15,7 @@ aria-controls="navbarSupportedContent" (click)="isCollapsed = !isCollapsed" [att
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
-    <li class="{{isActive('/')? 'nav-item active':'nav-item' }}">
+    <li class="{{isActive('/home')? 'nav-item active':'nav-item' }}">
         <a class="nav-link" routerLink="/">Home
         <!-- <span class="sr-only">(current)</span> -->
         </a>
