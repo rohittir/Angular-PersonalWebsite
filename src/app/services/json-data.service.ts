@@ -36,7 +36,7 @@ export class JSONDataService {
     }
 
     private fetchUserData() {
-        this._http.get(this._serverConfigService.serverUrl + '/userProfile').toPromise().then(res => {
+        this._http.get(this._serverConfigService.serverUrl + '/profile').toPromise().then(res => {
             this.jsonData = res.json();
         })
         .catch(err => {

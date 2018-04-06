@@ -21,19 +21,19 @@ export class LiveScoreService {
     //
     public fetchLiveMatches(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/cricket/livematches').toPromise();
+            + '/cricket?request=cbLiveMatches').toPromise();
     }
 
     // fetch the scorecard
     public fetchMatchScorecard(matchUrl: string): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/cricket/livematches/scorecard?matchUrl=' + matchUrl).toPromise();
+            + '/cricket?request=cbScorecard&matchUrl=' + matchUrl).toPromise();
     }
 
     // fetch the commentary
     public fetchMatchCommentary(matchUrl: string): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/cricket/livematches/commentary?matchUrl=' + matchUrl).toPromise();
+            + '/cricket?request=cbCommentary&matchUrl=' + matchUrl).toPromise();
     }
 
 }

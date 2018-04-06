@@ -19,7 +19,7 @@ import { ServerConfigService } from './services/server-config.service';
 export class AppComponent implements OnInit {
 
 
-  constructor(private _router: Router, private _serverConfigService: ServerConfigService) {
+  constructor(private _router: Router, public _serverConfigService: ServerConfigService) {
 
   }
 

@@ -17,16 +17,16 @@ var fs = require("fs");
 
 // GET API for get user data
 app.get('/profile', function (req, res) {
-   fs.readFile( __dirname + "/" + "assets/data/user-profile.json", 'utf8', function (err, data) {
-       if (!err && data) {
+    fs.readFile(__dirname + "/" + "assets/data/user-profile.json", 'utf8', function (err, data) {
+        if (!err && data) {
             res.status(200);
             res.send(JSON.parse(data));
-       } else {
+        } else {
             res.status(401);
             res.send(err);
-       }
+        }
 
-   });
+    });
 })
 
 
@@ -43,8 +43,8 @@ function extractDataFromServer(url, callback) {
         response.on('data', function (chunk) {
             completeResponse += chunk;
         });
-        response.on('end', function() {
-            parseString(completeResponse, function(err, result) {
+        response.on('end', function () {
+            parseString(completeResponse, function (err, result) {
                 callback(err, result);
             });
         })
@@ -56,72 +56,68 @@ function extractDataFromServer(url, callback) {
 
 
 // GET API for getting live cricket matches
-app.get('/cricket/livematches', function (req, res) {
+app.get('/cricket', function (req, res) {
 
-    // Cricbuzz URL for live score
-    var liveScoreURL = 'http://synd.cricbuzz.com/j2me/1.0/livematches.xml';
+    if (req.query.request === 'cbLiveMatches') {
+        // Cricbuzz URL for live score
+        var liveScoreURL = 'http://synd.cricbuzz.com/j2me/1.0/livematches.xml';
 
-    extractDataFromServer(liveScoreURL, function(err, data) {
-        if (!err && data) {
-            res.status(200);
-            res.send(data);
+        extractDataFromServer(liveScoreURL, function (err, data) {
+            if (!err && data) {
+                res.status(200);
+                res.send(data);
+            } else {
+                res.status(501);
+                res.send(null);
+            }
+        });
+    } else if (req.query.request === 'cbCommentary') {
+        var url = req.query.matchUrl;
+        if (url) {
+            url += 'commentary.xml';
+            extractDataFromServer(url, function (err, data) {
+                if (!err && data) {
+                    res.status(200);
+                    res.send(data);
+                } else {
+                    res.status(501);
+                    res.send(null);
+                }
+            });
         } else {
-            res.status(501);
+            res.status(403);
             res.send(null);
         }
-    });
-})
+    } else if (req.query.request === 'cbScorecard') {
+        var url = req.query.matchUrl;
 
-// GET API for getting commentary of match
-app.get('/cricket/livematches/commentary', function (req, res) {
-
-    var url = req.query.matchUrl;
-
-    if (url) {
-        url += 'commentary.xml';
-        extractDataFromServer(url, function(err, data) {
-            if (!err && data) {
-                res.status(200);
-                res.send(data);
-            } else {
-                res.status(501);
-                res.send(null);
-            }
-        });
+        if (url) {
+            url += 'scorecard.xml';
+            extractDataFromServer(url, function (err, data) {
+                if (!err && data) {
+                    res.status(200);
+                    res.send(data);
+                } else {
+                    res.status(501);
+                    res.send(null);
+                }
+            });
+        } else {
+            res.status(403);
+            res.send(null);
+        }
     } else {
-        res.status(403);
+        res.status(404);
         res.send(null);
     }
 })
-
-// GET API for getting scorecard of match
-app.get('/cricket/livematches/scorecard', function (req, res) {
-    var url = req.query.matchUrl;
-
-    if (url) {
-        url += 'scorecard.xml';
-        extractDataFromServer(url, function(err, data) {
-            if (!err && data) {
-                res.status(200);
-                res.send(data);
-            } else {
-                res.status(501);
-                res.send(null);
-            }
-        });
-    } else {
-        res.status(403);
-        res.send(null);
-    }
-})
-
 
 //
 // SERVE APPLICATION
 //
 
 // READ Config file
-fs.readFile( __dirname + "/" + "assets/server-config.json", 'utf8', function (err, data) {
+fs.readFile(__dirname + "/" + "assets/server-config.json", 'utf8', function (err, data) {
     if (!err && data) {
         var jsonData = JSON.parse(data);
 
