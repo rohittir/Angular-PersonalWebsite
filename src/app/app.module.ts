@@ -17,6 +17,7 @@ import { CricketViewComponent } from './cricket-view/cricket-view.component';
 import { LiveScoreService } from './cricket-view/live-score.service';
 import { CricketScorecardComponent } from './cricket-view/cricket-scorecard/cricket-scorecard.component';
 import { ProfileDetailsComponent } from './profile-page/profile-details/profile-details.component';
+import { ServerConfigService } from './services/server-config.service';
 
 
 @NgModule({
@@ -38,7 +39,12 @@ import { ProfileDetailsComponent } from './profile-page/profile-details/profile-
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [SearchService, JSONDataService, LiveScoreService],
+  providers: [
+    SearchService,
+    JSONDataService,
+    LiveScoreService,
+    ServerConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

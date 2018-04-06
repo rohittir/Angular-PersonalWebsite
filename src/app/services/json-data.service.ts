@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 /**
  * class: SearchService
  * Directory: src/app/services
@@ -15,8 +8,8 @@
 
 
 import { Injectable } from "@angular/core";
-import { Promise } from "q";
 import { Http, Headers, Response, Jsonp, RequestOptions } from '@angular/http';
+import { ServerConfigService } from "./server-config.service";
 
 
 @Injectable()
@@ -25,8 +18,8 @@ export class JSONDataService {
 
     private jsonData = null;
 
-    constructor(private _http: Http) {
-        this.readDataFromJsonFile('assets/data/user-profile.json');
+    constructor(private _http: Http, private _serverConfigService: ServerConfigService) {
+        this.fetchUserData();
     }
 
     //
@@ -40,6 +33,15 @@ export class JSONDataService {
          .catch(err => {
              console.error(err.json());
          })
+    }
+
+    private fetchUserData() {
+        this._http.get(this._serverConfigService.serverUrl + '/userProfile').toPromise().then(res => {
+            this.jsonData = res.json();
+        })
+        .catch(err => {
+            console.error(err);
+        });
     }
 
     public getJsonData() {

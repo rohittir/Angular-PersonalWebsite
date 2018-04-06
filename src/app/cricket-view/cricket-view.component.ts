@@ -30,6 +30,7 @@ export class CricketViewComponent implements OnInit, OnDestroy {
   constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
+    this._liveScoreService.fetchLiveMatches();
     this.initSettings();
 
     // this.fetchInterval = setInterval(() => {

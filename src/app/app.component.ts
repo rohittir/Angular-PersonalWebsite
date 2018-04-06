@@ -9,6 +9,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { ServerConfigService } from './services/server-config.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
 
 
-  constructor(private _router: Router) {
+  constructor(private _router: Router, private _serverConfigService: ServerConfigService) {
 
   }
 

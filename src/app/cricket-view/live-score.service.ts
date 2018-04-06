@@ -8,21 +8,16 @@
 import { Injectable } from "@angular/core";
 import { Http, ResponseContentType } from "@angular/http";
 import { RequestOptionsArgs } from "@angular/http/src/interfaces";
-
-
-var parseString = require('xml2js').parseString;
+import { ServerConfigService } from "../services/server-config.service";
 
 
 @Injectable()
 export class LiveScoreService {
 
-    liveScoreURL = 'http://synd.cricbuzz.com/j2me/1.0/livematches.xml';
-
     public matchesList = null;
     public commentaryList = null;
 
-    constructor(private _http: Http) {
-        this.fetchLiveMatches();
+    constructor(private _http: Http, private _serverConfigService: ServerConfigService) {
     }
 
     //
@@ -30,12 +25,14 @@ export class LiveScoreService {
     //
 
     public fetchLiveMatches() {
-        this._http.get(this.liveScoreURL, { responseType: ResponseContentType.Text }).toPromise().then(res => {
-            parseString(res.text(), this.setMatchList.bind(this));
+
+        this._http.get(this._serverConfigService.serverUrl + '/cricket/livematches').toPromise().then(res => {
+            this.setMatchList(null, res.json());
         })
         .catch(err => console.error(err));
     }
 
+    // Set information based on the fetched results
     private setMatchList(err, result) {
         if (!err && result) {
             this.matchesList = result.mchdata.match;
@@ -46,9 +43,9 @@ export class LiveScoreService {
 
                 if (this.matchesList[i].$.datapath) {
                     indexToRemove.push(i);
-                    let url = this.matchesList[i].$.datapath + 'commentary.xml';
-                    this._http.get(url, { responseType: ResponseContentType.Text }).toPromise().then(res => {
-                        parseString(res.text(), this.setCommentary.bind(this));
+                    let matchUrl = this.matchesList[i].$.datapath;
+                    this._http.get(this._serverConfigService.serverUrl + '/cricket/livematches/commentary?matchUrl=' + matchUrl).toPromise().then(res => {
+                        this.setCommentary(null, res.json());
                     })
                     .catch(err => console.error(err));
                 }
@@ -62,18 +59,22 @@ export class LiveScoreService {
         }
     }
 
+    // set commentary list
     private setCommentary(err, result) {
         this.commentaryList.push(result.mchDetails.match[0]);
         console.log(this.commentaryList);
 
     }
 
+    // fetch the scorecard
     public fetchLiveScorecard(url: string, callback) {
-
-        this._http.get(url, { responseType: ResponseContentType.Text }).toPromise().then(res => {
-            parseString(res.text(), callback);
+        this._http.get(this._serverConfigService.serverUrl + '/cricket/livematches/scorecard?matchUrl=' + url).toPromise().then(res => {
+            callback(null, res.json());
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.error(err);
+            callback(err, null);
+        });
     }
 
 }

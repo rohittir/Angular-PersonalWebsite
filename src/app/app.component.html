@@ -4,15 +4,17 @@
     @author: Rohit Tirmanwar
  -->
 
+<ng-container *ngIf="_serverConfigService.serverUrl">
 
-<app-header-menu></app-header-menu>
+  <app-header-menu></app-header-menu>
 
-<br>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
-<br>
-<app-footer></app-footer>
+  <br>
+  <div class="container">
+      <router-outlet>
+      </router-outlet>
+  </div>
+  <br>
+  <app-footer></app-footer>
 
 
-
+</ng-container>
