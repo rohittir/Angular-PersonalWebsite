@@ -7,6 +7,7 @@
  */
 
 var http = require('http');
+var https = require('https');
 var express = require('express');
 var app = express();
 var fs = require("fs");
@@ -55,7 +56,7 @@ function extractDataFromServer(url, callback) {
 }
 
 
-// GET API for getting live cricket matches
+// GET API for getting live cricket matches from cricbuzz
 app.get('/cricket', function (req, res) {
 
     if (req.query.request === 'cbLiveMatches') {
@@ -71,7 +72,7 @@ app.get('/cricket', function (req, res) {
                 res.send(null);
             }
         });
-    } else if (req.query.request === 'cbCommentary') {
+    } else if (req.query.request === 'cbCommentary' && req.query.matchUrl) {
         var url = req.query.matchUrl;
         if (url) {
             url += 'commentary.xml';
@@ -88,7 +89,7 @@ app.get('/cricket', function (req, res) {
             res.status(403);
             res.send(null);
         }
-    } else if (req.query.request === 'cbScorecard') {
+    } else if (req.query.request === 'cbScorecard' && req.query.matchUrl) {
         var url = req.query.matchUrl;
 
         if (url) {
@@ -110,7 +111,56 @@ app.get('/cricket', function (req, res) {
         res.status(404);
         res.send(null);
     }
-})
+});
+
+
+// GET API for getting live cricket matches from cricscore-api.appspot.com
+app.get('/cricket/livescore', function (req, res) {
+
+    if (req.query.request === 'csLiveMatches') {
+
+        var url = 'https://cricscore-api.appspot.com/csa';
+        https.get(url, function (response) {
+            var completeResponse = '';
+            response.on('data', function (chunk) {
+                completeResponse += chunk;
+            });
+            response.on('end', function () {
+                var data = JSON.parse(completeResponse);
+                res.status(200);
+                res.send(data);
+            })
+        }).on('error', function (err) {
+            res.status(500);
+            res.send(null);
+        });
+
+    } else if (req.query.request === 'csLiveScore' && req.query.matchId) {
+
+        var matchId = req.query.matchId;
+        var url = 'https://cricscore-api.appspot.com/csa?id=' + matchId;
+        https.get(url, function (response) {
+            var completeResponse = '';
+            response.on('data', function (chunk) {
+                completeResponse += chunk;
+            });
+            response.on('end', function () {
+                var data = JSON.parse(completeResponse);
+                res.status(200);
+                res.send(data);
+            })
+        }).on('error', function (err) {
+            res.status(500);
+            res.send(null);
+        });
+
+    } else {
+        res.status(404);
+        res.send(null);
+    }
+
+});
+
 
 //
 // SERVE APPLICATION

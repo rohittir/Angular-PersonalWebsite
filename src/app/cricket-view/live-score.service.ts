@@ -19,7 +19,18 @@ export class LiveScoreService {
     //
     // OPERATIONS
     //
+
     public fetchLiveMatches(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl
+            + '/cricket/livescore?request=csLiveMatches').toPromise();
+    }
+
+    public fetchLiveScore(matchId: string): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl
+            + '/cricket/livescore?request=csLiveScore&matchId=' + matchId).toPromise();
+    }
+
+    public fetchCurrentMatches(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
             + '/cricket?request=cbLiveMatches').toPromise();
     }

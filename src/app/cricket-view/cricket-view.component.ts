@@ -22,6 +22,7 @@ export class CricketViewComponent implements OnInit {
   //
   matchesList = null;
   commentaryList = null;
+  liveMatchesList = [];
 
   selectedMatchInfo = null;
   selectedCommentary = null;
@@ -32,6 +33,7 @@ export class CricketViewComponent implements OnInit {
 
   ngOnInit() {
     this.refreshMatches();
+    this.refreshLiveScore();
   }
 
   //
@@ -40,7 +42,7 @@ export class CricketViewComponent implements OnInit {
 
   private refreshMatches() {
     // Fetch Live scores
-    this._liveScoreService.fetchLiveMatches()
+    this._liveScoreService.fetchCurrentMatches()
     .then(res => {
         this.matchesList = res.json().mchdata.match;
         this.commentaryList = [];
@@ -71,6 +73,31 @@ export class CricketViewComponent implements OnInit {
         }
     })
     .catch(err => console.error(err));
+  }
+
+
+  //
+  // LIVE Score From cricscore
+  //
+  refreshLiveScore() {
+
+    this.liveMatchesList = [];
+    this._liveScoreService.fetchLiveMatches()
+    .then(res => {
+      console.log(res.json());
+      let matches = res.json();
+
+      for (let i = 0; i < matches.length; i++) {
+        this._liveScoreService.fetchLiveScore(matches[i].id)
+        .then(match => {
+          this.liveMatchesList.push(match.json()[0]);
+        })
+        .catch(err1 => console.error(err1));
+      }
+
+    })
+    .catch(err => console.error(err));
+
   }
 
 

@@ -1,23 +1,36 @@
 
 
-<ng-container *ngIf="!selectedMatchInfo && !selectedCommentary">
+<ng-container *ngIf="!selectedMatchInfo && !selectedCommentary && liveMatchesList.length <= 0">
     <div class="alert alert-primary" role="alert">
         <h6>Live cricket socores are coming soon. Keep an eye on this page.</h6>
     </div>
 </ng-container>
 
 
-<ng-container *ngIf="selectedMatchInfo || selectedCommentary">
+<ng-container *ngIf="selectedMatchInfo || selectedCommentary || liveMatchesList.length > 0">
+
+    <div class="alert alert-primary" role="alert" *ngIf="liveMatchesList.length > 0">
+      <strong>Live Cricket Score</strong>
+      <button class="btn btn-primary btn-sm pull-right" (click)="refreshLiveScore()">
+        Refresh
+      </button><br><br>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngFor="let live of liveMatchesList">
+          <div class="card" style="margin-bottom: 3%">
+            <div class="card-header">
+              {{live.si}}
+            </div>
+            <div class="card-body">
+              <h6 class="card-subtitle">{{live.de}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr *ngIf="liveMatchesList.length > 0">
 
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-
-        <div class="alert alert-primary" role="alert">
-            <strong>Live Cricket Score</strong>
-            <button class="btn btn-primary btn-sm" (click)="refreshMatches()">
-              Refresh
-            </button>
-          </div>
         <!-- MatchesList -->
         <!-- <div class="card-columns"> -->
           <div class="card {{(match===selectedMatchInfo)? 'text-white bg-info':''}}"
