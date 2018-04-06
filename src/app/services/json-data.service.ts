@@ -41,6 +41,9 @@ export class JSONDataService {
         })
         .catch(err => {
             console.error(err);
+
+            // when server is not available
+            this.readDataFromJsonFile('assets/data/user-profile.json');
         });
     }
 
