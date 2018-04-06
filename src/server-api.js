@@ -17,6 +17,8 @@ module.exports = function(app, passport, board) {
 
     // GET API for get user data
     app.get('/api/profile', function (req, res) {
+
+        try {
         fs.readFile(__dirname + "/" + "assets/data/user-profile.json", 'utf8', function (err, data) {
             if (!err && data) {
                 res.status(200);
@@ -27,6 +29,11 @@ module.exports = function(app, passport, board) {
             }
 
         });
+        } catch(e) {
+            console.error('Exception: ' + e);
+            res.status(501);
+            res.send(null);
+        }
     })
 
 
@@ -58,6 +65,7 @@ module.exports = function(app, passport, board) {
     // GET API for getting live cricket matches from cricbuzz
     app.get('/api/cricket', function (req, res) {
 
+        try {
         if (req.query.request === 'cbLiveMatches') {
             // Cricbuzz URL for live score
             var liveScoreURL = 'http://synd.cricbuzz.com/j2me/1.0/livematches.xml';
@@ -110,12 +118,18 @@ module.exports = function(app, passport, board) {
             res.status(404);
             res.send(null);
         }
+        } catch(e) {
+            console.error('Exception: ' + e);
+            res.status(501);
+            res.send(null);
+        }
     });
 
 
     // GET API for getting live cricket matches from cricscore-api.appspot.com
     app.get('/api/cricket/livescore', function (req, res) {
 
+        try {
         if (req.query.request === 'csLiveMatches') {
 
             var url = 'https://cricscore-api.appspot.com/csa';
@@ -158,6 +172,12 @@ module.exports = function(app, passport, board) {
             res.send(null);
         }
 
+        } catch(e) {
+            console.error('Exception: ' + e);
+            res.status(501);
+            res.send(null);
+        }
+
     });
 
     //
@@ -165,6 +185,7 @@ module.exports = function(app, passport, board) {
     //
     app.get('/api/cricket/cricketNews', function (req, res) {
 
+        try {
         if (req.query.newsType === 'top-headlines') {
 
             var url = 'https://newsapi.org/v2/top-headlines';
@@ -187,6 +208,11 @@ module.exports = function(app, passport, board) {
 
         } else {
             res.status(404);
+            res.send(null);
+        }
+        } catch(e) {
+            console.error('Exception: ' + e);
+            res.status(501);
             res.send(null);
         }
 
