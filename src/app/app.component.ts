@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ServerConfigService } from './services/server-config.service';
 
+declare let ga: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,9 +31,10 @@ export class AppComponent implements OnInit {
         if (!(evt instanceof NavigationEnd)) {
             return;
         }
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        ga('set', 'page', evt.urlAfterRedirects);
+        ga('send', 'pageview');
     });
-
   }
 
 
