@@ -1,5 +1,5 @@
 /**
- * class: HomePageComponent
+ * class: CricketScorecardComponent
  * Directory: src/app/cricket-view/cricket-scorecard
  * @author Rohit Tirmanwar
  */

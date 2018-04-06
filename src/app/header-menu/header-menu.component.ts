@@ -45,6 +45,16 @@ export class HeaderMenuComponent implements OnInit {
         return this._router.url === routeAddress;
     }
 
+    isSubMenuActive(routes: Array<string>) {
+        for (let i = 0; i < routes.length; i++) {
+            if (this._router.url === routes[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     getHeaading(): string {
         let data = this._jsonDataService.getJsonData();
         if (data) {

@@ -1,0 +1,28 @@
+
+
+
+
+
+<ng-container *ngIf="headlinesList">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="card" *ngIf="currentHeadline" style="max-width: 700px; margin: auto">
+
+                <div class="card-body">
+                    <button class="btn btn-primary pull-left" (click)="showPrevious()">Previous</button>
+                    <button class="btn btn-primary pull-right" (click)="showNext()">Next</button>
+                    <br><br>
+                    <h5 class="card-title">{{currentHeadline.title}}</h5>
+                    <p class="card-text">{{currentHeadline.description}}</p>
+                    <p><a href="{{currentHeadline.url}}" target="_blank">Click here</a> for more information at espncricinfo.com</p>
+                </div>
+                <img class="card-img-bottom" src="{{currentHeadline.urlToImage}}" alt="{{currentHeadline.title}}">
+            </div>
+        </div>
+    </div>
+
+</ng-container>
+
+
+

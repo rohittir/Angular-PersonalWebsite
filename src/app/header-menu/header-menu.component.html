@@ -26,6 +26,17 @@ aria-controls="navbarSupportedContent" (click)="isCollapsed = !isCollapsed" [att
     <li class="{{isActive('/cricket')? 'nav-item active':'nav-item' }}">
         <a class="nav-link" routerLink="/cricket">Cricket</a>
     </li>
+
+    <!-- <li class="nav-item dropdown {{isSubMenuActive(['/cricket/news', '/cricket/live'])? 'active':'' }}">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cricket
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/cricket/live">Live Matches</a>
+            <a class="dropdown-item" routerLink="/cricket/news">News</a>
+        </div>
+
+    </li> -->
     <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown
