@@ -1,7 +1,7 @@
 
 {
     "serverConfig": {
-        "host": "localhost",
+        "host": "ec2-35-173-149-174.compute-1.amazonaws.com",
         "port": "3200"
     }
 
