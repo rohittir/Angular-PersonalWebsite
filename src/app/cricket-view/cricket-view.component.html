@@ -14,7 +14,7 @@
 
         <div class="alert alert-primary" role="alert">
             <strong>Live Cricket Score</strong>
-            <button class="btn btn-primary btn-sm" (click)="refreshScore()">
+            <button class="btn btn-primary btn-sm" (click)="refreshMatches()">
               Refresh
             </button>
           </div>
@@ -22,7 +22,7 @@
         <!-- <div class="card-columns"> -->
           <div class="card {{(match===selectedMatchInfo)? 'text-white bg-info':''}}"
             style="margin-bottom: 5%; cursor: pointer" (click)="showMatchInfo(match)"
-            *ngFor="let match of _liveScoreService.matchesList">
+            *ngFor="let match of matchesList">
               <div class="card-header">
                   <strong>{{match.$.type}}: {{match.$.srs}} ({{match.$.mnum}})</strong>
               </div>
@@ -42,7 +42,7 @@
         <!-- Matches With Commentary List -->
         <div class="card {{(commentary===selectedCommentary)? 'text-white bg-info':''}}"
             style="margin-bottom: 5%; cursor: pointer" (click)="showCommentary(commentary)"
-            *ngFor="let commentary of _liveScoreService.commentaryList">
+            *ngFor="let commentary of commentaryList">
             <div class="card-header">
                 <strong>{{commentary.$.type}}: {{commentary.$.srs}} ({{commentary.$.mnum}})</strong>
             </div>

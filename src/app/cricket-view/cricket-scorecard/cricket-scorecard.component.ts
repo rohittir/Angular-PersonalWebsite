@@ -45,24 +45,14 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             return;
         }
 
-        this._liveScoreService.fetchLiveScorecard(this.scorecardURL, this.scorecardResults.bind(this));
+        this._liveScoreService.fetchMatchScorecard(this.scorecardURL)
+        .then(res => {
+            this.scoreCard = res.json().scrCard;
+        })
+        .catch(err => console.error(err));
     }
 
 
-
-    //
-    // OPERATIONS
-    //
-    scorecardResults(err, result) {
-
-        if (err) {
-            return;
-        }
-
-        this.scoreCard = result.scrCard;
-        console.log(this.scoreCard);
-
-    }
 }
 
 
