@@ -10,7 +10,8 @@ import { LiveScoreService } from '../live-score.service';
 
 @Component({
   selector: 'app-cricket-live',
-  templateUrl: './cricket-live.component.html'
+  templateUrl: './cricket-live.component.html',
+  styleUrls: ['./cricket-live.component.css']
 })
 export class CricketLiveComponent implements OnInit {
 
@@ -30,7 +31,7 @@ export class CricketLiveComponent implements OnInit {
 
   ngOnInit() {
     this.refreshMatches();
-    this.refreshLiveScore();
+    // this.refreshLiveScore();
   }
 
   //
@@ -47,9 +48,11 @@ export class CricketLiveComponent implements OnInit {
         for (let i = 0; i < matches.length; i++) {
           this.matchesList.push(matches[i]);
 
-          if (!this.selectedCommentary && i == 0) {
-            this.showMatchInfo(matches[i]);
+          if (!this.selectedMatchInfo && i == 0) {
+            this.selectedMatchInfo = matches[i];
           }
+
+          this.showMatchInfo(this.selectedMatchInfo);
         }
     })
     .catch(err => console.error(err));
@@ -79,16 +82,30 @@ export class CricketLiveComponent implements OnInit {
 
   }
 
+  refreshCommentary(match) {
+    if (!match.$.datapath) {
+      return;
+    }
+
+    this._liveScoreService.fetchMatchCommentary(match.$.datapath)
+      .then(res => {
+        this.selectedCommentary = res.json().mchDetails.match[0];
+      })
+      .catch(err => console.error(err));
+  }
+
 
   //
   // EVENTS
   //
 
+
+
   showMatchInfo(match) {
 
-    if (match === this.selectedMatchInfo) {
-      return;
-    }
+    // if (match === this.selectedMatchInfo) {
+    //   return;
+    // }
 
     this.selectedMatchInfo = match;
 
@@ -98,15 +115,15 @@ export class CricketLiveComponent implements OnInit {
     }
 
     this.selectedCommentary = null;
-    this._liveScoreService.fetchMatchCommentary(match.$.datapath)
-    .then(res => {
-      this.selectedCommentary = res.json().mchDetails.match[0];
-    })
-    .catch(err => console.error(err));
-
+    this.refreshCommentary(match);
   }
 
 
+  refresh() {
+    // this.refreshLiveScore();
+    this.selectedMatchInfo = null;
+    this.refreshMatches();
+  }
 
 
 
