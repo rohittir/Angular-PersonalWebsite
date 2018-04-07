@@ -39,6 +39,10 @@ export class ServerConfigService {
              if (jsonData.serverConfig.customURL && jsonData.serverConfig.customURL !== "") {
                 this.serverUrl = jsonData.serverConfig.customURL;
              }
+
+             if (jsonData.serverConfig.prod === true) {
+                this.serverUrl = "";
+             }
          })
          .catch(err => {
              console.error(err.json());
