@@ -5,7 +5,7 @@
  */
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LiveScoreService } from '../live-score.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { LiveScoreService } from '../live-score.service';
   templateUrl: './cricket-live.component.html',
   styleUrls: ['./cricket-live.component.css']
 })
-export class CricketLiveComponent implements OnInit {
+export class CricketLiveComponent implements OnInit, OnDestroy {
 
 
   //
@@ -27,11 +27,19 @@ export class CricketLiveComponent implements OnInit {
   selectedTab = 'Commentary';
   showLive = false;
 
+  dataFetchInterval = null;
+
   constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
-    this.refreshMatches();
-    // this.refreshLiveScore();
+    this.refresh();
+    this.dataFetchInterval = setInterval(this.refresh.bind(this), 60000);
+  }
+
+  ngOnDestroy() {
+    if (this.dataFetchInterval) {
+      clearInterval(this.dataFetchInterval);
+    }
   }
 
   //
