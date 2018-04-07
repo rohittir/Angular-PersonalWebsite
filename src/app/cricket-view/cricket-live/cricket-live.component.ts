@@ -24,6 +24,7 @@ export class CricketLiveComponent implements OnInit {
   selectedMatchInfo = null;
   selectedCommentary = null;
   selectedTab = 'Commentary';
+  showLive = false;
 
   constructor(public _liveScoreService: LiveScoreService) { }
 

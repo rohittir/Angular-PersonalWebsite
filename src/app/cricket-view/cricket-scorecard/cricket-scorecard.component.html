@@ -5,7 +5,7 @@
 
 <ng-container *ngIf="scoreCard">
 
-    <div *ngFor="let inngs of scoreCard.scrs[0].Inngs">
+    <div *ngFor="let inngs of scoreCard.scrs[0].Inngs" style="overflow-x: auto">
 
         <h6 *ngFor="let bat of inngs.btTm">{{bat.$.sName}} ({{inngs.$.desc}})</h6>
         <h6>{{inngs.$.r}}/{{inngs.$.wkts}} ({{inngs.$.ovrs}}) <span *ngIf="inngs.$?.Target">Target: {{inngs.$?.Target}}</span></h6>
