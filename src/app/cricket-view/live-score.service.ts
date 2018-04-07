@@ -22,35 +22,35 @@ export class LiveScoreService {
 
     public fetchLiveMatches(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket/livescore?request=csLiveMatches').toPromise();
+            + '/api/cricket/livecricscore/csLiveMatches/').toPromise();
     }
 
     public fetchLiveScore(matchId: string): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket/livescore?request=csLiveScore&matchId=' + matchId).toPromise();
+            + '/api/cricket/livecricscore/csLiveScore/?matchId=' + matchId).toPromise();
     }
 
     public fetchCurrentMatches(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket?request=cbLiveMatches').toPromise();
+            + '/api/cricket/cbLiveMatches/').toPromise();
     }
 
     // fetch the scorecard
     public fetchMatchScorecard(matchUrl: string): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket?request=cbScorecard&matchUrl=' + matchUrl).toPromise();
+            + '/api/cricket/cbScorecard/?matchUrl=' + matchUrl).toPromise();
     }
 
     // fetch the commentary
     public fetchMatchCommentary(matchUrl: string): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket?request=cbCommentary&matchUrl=' + matchUrl).toPromise();
+            + '/api/cricket/cbCommentary/?matchUrl=' + matchUrl).toPromise();
     }
 
     // fetch the news headlines
     public fetchCricketHeadlines(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket/cricketNews?newsType=top-headlines').toPromise();
+            + '/api/cricket/cricnews/top-headlines/').toPromise();
     }
 
 }

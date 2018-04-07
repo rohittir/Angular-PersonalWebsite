@@ -35,6 +35,10 @@ export class ServerConfigService {
              this.serverHost = jsonData.serverConfig.host;
              this.serverPort = jsonData.serverConfig.port;
              this.serverUrl = 'http://' + this.serverHost + ':' + this.serverPort;
+
+             if (jsonData.serverConfig.customURL && jsonData.serverConfig.customURL !== "") {
+                this.serverUrl = jsonData.serverConfig.customURL;
+             }
          })
          .catch(err => {
              console.error(err.json());

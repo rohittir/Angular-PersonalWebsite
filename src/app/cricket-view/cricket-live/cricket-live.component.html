@@ -177,7 +177,7 @@
                         <!-- Commentry -->
                         <div *ngFor="let commentry of selectedCommentary.comm">
                             <div class="alert alert-info" role="alert" *ngFor="let comStmnt of commentry.c">
-                                {{comStmnt}}
+                                <span [innerHTML]="comStmnt"></span>
                             </div>
                         </div>
                     </div>

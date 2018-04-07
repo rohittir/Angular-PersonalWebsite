@@ -63,10 +63,10 @@ module.exports = function(app, passport, board) {
 
 
     // GET API for getting live cricket matches from cricbuzz
-    app.get('/api/cricket', function (req, res) {
+    app.get('/api/cricket/:type', function (req, res) {
 
         try {
-        if (req.query.request === 'cbLiveMatches') {
+        if (req.params.type === 'cbLiveMatches') {
             // Cricbuzz URL for live score
             var liveScoreURL = 'http://synd.cricbuzz.com/j2me/1.0/livematches.xml';
 
@@ -79,7 +79,7 @@ module.exports = function(app, passport, board) {
                     res.send(null);
                 }
             });
-        } else if (req.query.request === 'cbCommentary' && req.query.matchUrl) {
+        } else if (req.params.type === 'cbCommentary' && req.query.matchUrl) {
             var url = req.query.matchUrl;
             if (url) {
                 url += 'commentary.xml';
@@ -96,7 +96,7 @@ module.exports = function(app, passport, board) {
                 res.status(403);
                 res.send(null);
             }
-        } else if (req.query.request === 'cbScorecard' && req.query.matchUrl) {
+        } else if (req.params.type === 'cbScorecard' && req.query.matchUrl) {
             var url = req.query.matchUrl;
 
             if (url) {
@@ -127,10 +127,10 @@ module.exports = function(app, passport, board) {
 
 
     // GET API for getting live cricket matches from cricscore-api.appspot.com
-    app.get('/api/cricket/livescore', function (req, res) {
+    app.get('/api/cricket/livecricscore/:type', function (req, res) {
 
         try {
-        if (req.query.request === 'csLiveMatches') {
+        if (req.params.type === 'csLiveMatches') {
 
             var url = 'https://cricscore-api.appspot.com/csa';
             https.get(url, function (response) {
@@ -148,7 +148,7 @@ module.exports = function(app, passport, board) {
                 res.send(null);
             });
 
-        } else if (req.query.request === 'csLiveScore' && req.query.matchId) {
+        } else if (req.params.type === 'csLiveScore' && req.query.matchId) {
 
             var matchId = req.query.matchId;
             var url = 'https://cricscore-api.appspot.com/csa?id=' + matchId;
@@ -183,10 +183,10 @@ module.exports = function(app, passport, board) {
     //
     // FOR CRICKET NEWS AND UPDATES
     //
-    app.get('/api/cricket/cricketNews', function (req, res) {
+    app.get('/api/cricket/cricnews/:type', function (req, res) {
 
         try {
-        if (req.query.newsType === 'top-headlines') {
+        if (req.params.type === 'top-headlines') {
 
             var url = 'https://newsapi.org/v2/top-headlines';
             url += '?sources=' + sources + '&apiKey=' + newsApiKey;
