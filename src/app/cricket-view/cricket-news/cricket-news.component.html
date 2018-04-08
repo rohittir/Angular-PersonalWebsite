@@ -10,8 +10,8 @@
             <div class="card" *ngIf="currentHeadline" style="max-width: 700px; margin: auto">
 
                 <div class="card-body">
-                    <button class="btn btn-primary pull-left" (click)="showPrevious()">Previous</button>
-                    <button class="btn btn-primary pull-right" (click)="showNext()">Next</button>
+                    <button class="btn btn-primary pull-left" (click)="showPrevious()"><span class="fa fa-chevron-circle-left"></span> Previous</button>
+                    <button class="btn btn-primary pull-right" (click)="showNext()">Next <span class="fa fa-chevron-circle-right"></span></button>
                     <br>
                     <hr>
                     <h5 class="card-title">{{currentHeadline.title}}</h5>

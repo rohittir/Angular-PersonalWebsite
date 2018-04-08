@@ -27,13 +27,13 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   selectedTab = 'Commentary';
   showLive = false;
 
+  showMatchCommentary = false;
   dataFetchInterval = null;
 
   constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
     this.refresh();
-    this.dataFetchInterval = setInterval(this.refresh.bind(this), 60000);
   }
 
   ngOnDestroy() {
@@ -51,16 +51,17 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
     this._liveScoreService.fetchCurrentMatches()
     .then(res => {
         let matches = res.json().mchdata.match;
+        console.log(matches);
 
         this.matchesList = [];
         for (let i = 0; i < matches.length; i++) {
           this.matchesList.push(matches[i]);
 
-          if (!this.selectedMatchInfo && i == 0) {
-            this.selectedMatchInfo = matches[i];
-          }
+          // if (!this.selectedMatchInfo && i == 0) {
+          //   this.selectedMatchInfo = matches[i];
+          // }
 
-          this.showMatchInfo(this.selectedMatchInfo);
+          // this.showMatchInfo(this.selectedMatchInfo, false);
         }
     })
     .catch(err => console.error(err));
@@ -98,6 +99,9 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
     this._liveScoreService.fetchMatchCommentary(match.$.datapath)
       .then(res => {
         this.selectedCommentary = res.json().mchDetails.match[0];
+         if (this.dataFetchInterval && this.selectedCommentary.manofthematch) {
+          clearInterval(this.dataFetchInterval);
+        }
       })
       .catch(err => console.error(err));
   }
@@ -109,7 +113,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
 
 
-  showMatchInfo(match) {
+  showMatchInfo(match, userEvent = true) {
 
     // if (match === this.selectedMatchInfo) {
     //   return;
@@ -117,20 +121,35 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
     this.selectedMatchInfo = match;
 
-    if (!match.$.datapath) {
-      this.selectedCommentary = null;
-      return;
-    }
+    // if (!match.$.datapath) {
+    //   this.selectedCommentary = null;
+    //   return;
+    // }
 
     this.selectedCommentary = null;
     this.refreshCommentary(match);
+
+    if (userEvent) {
+      this.showMatchCommentary = true;
+    }
+
+    if (this.dataFetchInterval) {
+      clearInterval(this.dataFetchInterval);
+    }
+
+    this.dataFetchInterval = setInterval(this.refreshCommentary.bind(this), 10000, match);
   }
 
 
   refresh() {
     // this.refreshLiveScore();
-    this.selectedMatchInfo = null;
-    this.refreshMatches();
+    // this.selectedMatchInfo = null;
+
+    if (!this.showMatchCommentary) {
+      this.refreshMatches();
+    } else {
+      this.showMatchInfo(this.selectedMatchInfo);
+    }
   }
 
 
