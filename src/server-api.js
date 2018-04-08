@@ -186,30 +186,50 @@ module.exports = function(app, passport, board) {
     app.get('/api/cricket/cricnews/:type', function (req, res) {
 
         try {
-        if (req.params.type === 'top-headlines') {
+            if (req.params.type === 'top-headlines') {
 
-            var url = 'https://newsapi.org/v2/top-headlines';
-            url += '?sources=' + sources + '&apiKey=' + newsApiKey;
+                var url = 'https://newsapi.org/v2/top-headlines';
+                url += '?sources=' + sources + '&apiKey=' + newsApiKey;
 
-            https.get(url, function(response) {
-                var completeResponse = '';
-                response.on('data', function (chunk) {
-                    completeResponse += chunk;
+                https.get(url, function(response) {
+                    var completeResponse = '';
+                    response.on('data', function (chunk) {
+                        completeResponse += chunk;
+                    });
+                    response.on('end', function () {
+                        var data = JSON.parse(completeResponse);
+                        res.status(200);
+                        res.send(data);
+                    })
+                }).on('error', function (err) {
+                    res.status(500);
+                    res.send(null);
                 });
-                response.on('end', function () {
-                    var data = JSON.parse(completeResponse);
-                    res.status(200);
-                    res.send(data);
-                })
-            }).on('error', function (err) {
-                res.status(500);
-                res.send(null);
-            });
 
-        } else {
-            res.status(404);
-            res.send(null);
-        }
+            } else if (req.params.type === 'everything') {
+
+                var url = 'https://newsapi.org/v2/everything';
+                url += '?sources=' + sources + '&apiKey=' + newsApiKey;
+
+                https.get(url, function(response) {
+                    var completeResponse = '';
+                    response.on('data', function (chunk) {
+                        completeResponse += chunk;
+                    });
+                    response.on('end', function () {
+                        var data = JSON.parse(completeResponse);
+                        res.status(200);
+                        res.send(data);
+                    })
+                }).on('error', function (err) {
+                    res.status(500);
+                    res.send(null);
+                });
+
+            } else {
+                res.status(404);
+                res.send(null);
+            }
         } catch(e) {
             console.error('Exception: ' + e);
             res.status(501);

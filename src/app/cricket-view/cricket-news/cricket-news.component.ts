@@ -38,7 +38,7 @@ export class CricketNewsComponent implements OnInit {
     }
 
     initData() {
-        this._liveScoreService.fetchCricketHeadlines()
+        this._liveScoreService.fetchCricketNews()
         .then(res => {
             console.log(res.json());
             this.headlinesList = res.json().articles;

@@ -53,5 +53,11 @@ export class LiveScoreService {
             + '/api/cricket/cricnews/top-headlines/').toPromise();
     }
 
+     // fetch the news headlines
+    public fetchCricketNews(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl
+            + '/api/cricket/cricnews/everything/').toPromise();
+    }
+
 }
 
