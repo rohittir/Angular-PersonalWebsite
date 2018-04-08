@@ -51,7 +51,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
     this._liveScoreService.fetchCurrentMatches()
     .then(res => {
         let matches = res.json().mchdata.match;
-        console.log(matches);
+        // console.log(matches);
 
         this.matchesList = [];
         for (let i = 0; i < matches.length; i++) {
@@ -110,9 +110,6 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   //
   // EVENTS
   //
-
-
-
   showMatchInfo(match, userEvent = true) {
 
     // if (match === this.selectedMatchInfo) {

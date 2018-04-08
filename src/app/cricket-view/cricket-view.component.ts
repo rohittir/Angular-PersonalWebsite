@@ -7,6 +7,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { LiveScoreService } from './live-score.service';
 
 @Component({
   selector: 'app-cricket-view',
@@ -21,15 +22,35 @@ export class CricketViewComponent implements OnInit {
   //
 
   selectedMainTab = 'Live Score';
+  iplStandings = null;
 
-  constructor() { }
+  constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
-
+    // this.refreshIPLSTandings();
   }
 
   //
   // OPERATIONS
   //
+
+  refreshIPLSTandings() {
+
+    this._liveScoreService.fetchIPLStandings()
+    .then(res => {
+      this.iplStandings = res.json();
+      // console.log(this.iplStandings);
+    })
+    .catch(err => console.error(err));
+
+  }
+
+  //
+  // EVENTS
+  //
+  onIPLStandings() {
+    this.selectedMainTab='IPL Standings';
+    this.refreshIPLSTandings();
+  }
 
 }

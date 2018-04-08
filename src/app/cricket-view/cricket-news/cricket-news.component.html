@@ -18,10 +18,46 @@
                     <p class="card-text">{{currentHeadline.description}}</p>
                     <p><a href="{{currentHeadline.url}}" target="_blank">Click here</a> for more information at espncricinfo.com</p>
                 </div>
-                <img class="card-img-bottom" src="{{currentHeadline.urlToImage}}" alt="{{currentHeadline.title}}">
+                <div>
+                    <img class="card-img-bottom" src="{{currentHeadline.urlToImage}}" alt="{{currentHeadline.title}}">
+                    <a class="carousel-control-prev" data-slide="prev" role="button" (click)="showPrevious()" style="cursor: pointer">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" data-slide="next" role="button" (click)="showNext()" style="cursor: pointer">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+<!-- <div id="demo" class="carousel slide" data-ride="carousel" style="max-width: 900px; margin: auto">
+
+    <ul class="carousel-indicators">
+        <li *ngFor="let news of headlinesList; let i = index" data-target="#demo" data-slide-to="0" class="{{(news == currentHeadline)? 'active':''}}"></li>
+    </ul>
+
+    <div class="carousel-inner">
+        <div class="carousel-item {{(news == currentHeadline)? 'active':''}}" *ngFor="let news of headlinesList">
+            <img src="{{news.urlToImage}}" alt="{{news.title}}">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>{{news.title}}</h3>
+                <p>{{news.description}}</p>
+                <p><a href="{{news.url}}" target="_blank">Click here</a> for more information at espncricinfo.com</p>
+            </div>
+        </div>
+    </div>
+
+
+    <a class="carousel-control-prev" data-slide="prev" role="button" (click)="showPrevious()" style="cursor: pointer">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" data-slide="next" role="button" (click)="showNext()" style="cursor: pointer">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div> -->
 
 </ng-container>
 

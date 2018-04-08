@@ -59,5 +59,11 @@ export class LiveScoreService {
             + '/api/cricket/cricnews/everything/').toPromise();
     }
 
+     // fetch the ipl standins
+    public fetchIPLStandings(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl
+            + '/api/cricket/ipl/standings/').toPromise();
+    }
+
 }
 
