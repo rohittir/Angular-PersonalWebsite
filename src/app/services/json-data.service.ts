@@ -51,6 +51,10 @@ export class JSONDataService {
         return this.jsonData;
     }
 
+    public fetchCurrentInspiration(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/').toPromise();
+    }
+
 
 
 }

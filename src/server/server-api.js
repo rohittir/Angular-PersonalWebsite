@@ -9,8 +9,35 @@ var JSSoup = require('jssoup').default;
 var newsApiKey = '0c3f4aa05b9c46929d6a407a830eaebc';
 var sources = 'espn-cric-info';
 
+var currInspiration = null;
+
 module.exports = function(app) {
 
+    setInterval(function() {
+        chooseRandomInspiration(null);
+    // }, 1000);
+    }, 24 * 60 * 60 * 1000);
+
+    function chooseRandomInspiration(res) {
+        fs.readFile(__dirname + "/" + "../assets/data/inspirations-data.json", 'utf8', function (err, data) {
+            if (!err && data) {
+                var parsedData = JSON.parse(data);
+                var inspCount = parsedData.inspirations.length;
+                var prime = 53;
+                var index = Math.floor(Math.random() * 49 * prime) % (inspCount);
+                if (currInspiration === parsedData.inspirations[index]) {
+                    chooseRandomInspiration(res);
+                } else {
+                    currInspiration = parsedData.inspirations[index];
+                    if (res) {
+                        res.status(200).send(currInspiration);
+                    }
+                }
+            } else if (res) {
+                res.status(501).send(null);
+            }
+        });
+    }
 
     //
     // READ USER DATA
@@ -35,7 +62,16 @@ module.exports = function(app) {
             res.status(501);
             res.send(null);
         }
-    })
+    });
+
+     // GET API for get user data
+     app.get('/api/inspiration', function (req, res) {
+         if (!currInspiration) {
+            chooseRandomInspiration(res);
+         } else {
+             res.status(200).send(currInspiration);
+         }
+    });
 
 
     //

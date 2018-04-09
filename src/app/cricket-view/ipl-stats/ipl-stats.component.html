@@ -8,7 +8,7 @@
     <div class="col-4 col-sm-4 col-md-4 col-lg-2" style="overflow-x: auto">
         <ul class="list-group" style="cursor: pointer">
             <li *ngFor="let category of availableStatsCategory; let i = index"
-            class="list-group-item {{selectedMenuIndex==i? 'active':''}}" (click)="onMenuChange(i)">{{category}}</li>
+            class="list-group-item list-group-item-action {{selectedMenuIndex==i? 'active':''}}" (click)="onMenuChange(i)">{{category}}</li>
         </ul>
         <br>
     </div>

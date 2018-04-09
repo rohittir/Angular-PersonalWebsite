@@ -21,6 +21,7 @@ export class HomePageComponent implements OnInit {
     // PROPERTIES
     //
     userProfile = null;
+    inspirationData = null;
 
     //
     // LIFECYCLE
@@ -48,7 +49,12 @@ export class HomePageComponent implements OnInit {
 
         this.userProfile = jsonData.userData.profile;
 
-
+        this._jsonDataService.fetchCurrentInspiration()
+        .then(res => {
+            this.inspirationData = res.json();
+            // console.log(this.inspirationData);
+        })
+        .catch(err => console.error(err));
     }
 
 

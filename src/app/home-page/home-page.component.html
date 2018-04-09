@@ -12,7 +12,7 @@
                 <h4 class="card-title">Welcome to my website!</h4>
                 <br>
 
-                <p class="card-text">I'm glad for taking your time to visit my website. You will find here all the details about me.</p>
+                <p class="card-text">I'm glad for taking your time to visit my website. I hope you find this website very pleasant and informative.</p>
 
                 <br>
 
@@ -30,7 +30,7 @@
                                         target="_blank">{{userProfile.contact.address.name}}
                                     </a>
                                 </p>
-                                <a routerLink="/profile" class="btn btn-primary">See Profile</a>
+                                <a routerLink="/profile" class="btn btn-primary">See Complete Profile</a>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
                                 <h5 class="card-title">Contact Me</h5>
@@ -49,8 +49,12 @@
                 <br>
 
                 <p class="card-text">Today's inspiration:</p>
-                <p class="card-text"><i>Let us sacrifice our today so that our children can have better tomorrow.</i></p>
-                <p class="card-text">- Dr. A. P. J. Abdul Kalam (Former President of India)</p>
+                <p class="card-text">
+                    <i *ngIf="inspirationData">{{inspirationData.content}}</i>
+                    <i *ngIf="!inspirationData">Let us sacrifice our today so that our children can have better tomorrow.</i>
+                </p>
+                <p class="card-text" *ngIf="inspirationData">- {{inspirationData.author}}</p>
+                <p class="card-text" *ngIf="!inspirationData">- Dr. A. P. J. Abdul Kalam (Former President of India)</p>
                 <br>
             </div>
         </div>
