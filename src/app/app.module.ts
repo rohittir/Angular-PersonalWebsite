@@ -20,6 +20,8 @@ import { ProfileDetailsComponent } from './profile-page/profile-details/profile-
 import { ServerConfigService } from './services/server-config.service';
 import { CricketNewsComponent } from './cricket-view/cricket-news/cricket-news.component';
 import { CricketLiveComponent } from './cricket-view/cricket-live/cricket-live.component';
+import { IPLStatsComponent } from './cricket-view/ipl-stats/ipl-stats.component';
+import { IPLStatsService } from './cricket-view/ipl-stats/ipl-stats.service';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { CricketLiveComponent } from './cricket-view/cricket-live/cricket-live.c
     CricketScorecardComponent,
     ProfileDetailsComponent,
     CricketNewsComponent,
-    CricketLiveComponent
+    CricketLiveComponent,
+    IPLStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { CricketLiveComponent } from './cricket-view/cricket-live/cricket-live.c
     SearchService,
     JSONDataService,
     LiveScoreService,
-    ServerConfigService
+    ServerConfigService,
+    IPLStatsService
   ],
   bootstrap: [AppComponent]
 })

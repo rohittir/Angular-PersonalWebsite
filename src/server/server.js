@@ -13,13 +13,14 @@ var fs = require("fs");
 
 // Initialize server APIs
 var serverAPI = require('./server-api') (app);
+var iplStatsAPI = require('./ipl-stats-api') (app);
 
 //
 // SERVE APPLICATION
 //
 
 // READ Config file
-fs.readFile(__dirname + "/" + "assets/server-config.json", 'utf8', function (err, data) {
+fs.readFile(__dirname + "/" + "../assets/server-config.json", 'utf8', function (err, data) {
     if (!err && data) {
         var jsonData = JSON.parse(data);
 

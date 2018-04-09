@@ -27,30 +27,13 @@ export class CricketViewComponent implements OnInit {
   constructor(public _liveScoreService: LiveScoreService) { }
 
   ngOnInit() {
-    // this.refreshIPLSTandings();
+
   }
 
   //
   // OPERATIONS
   //
 
-  refreshIPLSTandings() {
 
-    this._liveScoreService.fetchIPLStandings()
-    .then(res => {
-      this.iplStandings = res.json();
-      // console.log(this.iplStandings);
-    })
-    .catch(err => console.error(err));
-
-  }
-
-  //
-  // EVENTS
-  //
-  onIPLStandings() {
-    this.selectedMainTab='IPL Standings';
-    this.refreshIPLSTandings();
-  }
 
 }

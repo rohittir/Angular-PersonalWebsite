@@ -1,0 +1,49 @@
+
+
+<div class="alert alert-primary" role="alert">
+    <h6><strong>Indian Premier League, 2018</strong></h6>
+</div>
+
+<div class="row">
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2" style="overflow-x: auto">
+        <ul class="list-group" style="cursor: pointer">
+            <li *ngFor="let category of availableStatsCategory; let i = index"
+            class="list-group-item {{selectedMenuIndex==i? 'active':''}}" (click)="onMenuChange(i)">{{category}}</li>
+        </ul>
+        <br>
+    </div>
+    <div class="col-8 col-sm-8 col-md-8 col-lg-10">
+
+    <!-- Stats in table -->
+    <div style="overflow-x: auto" *ngIf="selectedData">
+        <table class="table table-sm table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th *ngFor="let head of selectedData[0]" scope="col"><span [innerHTML]="head"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of selectedData; let i = index">
+                    <ng-container *ngIf="i > 0 && i <= 4">
+                        <th *ngFor="let cell of row">
+                            <span [innerHTML]="cell"></span>
+                        </th>
+                    </ng-container>
+                    <ng-container *ngIf="i > 4">
+                        <td *ngFor="let cell of row">
+                            <span [innerHTML]="cell"></span>
+                        </td>
+                    </ng-container>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+

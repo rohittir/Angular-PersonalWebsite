@@ -24,8 +24,8 @@
             <tbody>
                 <tr *ngFor="let batsman of inngs.btTm[0]?.plyr">
                     <th scope="row">{{batsman.$.sName}}</th>
-                    <th>{{batsman.status[0]}}</th>
-                    <td>{{batsman.$.r}}</td>
+                    <td>{{batsman.status[0]}}</td>
+                    <th>{{batsman.$.r}}</th>
                     <td>{{batsman.$.frs}}</td>
                     <td>{{batsman.$.six}}</td>
                     <td>{{batsman.$.b}}</td>
@@ -51,7 +51,7 @@
                     <th>{{bowler.$.ovrs}}</th>
                     <td>{{bowler.$.mdns}}</td>
                     <td>{{bowler.$.rOff}}</td>
-                    <td>{{bowler.$.wkts}}</td>
+                    <th>{{bowler.$.wkts}}</th>
                     <td>{{bowler.$.er}}</td>
                 </tr>
             </tbody>
