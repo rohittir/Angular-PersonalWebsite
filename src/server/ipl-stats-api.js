@@ -14,13 +14,12 @@ var ipl2018DataUrls = ['', 'most-runs', 'best-batting-average', 'fastest-fifties
 module.exports = function(app) {
 
     // set the data extraction time
-    var now = new Date();
     setInterval(function () {
+        var now = new Date();
         if (now.getUTCHours() > 13 && now.getUTCMinutes() >= 30 && now.getUTCHours() < 18) {
             ipl2018Data = null;
         }
     }, 23 * 60 * 1000);
-
 
 
     function parseHTMLTableWithJSSoup(completeResponse) {
