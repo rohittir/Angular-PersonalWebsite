@@ -7,7 +7,6 @@
 
 
 <ng-container *ngIf="matchesList">
-
     <div class="alert alert-primary" role="alert">
         <strong>Live Cricket Score</strong>
         <button class="btn btn-primary btn-sm pull-right" (click)="refresh()">
@@ -17,7 +16,7 @@
             {{(showLive)? 'Hide':'Show'}}
         </button> -->
         <!-- <br> -->
-        <br>
+        <!-- <br>
         <div class="row" *ngIf="showLive && liveMatchesList?.length > 0">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngFor="let live of liveMatchesList">
                 <div class="card" style="margin-bottom: 3%">
@@ -29,9 +28,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
-    <hr *ngIf="liveMatchesList?.length > 0">
+    <!-- <hr *ngIf="liveMatchesList?.length > 0"> -->
 
 
     <div class="row" *ngIf="!showMatchCommentary">
@@ -80,7 +79,7 @@
 
     <div *ngIf="showMatchCommentary && selectedCommentary">
         <button class="btn btn-primary" (click)="showMatchCommentary = !showMatchCommentary" style="margin-bottom: 5px">
-            <span class="fa fa-chevron-circle-left"></span> Back
+            <span class="fa fa-chevron-circle-left"></span> Go Back
         </button>
         <div>
             <div *ngIf="selectedMatchInfo && !selectedCommentary" class="card">
@@ -130,6 +129,62 @@
                     </h6>
                     <hr *ngIf="selectedCommentary.manofthematch?.length > 0 || selectedCommentary.ManOftheSeries?.length > 0">
 
+
+
+                    <!-- Commentry -->
+                    <!-- <div *ngIf="selectedTab === 'Commentary'"> -->
+
+                    <div class="card-text" *ngFor="let score of selectedCommentary.mscr">
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.btTm[0]?.Inngs?.length > 0">
+                                    <!-- Batting Team Score -->
+                                <h6 class="card-text gap-bottom">
+                                    <span>{{score.btTm[0].$.sName}}: </span>
+                                    <br>
+                                    <div *ngFor="let inn of score.btTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
+                                </h6>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.blgTm[0]?.Inngs?.length > 0">
+                                    <!-- Bowling Team Score -->
+                                <h6 class="card-text">
+                                    <span>{{score.blgTm[0].$.sName}}: </span>
+                                    <br>
+                                    <div *ngFor="let inn of score.blgTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
+                                </h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.btsmn?.length > 0">
+                                    <!-- Batsman Stats -->
+                                <!-- <h6 class="card-text">Batsman:</h6> -->
+                                <div *ngFor="let batsman of score.btsmn">
+                                    <h6 class="card-text">
+                                        {{batsman.$.sName}}: {{batsman.$.r}}({{batsman.$.b}})
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.blrs?.length > 0">
+                                    <!-- Bowler Stats -->
+                                <!-- <h6 class="card-text">Bowler:</h6> -->
+                                <div *ngFor="let bowler of score.blrs">
+                                    <h6 class="card-text">
+                                        {{bowler.$.sName}}: {{bowler.$.ovrs}} - {{bowler.$.mdns}} - {{bowler.$.r}} - {{bowler.$.wkts}}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" *ngFor="let inng of score.inngsdetail">
+                                <br>
+                                <h6 class="card-text">Current Rate: {{inng.$.crr}}</h6>
+                                <h6 class="card-text">Required Rate: {{inng.$.rrr}}</h6>
+                                <h6 class="card-text">Partnership: {{inng.$.cprtshp}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <hr *ngIf="selectedCommentary.mscr">
                     <!-- Tabs -->
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
@@ -141,61 +196,7 @@
                     </ul>
                     <br>
 
-                    <!-- Commentry -->
                     <div *ngIf="selectedTab === 'Commentary'">
-
-                        <div class="card-text" *ngFor="let score of selectedCommentary.mscr">
-
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.btTm[0]?.Inngs?.length > 0">
-                                     <!-- Batting Team Score -->
-                                    <h6 class="card-text gap-bottom">
-                                        <span>{{score.btTm[0].$.sName}}: </span>
-                                        <br>
-                                        <div *ngFor="let inn of score.btTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
-                                    </h6>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.blgTm[0]?.Inngs?.length > 0">
-                                     <!-- Bowling Team Score -->
-                                    <h6 class="card-text">
-                                        <span>{{score.blgTm[0].$.sName}}: </span>
-                                        <br>
-                                        <div *ngFor="let inn of score.blgTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
-                                    </h6>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.btsmn?.length > 0">
-                                     <!-- Batsman Stats -->
-                                    <!-- <h6 class="card-text">Batsman:</h6> -->
-                                    <div *ngFor="let batsman of score.btsmn">
-                                        <h6 class="card-text">
-                                            {{batsman.$.sName}}: {{batsman.$.r}}({{batsman.$.b}})
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.blrs?.length > 0">
-                                     <!-- Bowler Stats -->
-                                    <!-- <h6 class="card-text">Bowler:</h6> -->
-                                    <div *ngFor="let bowler of score.blrs">
-                                        <h6 class="card-text">
-                                            {{bowler.$.sName}}: {{bowler.$.ovrs}} - {{bowler.$.mdns}} - {{bowler.$.r}} - {{bowler.$.wkts}}
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12" *ngFor="let inng of score.inngsdetail">
-                                    <br>
-                                    <h6 class="card-text">Current Rate: {{inng.$.crr}}</h6>
-                                    <h6 class="card-text">Required Rate: {{inng.$.rrr}}</h6>
-                                    <h6 class="card-text">Partnership: {{inng.$.cprtshp}}</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-
                         <!-- Commentry -->
                         <div *ngFor="let commentry of selectedCommentary.comm">
                             <div class="alert alert-info" role="alert" *ngFor="let comStmnt of commentry.c">
