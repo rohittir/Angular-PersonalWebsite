@@ -46,6 +46,17 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   // OPERATIONS
   //
 
+  private isDuplicateMatch(match): boolean {
+
+    for (let i = 0; i < this.matchesList.length; i++) {
+      if (match.$.datapath === this.matchesList[i].$.datapath && match.$.datapath) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   private refreshMatches() {
     // Fetch Live scores
     this._liveScoreService.fetchCurrentMatches()
@@ -55,7 +66,9 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
         this.matchesList = [];
         for (let i = 0; i < matches.length; i++) {
-          this.matchesList.push(matches[i]);
+          if (!this.isDuplicateMatch(matches[i])) {
+            this.matchesList.push(matches[i]);
+          }
 
           // if (!this.selectedMatchInfo && i == 0) {
           //   this.selectedMatchInfo = matches[i];
