@@ -119,6 +119,30 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
       .catch(err => console.error(err));
   }
 
+  convertGMTtoLocalTime(gmtTime: string) {
+    let time = gmtTime.split(':');
+    if (time.length == 2) {
+      let gmtTimeMin = Math.floor(parseInt(time[0]) * 60) + Math.floor(parseInt(time[1]));
+      let offset = new Date().getTimezoneOffset();
+      let localTimeMin = gmtTimeMin - offset;
+
+      let localHours = Math.floor(localTimeMin/60);
+      let localMins = Math.floor(localTimeMin%60);
+      let timeDay = 'AM';
+      if (localHours >= 12) {
+        localHours = localHours - 12;
+        timeDay = 'PM';
+      }
+      if (localHours == 0) {
+        localHours = 12;
+      }
+
+      let hours = (localHours < 10)? ('0' + localHours) : localHours;
+      let mins = (localMins < 10)? ('0' + localMins) : localMins;
+
+      return ( hours + ':' + mins + ' ' + timeDay);
+    }
+  }
 
   //
   // EVENTS
@@ -147,7 +171,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
       clearInterval(this.dataFetchInterval);
     }
 
-    this.dataFetchInterval = setInterval(this.refreshCommentary.bind(this), 10000, match);
+    this.dataFetchInterval = setInterval(this.refreshCommentary.bind(this), 60000, match);
   }
 
 

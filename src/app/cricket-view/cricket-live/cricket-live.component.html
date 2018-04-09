@@ -108,7 +108,7 @@
                     <h5 class="card-title">{{selectedCommentary.$.mchDesc}}</h5>
 
                     <div *ngFor="let time of selectedCommentary.Tme">
-                        <h6 class="card-text">Started on {{time.$.Dt}} at {{time.$.stTme}} Hrs GMT</h6>
+                        <h6 class="card-text">Started on {{time.$.Dt}} at {{convertGMTtoLocalTime(time.$.stTme)}}</h6>
                         <h6 *ngIf="time.$?.enddt && selectedCommentary.$.type == 'TEST'" class="card-text">End date: {{time.$.enddt}}</h6>
                     </div>
                     <hr>
@@ -179,7 +179,7 @@
                             <div class="col-12" *ngFor="let inng of score.inngsdetail">
                                 <br>
                                 <h6 class="card-text">Current Rate: {{inng.$.crr}}</h6>
-                                <h6 class="card-text">Required Rate: {{inng.$.rrr}}</h6>
+                                <h6 class="card-text" *ngIf="inng.$.rrr !== '0'">Required Rate: {{inng.$.rrr}}</h6>
                                 <h6 class="card-text">Partnership: {{inng.$.cprtshp}}</h6>
                             </div>
                         </div>
