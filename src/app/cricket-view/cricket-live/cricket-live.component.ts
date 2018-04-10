@@ -126,6 +126,10 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
       let offset = new Date().getTimezoneOffset();
       let localTimeMin = gmtTimeMin - offset;
 
+      if (localTimeMin < 0 || localTimeMin > (60 * 24)) {
+        return gmtTime + ' Hrs GMT';
+      }
+
       let localHours = Math.floor(localTimeMin/60);
       let localMins = Math.floor(localTimeMin%60);
       let timeDay = 'AM';
