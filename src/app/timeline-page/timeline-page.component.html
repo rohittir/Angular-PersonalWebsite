@@ -4,14 +4,14 @@
 <div class="row">
     <div class="col-12">
         <ul class="timeline">
-            <li class="timeline-item" *ngFor="let timelineItem of userTimelineData.timeline">
-                <div class="timeline-badge"><i class="glyphicon glyphicon-off"></i></div>
-                <div class="timeline-panel">
+            <li class="timeline-item" *ngFor="let timelineItem of userTimelineData?.timeline; let i = index" style="cursor: pointer">
+                <div class="timeline-badge" (click)="showAlways[i]=!showAlways[i]"><i class="glyphicon glyphicon-off"></i></div>
+                <div class="timeline-panel {{(showAlways[i])? 'timeline-panel-select':''}}" (click)="showAlways[i]=true">
                     <div class="timeline-heading">
                         <h6 class="timeline-title">{{timelineItem.title}}</h6>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{timelineItem.date}}</small></p>
                     </div>
-                    <div class="timeline-body">
+                    <div class="timeline-body" *ngIf="showAlways[i]">
                         <p>{{timelineItem.description}}</p>
                         <p *ngFor="let link of timelineItem.links">
                             Link to <a href="{{link.url}}" target="_blank">{{link.name}}</a>

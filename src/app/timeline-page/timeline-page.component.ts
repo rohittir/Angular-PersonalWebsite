@@ -21,6 +21,8 @@ export class TimelinePageComponent implements OnInit {
     // PROPERTIES
     //
     userTimelineData = null;
+    showContent = [];
+    showAlways = [];
 
 
     //
@@ -45,6 +47,7 @@ export class TimelinePageComponent implements OnInit {
         this._jsonDataService.fetchUserTimelineData()
         .then(res => {
             this.userTimelineData = res.json();
+            this.initShowContent();
         })
         .catch(err => {
             console.error(err);
@@ -53,9 +56,18 @@ export class TimelinePageComponent implements OnInit {
             this._jsonDataService.readUserTimelineFromJson()
             .then(res1 => {
                 this.userTimelineData = res1.json();
+                this.initShowContent();
             })
         });
+    }
 
+    initShowContent() {
+        this.showContent = [];
+        this.showAlways = [];
+        for (let i = 0; i < this.userTimelineData.timeline.length; i++) {
+            this.showContent.push(false);
+            this.showAlways.push(false);
+        }
     }
 
 

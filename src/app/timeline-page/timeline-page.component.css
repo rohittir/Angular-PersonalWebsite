@@ -51,6 +51,7 @@
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
+  cursor: pointer;
 }
 
 .timeline .timeline-item .timeline-badge i,
@@ -101,10 +102,20 @@
   border-bottom: 8px solid transparent;
   content: " ";
 }
+
+/* .timeline .timeline-item .timeline-panel:hover {
+    background: #5bc0de;
+} */
+
+.timeline-panel-select {
+    background: #5bc0de !important;
+ }
+
 .timeline .timeline-item .timeline-panel .timeline-title {
   margin-top: 0;
   color: inherit;
 }
+
 .timeline .timeline-item .timeline-panel .timeline-body > p,
 .timeline .timeline-item .timeline-panel .timeline-body > ul {
   margin-bottom: 0;
