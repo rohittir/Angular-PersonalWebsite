@@ -23,6 +23,7 @@ export class IPLStatsComponent implements OnInit {
     //
     selectedMenuIndex = null;
     selectedData = null;
+    timeUpdated = null;
 
     availableStatsCategory = ['Points Table', 'Most Runs', 'Best Batting Average', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
     'Best Bowling Average', 'Best Bowling Economy'];
@@ -46,7 +47,9 @@ export class IPLStatsComponent implements OnInit {
         this.selectedMenuIndex = index;
         this.selectedData = null;
         this._iplStatsService.fetchIPLStats(index).then(res => {
-            this.selectedData = res.json();
+            let resData = res.json();
+            this.selectedData = resData.data;
+            this.timeUpdated = resData.updated;
             // console.log(this.selectedData);
         })
         .catch(err => console.error(err));

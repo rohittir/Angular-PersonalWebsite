@@ -16,7 +16,8 @@ module.exports = function(app) {
     // set the data extraction time
     setInterval(function () {
         var now = new Date();
-        if (now.getUTCHours() > 13 && now.getUTCMinutes() >= 30 && now.getUTCHours() < 18) {
+        console.log(now.getUTCHours() + ':' + now.getUTCMinutes())
+        if (now.getUTCHours() > 13 && now.getUTCHours() < 18) {
             ipl2018Data = null;
         }
     }, 23 * 60 * 1000);
@@ -45,7 +46,9 @@ module.exports = function(app) {
             data.push(rowData);
         }
 
-        return data;
+
+        let dataWithTimestamp = {data: data, updated: new Date().toUTCString()}
+        return dataWithTimestamp;
     }
 
 
