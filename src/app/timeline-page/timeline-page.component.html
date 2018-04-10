@@ -13,6 +13,9 @@
                     </div>
                     <div class="timeline-body">
                         <p>{{timelineItem.description}}</p>
+                        <p *ngFor="let link of timelineItem.links">
+                            Link to <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+                        </p>
                     </div>
                 </div>
             </li>

@@ -3,53 +3,111 @@
 {
     "timeline": [
         {
-            "title": "Completed masters degree",
-            "description": "Graduated from George Mason University with Masters degree in Software Engineering",
-            "date": "May 17th, 2018"
+            "title": "Looking new oppertunities",
+            "description": "Expecting my graduation on May 17th, 2018 and started exploring new oppertunities. Please contact me using the details mentioned on the home page if you are looking for a software developer.",
+            "date": "April-June 2018"
         },
         {
-            "title": "Started working as Graduate Research Assistant",
-            "description": "Started working on web application design and development under Dr. Miaai Boicu at Learning Agents Center, George Mason University.",
+            "title": "Created this website",
+            "description": "This website is created using Angular 4, Typescript and Boostrap. All the interface components are designed and developed by me and the source code is available at github. The idea of building this website is to use it for any individual. Hence it is created to read the data from a json file and dynamically render on the page.",
+            "date": "April 2018",
+            "links": [
+                {
+                    "name": "Source Code (GitHub)",
+                    "url": "https://github.com/rohittir/Angular-PersonalWebsite"
+                }
+            ]
+        },
+        {
+            "title": "Started working as Graduate Research Assistant under Dr. Boicu",
+            "description": "Started working on web application design and development using emerging technologies including Angular 2, Typescript, Bootstrap, HTML and CSS. Also, started applying all my experience using agile and became the srum master to manage sprint plans and daily stand up meetings. Learned a lot of stuff about user experience, javascript and html features, developed for mobile and iPad like devices etc.",
             "date": "Januray 25th, 2017"
         },
         {
-            "title": "Joined for MS in George Mason Univesity",
-            "description": "Admitted to George Mason Univeristy to pursue masters in Software Engineering",
+            "title": "Volunteered as Graduate Research Assistant",
+            "description": "Got in contact with Dr. Gingold in Computer Science department and voluntarily started working on a project using javascript, HTML canvas and nodejs.",
+            "date": "September 2016"
+        },
+        {
+            "title": "First day at George Mason University",
+            "description": "Explored the university, met new people and found exciting new room-mates to share the apartment.",
             "date": "August 22th, 2016"
         },
         {
             "title": "Landed in United States",
-            "description": "Came to the United States for the first time at Washington Dulles.",
+            "description": "For the first time I came to the United States and landed at Washington Dulles International Airport. Very excited to explore and also nervous and emotional since I had left my family behind.",
             "date": "August 19th, 2016"
         },
         {
-            "title": "Left working ar General Electric",
-            "description": "",
+            "title": "Left General Electric",
+            "description": "The decision to pursue masters from GMU, left with no other option but to leave GE and move on. I'm very grateful for working with such a large orgnanization and could learn technical and leadership skills at their best level.",
             "date": "July 31st, 2016"
         },
         {
+            "title": "Got Admit in George Mason University",
+            "description": "Post graduation was one of the remaining spot in my life hence decided to pursue my Masters in Software Engineering from George Mason University.",
+            "date": "June 2016"
+        },
+        {
+            "title": "Promoted to Lead Engineer",
+            "description": "This was the time when I took responsibility of a project that was running late and contributed to the successful delivery of the first production version. I learned a lot from this project by greater involvement in gathering functional requirements, following agile, creating stories, managing sprint plans, daily standup meetings, architecture discussions, code reviews and production ready reviews.",
+            "date": "September 2015"
+        },
+        {
+            "title": "Started working on Web Application Development",
+            "description": "This was the first time when I started to work on we based applications using Java in on server side and javascript, html and css for front end development. This was a large project to integrate over 200 design tools to be a part of the single system for better handoffs with improved communication and data transfer. I had attended two weeks professional training to learn Java and related technologies including Spring framework, Hibernate and JPA. After a few weeks I really sppeded up with all the technologies and started developing major features that had a real good impact on the overall development.",
+            "date": "January 2015"
+        },
+        {
+            "title": "Joined Advance Design Tools Team",
+            "description": "ADT is one of the software development team in GE Avaiation. I was assigned to work on a small project with NX customization and C++ technologies.",
+            "date": "August 6th, 2014"
+        },
+        {
             "title": "Started working at General Electric",
-            "description": "",
+            "description": "The name has a lot of oppertunities in itslef to grow up professionally in an environment where great people work togather to make an imapct. It was a sunny day and the time for induction (OMG! Too much to digest in inductions).",
             "date": "August 4th, 2014"
         },
         {
             "title": "Left job at Geometric Limited",
-            "description": "",
+            "description": "Thriving for new role and challenges with more user interactions led me to change of job. This was an emotional time and it is a team that I always remember with gratitude.",
             "date": "August 1st 2014"
         },
         {
-            "title": "Started working at Geometric Limited",
-            "description": "",
+            "title": "Promoted to be the owner of DFMPro for NX",
+            "description": "DFMPro for NX was emerging and my practical learnings of NX Customizations and applying them for the product improvements helped me to achieve this role and take responsibility of becoming the owner of a part of the DFMPro.",
+            "date": "February 2013",
+            "links": [
+                {
+                    "name": "DFMPro for NX",
+                    "url": "https://dfmpro.geometricglobal.com/cad-systems/dfmpro-nx/"
+                }
+            ]
+        },
+        {
+            "title": "Started working on DFMPro product development",
+            "description": "DFMPro is the customized CAD based product of geometric which provides insights to CAD designs for early identification of problems to reduce cost and improve efficiency. Here I learned by practially working with C++, MFC and computational geometry. Also, learned some new technologies and tools including JIRA, SVN, Visual Studio, QuickBuild, Wix and SQL.",
+            "date": "August 2011",
+            "links": [
+                {
+                    "name": "DFMPro",
+                    "url": "https://dfmpro.geometricglobal.com/"
+                }
+            ]
+        },
+        {
+            "title": "Started working at Geometric Limited as Software Engineer",
+            "description": "Got my first job at Geometric Limited as a Software Engineer. This was my first step into software engineering world and it was very exciting! I enjoyed the first two months learning object oriented programming languages including C++ and C# with MFC for GUI design and development. I also learned computational geometry with one of the best trainer at Geomertic.",
             "date": "June 20th, 2011"
         },
         {
-            "title": "Graduated with bachelors degree",
-            "description": "",
+            "title": "Graduated with a degree in B.Tech.",
+            "description": "Completed four years and successfully recieved a degree in Mechanical Engineering from Government College of Engineering, Amravati.",
             "date": "May 15th, 2011"
         },
         {
-            "title": "Joined Government College of Engineering",
-            "description": "",
+            "title": "Started College at GCOEA",
+            "description": "Got admit and started college at Government College of Engineering, Amravati, India. Here I studied for four years and enjoyed bachelors life as much as I can. :)",
             "date": "August 4th, 2011"
         }
     ]

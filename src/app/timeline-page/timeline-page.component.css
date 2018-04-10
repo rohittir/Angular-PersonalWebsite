@@ -18,8 +18,9 @@
 }
 
 .timeline .timeline-item {
-  margin-bottom: 20px;
-  position: relative;
+    margin-top: -10px;
+    /* margin-bottom: 20px; */
+    position: relative;
 }
 
 .timeline .timeline-item:before,
@@ -43,7 +44,7 @@
   top: 9px;
   left: 50%;
   margin-left: -12px;
-  background-color: #7c7c7c;
+  background-color: #17a2b8;
   border: 3px solid #ffffff;
   z-index: 100;
   border-top-right-radius: 50%;
@@ -78,7 +79,7 @@
 
 .timeline .timeline-item .timeline-panel {
   position: relative;
-  width: 46%;
+  width: 48%;
   float: left;
   right: 8px;
   border: 1px solid #c0c0c0;
