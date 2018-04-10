@@ -64,6 +64,27 @@ module.exports = function(app) {
         }
     });
 
+    // GET API for get user timeline data
+    app.get('/api/profile/timeline', function (req, res) {
+
+        try {
+        fs.readFile(__dirname + "/" + "../assets/data/user-timeline.json", 'utf8', function (err, data) {
+            if (!err && data) {
+                res.status(200);
+                res.send(JSON.parse(data));
+            } else {
+                res.status(401);
+                res.send(err);
+            }
+
+        });
+        } catch(e) {
+            console.error('Exception: ' + e);
+            res.status(501);
+            res.send(null);
+        }
+    });
+
      // GET API for get user data
      app.get('/api/inspiration', function (req, res) {
          if (!currInspiration) {

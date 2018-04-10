@@ -40,19 +40,28 @@ export class HomePageComponent implements OnInit {
     // OPERATIONS
     //
     initData() {
-        let jsonData = this._jsonDataService.getJsonData();
 
-        if (!jsonData) {
-            setTimeout(this.initData.bind(this), 1000);
-            return;
-        }
+        // USER PRofile Data
+        this._jsonDataService.fetchUserData()
+        .then(res => {
+            this.userProfile = res.json().userData.profile;
+            this._jsonDataService.setJsonData(res.json());
+        })
+        .catch(err => {
+            console.error(err);
 
-        this.userProfile = jsonData.userData.profile;
+             // retry locally when server is not available
+            this._jsonDataService.readUserProfileDataFromJson()
+            .then(res1 => {
+                this.userProfile = res1.json().userData.profile;;
+                this._jsonDataService.setJsonData(res1.json());
+            })
+        });
 
+        // INspirations data
         this._jsonDataService.fetchCurrentInspiration()
         .then(res => {
             this.inspirationData = res.json();
-            // console.log(this.inspirationData);
         })
         .catch(err => console.error(err));
     }

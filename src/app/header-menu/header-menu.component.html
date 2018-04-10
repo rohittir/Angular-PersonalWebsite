@@ -15,42 +15,20 @@ aria-controls="navbarSupportedContent" (click)="isCollapsed = !isCollapsed" [att
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
-    <li class="{{isActive('/home')? 'nav-item active':'nav-item' }}">
-        <a class="nav-link" routerLink="/">Home
-        <!-- <span class="sr-only">(current)</span> -->
-        </a>
-    </li>
-    <li class="{{isActive('/profile')? 'nav-item active':'nav-item' }}">
-        <a class="nav-link" routerLink="/profile">Profile</a>
-    </li>
-    <li class="{{isActive('/cricket')? 'nav-item active':'nav-item' }}">
-        <a class="nav-link" routerLink="/cricket">Cricket</a>
-    </li>
-
-    <!-- <li class="nav-item dropdown {{isSubMenuActive(['/cricket/news', '/cricket/live'])? 'active':'' }}">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cricket
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/cricket/live">Live Matches</a>
-            <a class="dropdown-item" routerLink="/cricket/news">News</a>
-        </div>
-
-    </li> -->
-    <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </li> -->
-    <!-- <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-    </li> -->
+        <li class="{{isActive('/home')? 'nav-item active':'nav-item' }}">
+            <a class="nav-link" routerLink="/">Home
+            <!-- <span class="sr-only">(current)</span> -->
+            </a>
+        </li>
+        <li class="{{isActive('/profile')? 'nav-item active':'nav-item' }}">
+            <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="{{isActive('/timeline')? 'nav-item active':'nav-item' }}">
+            <a class="nav-link" routerLink="/timeline">Timeline</a>
+        </li>
+        <li class="{{isActive('/cricket')? 'nav-item active':'nav-item' }}">
+            <a class="nav-link" routerLink="/cricket">Cricket</a>
+        </li>
     </ul>
     <!-- <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText">

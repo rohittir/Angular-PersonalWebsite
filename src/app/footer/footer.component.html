@@ -3,12 +3,12 @@
 
 
 <!-- Begin page content -->
-<div *ngIf="socialDataLinks" class="container-fluid content">
+<div *ngIf="getSocialDataLinks()" class="container-fluid content">
     <div>
-        <a href="{{socialDataLinks.linkedin}}" target="_blank" class="google"><i class="fa fa-linkedin fa-2x"></i></a> &nbsp;
-        <a href="{{socialDataLinks.github}}" target="_blank" class="github"><i class="fa fa-github fa-2x"></i></a> &nbsp;
-        <a href="{{socialDataLinks.twitter}}" target="_blank" class="twitter"><i class="fa fa-twitter fa-2x"></i></a> &nbsp;
-        <a href="{{socialDataLinks.facebook}}" target="_blank" class="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
+        <a href="{{getSocialDataLinks().linkedin}}" target="_blank" class="google"><i class="fa fa-linkedin fa-2x"></i></a> &nbsp;
+        <a href="{{getSocialDataLinks().github}}" target="_blank" class="github"><i class="fa fa-github fa-2x"></i></a> &nbsp;
+        <a href="{{getSocialDataLinks().twitter}}" target="_blank" class="twitter"><i class="fa fa-twitter fa-2x"></i></a> &nbsp;
+        <a href="{{getSocialDataLinks().facebook}}" target="_blank" class="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
     </div>
     <div class="mt-3">
         © 2018 Copyrights <b>Rohit Tirmanwar</b>

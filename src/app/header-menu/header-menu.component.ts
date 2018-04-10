@@ -61,7 +61,7 @@ export class HeaderMenuComponent implements OnInit {
             return data.userData.profile.name;
         }
 
-        return 'Loading...';
+        return 'Rohit Tirmanwar';
     }
 
 

@@ -1,0 +1,61 @@
+
+
+{
+    "timeline": [
+        {
+            "title": "Completed masters degree",
+            "description": "Graduated from George Mason University with Masters degree in Software Engineering",
+            "date": "May 17th, 2018"
+        },
+        {
+            "title": "Started working as Graduate Research Assistant",
+            "description": "Started working on web application design and development under Dr. Miaai Boicu at Learning Agents Center, George Mason University.",
+            "date": "Januray 25th, 2017"
+        },
+        {
+            "title": "Joined for MS in George Mason Univesity",
+            "description": "Admitted to George Mason Univeristy to pursue masters in Software Engineering",
+            "date": "August 22th, 2016"
+        },
+        {
+            "title": "Landed in United States",
+            "description": "Came to the United States for the first time at Washington Dulles.",
+            "date": "August 19th, 2016"
+        },
+        {
+            "title": "Left working ar General Electric",
+            "description": "",
+            "date": "July 31st, 2016"
+        },
+        {
+            "title": "Started working at General Electric",
+            "description": "",
+            "date": "August 4th, 2014"
+        },
+        {
+            "title": "Left job at Geometric Limited",
+            "description": "",
+            "date": "August 1st 2014"
+        },
+        {
+            "title": "Started working at Geometric Limited",
+            "description": "",
+            "date": "June 20th, 2011"
+        },
+        {
+            "title": "Graduated with bachelors degree",
+            "description": "",
+            "date": "May 15th, 2011"
+        },
+        {
+            "title": "Joined Government College of Engineering",
+            "description": "",
+            "date": "August 4th, 2011"
+        }
+    ]
+}
+
+
+
+
+

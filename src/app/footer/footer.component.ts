@@ -28,17 +28,15 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initData();
   }
 
-  initData() {
+  getSocialDataLinks() {
     let jsonData = this._jsonDataService.getJsonData();
-    if (!jsonData) {
-      setTimeout(this.initData.bind(this), 1000);
-      return;
+    if (jsonData) {
+      return jsonData.userData.social;
     }
 
-    this.socialDataLinks = jsonData.userData.social;
+    return null;
   }
 
 }

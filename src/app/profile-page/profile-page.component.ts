@@ -37,7 +37,7 @@ export class ProfilePageComponent implements OnInit {
 
 
     ngOnInit() {
-        this.populateData();
+        this.initData();
     }
 
 
@@ -45,20 +45,33 @@ export class ProfilePageComponent implements OnInit {
     // OPERATIONS
     //
 
-    populateData() {
-        this.jsonData = this._jsonDataService.getJsonData();
+    initData() {
+         // USER PRofile Data
+         this._jsonDataService.fetchUserData()
+         .then(res => {
+             this.jsonData = res.json();
+             this._jsonDataService.setJsonData(this.jsonData);
+             this.populateUserJSONData();
+         })
+         .catch(err => {
+             console.error(err);
 
-        if(!this.jsonData) {
-            setTimeout(this.populateData.bind(this), 1000);
-            return;
-        }
+             // retry locally when server is not available
+             this._jsonDataService.readUserProfileDataFromJson()
+             .then(res1 => {
+                 this.jsonData = res1.json();
+                 this._jsonDataService.setJsonData(this.jsonData);
+                 this.populateUserJSONData();
+             })
+         });
+    }
 
+    populateUserJSONData() {
         this.profile = this.jsonData.userData.profile;
         this.skillList = this.jsonData.userData.skills.keywords;
         this.schoolList = this.jsonData.userData.education.schools;
         this.industryList = this.jsonData.userData.experience.industries;
         this.academicProjectList = this.jsonData.userData.academic.projects;
-
     }
 
 

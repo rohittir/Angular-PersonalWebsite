@@ -16,45 +16,50 @@ import { ServerConfigService } from "./server-config.service";
 export class JSONDataService {
 
 
-    private jsonData = null;
+    //
+    // DATA
+    //
+    userProfileData = null;
 
     constructor(private _http: Http, private _serverConfigService: ServerConfigService) {
-        this.fetchUserData();
     }
 
     //
     // OPERATIONS
     //
 
-    private readDataFromJsonFile(fileName: string) {
-         this._http.get(fileName).toPromise().then(res => {
-             this.jsonData = res.json();
-         })
-         .catch(err => {
-             console.error(err.json());
-         })
+    public readUserProfileDataFromJson(): Promise<Response> {
+        let fileName = 'assets/data/user-profile.json';
+        return this._http.get(fileName).toPromise();
     }
 
-    private fetchUserData() {
-        this._http.get(this._serverConfigService.serverUrl + '/api/profile/').toPromise().then(res => {
-            this.jsonData = res.json();
-        })
-        .catch(err => {
-            console.error(err);
-
-            // when server is not available
-            this.readDataFromJsonFile('assets/data/user-profile.json');
-        });
+    public readUserTimelineFromJson(): Promise<Response> {
+        let fileName = 'assets/data/user-timeline.json';
+        return this._http.get(fileName).toPromise();
     }
 
-    public getJsonData() {
-        return this.jsonData;
+    public fetchUserData(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/').toPromise();
+    }
+
+    public fetchUserTimelineData(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/timeline/').toPromise();
     }
 
     public fetchCurrentInspiration(): Promise<Response> {
         return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/').toPromise();
     }
 
+
+    //
+    // GETTERS and SETTERS
+    //
+    setJsonData(data) {
+        this.userProfileData = data;
+    }
+    getJsonData() {
+        return this.userProfileData;
+    }
 
 
 }
