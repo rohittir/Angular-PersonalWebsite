@@ -114,7 +114,7 @@ module.exports = function(app) {
                 });
             })
         }).on('error', function (err) {
-            console.log('problem with request: ' + e.message);
+            console.log('problem with request: ' + err.message);
             callback(err, null);
         });
     }
@@ -138,9 +138,10 @@ module.exports = function(app) {
                 }
             });
         } else if (req.params.type === 'cbCommentary' && req.query.matchUrl) {
-            var url = req.query.matchUrl;
-            if (url) {
-                url += 'commentary.xml';
+            var matchId = req.query.matchUrl;
+            if (matchId) {
+                let convMatchId = matchId.replace(/:/g, '/');
+                let url = 'http://synd.cricbuzz.com/j2me/1.0/' + convMatchId + 'commentary.xml';
                 extractDataFromServer(url, function (err, data) {
                     if (!err && data) {
                         res.status(200);

@@ -52,9 +52,9 @@ export class CricketCommentaryComponent implements OnInit, OnDestroy {
 
     initData() {
         if (this.matchId) {
-            let convMatchId =this.matchId.replace(/:/g, '/');
-            let url = 'http://synd.cricbuzz.com/j2me/1.0/' + convMatchId;
-            this._liveScoreService.fetchMatchCommentary(url)
+            // let convMatchId = this.matchId.replace(/:/g, '/');
+            // let url = 'http://synd.cricbuzz.com/j2me/1.0/' + convMatchId;
+            this._liveScoreService.fetchMatchCommentary(this.matchId)
             .then(res => {
               this.selectedCommentary = res.json().mchDetails.match[0];
             })
