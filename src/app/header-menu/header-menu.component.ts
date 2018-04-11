@@ -21,7 +21,7 @@ export class HeaderMenuComponent implements OnInit {
     // PROPERTIES
     //
 
-    isCollapsed = false;
+    isCollapsed = true;
     searchText: string = '';
 
     //

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+@media only screen and (max-width: 500px) {
+    .gap-bottom {
+        margin-bottom: 3%;
+    }
+}
+

@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cricket-live',
-  templateUrl: './cricket-live.component.html',
-  styleUrls: ['./cricket-live.component.css']
+  templateUrl: './cricket-live.component.html'
 })
 export class CricketLiveComponent implements OnInit, OnDestroy {
 

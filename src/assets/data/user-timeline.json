@@ -9,7 +9,7 @@
         },
         {
             "title": "Created this website",
-            "description": "This website is created using Angular 4, Typescript and Boostrap. All the interface components are designed and developed by me and the source code is available at github. The idea of building this website is to use it for any individual. Hence it is created to read the data from a json file and dynamically render on the page.",
+            "description": "This website is created using Angular 4, Typescript, Boostrap and Node.js. All the interface components are designed and developed by myself and the source code is available at github. The idea of building this website is to use it for any individual. Hence it is created to read the data from a json file and dynamically render on the page.",
             "date": "April 2018",
             "links": [
                 {
