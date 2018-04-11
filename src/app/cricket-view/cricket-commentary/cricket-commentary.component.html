@@ -1,0 +1,122 @@
+
+
+ <div *ngIf="selectedCommentary">
+    <div>
+        <div *ngIf="selectedCommentary" class="card">
+            <div class="card-header">
+                <strong>{{selectedCommentary.$.type}}: {{selectedCommentary.$.srs}} ({{selectedCommentary.$.mnum}})</strong>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{selectedCommentary.$.mchDesc}}</h5>
+
+                <div *ngFor="let time of selectedCommentary.Tme">
+                    <h6 class="card-text">Started on {{time.$.Dt}} at {{convertGMTtoLocalTime(time.$.stTme)}}</h6>
+                    <h6 *ngIf="time.$?.enddt && selectedCommentary.$.type == 'TEST'" class="card-text">End date: {{time.$.enddt}}</h6>
+                </div>
+                <hr>
+
+                <h6 class="card-subtitle mb-2 text-muted" *ngFor="let state of selectedCommentary.state">
+                    {{state.$.status}}
+                    <br> <span *ngIf="state.$.decisn"> {{state.$.TW}} Decided to {{state.$.decisn}} First</span>
+                </h6>
+                <hr>
+
+                <h6 class="card-text" *ngFor="let mom of selectedCommentary.manofthematch">
+                    Man of the Match:
+                    <span *ngFor="let mom1 of mom?.mom">{{mom1.$.Name}}</span>
+                </h6>
+                <h6 class="card-text" *ngFor="let mos of selectedCommentary.ManOftheSeries">
+                    Man of the Series:
+                    <span *ngFor="let mos1 of mos?.mos">{{mos1.$.Name}}</span>
+                </h6>
+                <hr *ngIf="selectedCommentary.manofthematch?.length > 0 || selectedCommentary.ManOftheSeries?.length > 0">
+
+
+
+                <!-- Commentry -->
+                <!-- <div *ngIf="selectedTab === 'Commentary'"> -->
+
+                <div class="card-text" *ngFor="let score of selectedCommentary.mscr">
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.btTm[0]?.Inngs?.length > 0">
+                                <!-- Batting Team Score -->
+                            <h6 class="card-text gap-bottom">
+                                <span>{{score.btTm[0].$.sName}}: </span>
+                                <br>
+                                <div *ngFor="let inn of score.btTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
+                            </h6>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngIf="score.blgTm[0]?.Inngs?.length > 0">
+                                <!-- Bowling Team Score -->
+                            <h6 class="card-text">
+                                <span>{{score.blgTm[0].$.sName}}: </span>
+                                <br>
+                                <div *ngFor="let inn of score.blgTm[0].Inngs">{{inn.$.desc}}: {{inn.$.r}}/{{inn.$.wkts}} ({{inn.$.ovrs}} Overs)</div>
+                            </h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.btsmn?.length > 0">
+                                <!-- Batsman Stats -->
+                            <!-- <h6 class="card-text">Batsman:</h6> -->
+                            <div *ngFor="let batsman of score.btsmn">
+                                <h6 class="card-text">
+                                    {{batsman.$.sName}}: {{batsman.$.r}}({{batsman.$.b}})
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gap-bottom" *ngIf="score.blrs?.length > 0">
+                                <!-- Bowler Stats -->
+                            <!-- <h6 class="card-text">Bowler:</h6> -->
+                            <div *ngFor="let bowler of score.blrs">
+                                <h6 class="card-text">
+                                    {{bowler.$.sName}}: {{bowler.$.ovrs}} - {{bowler.$.mdns}} - {{bowler.$.r}} - {{bowler.$.wkts}}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" *ngFor="let inng of score.inngsdetail">
+                            <br>
+                            <h6 class="card-text">Current Rate: {{inng.$.crr}}</h6>
+                            <h6 class="card-text" *ngIf="inng.$.rrr !== '0'">Required Rate: {{inng.$.rrr}}</h6>
+                            <h6 class="card-text">Partnership: {{inng.$.cprtshp}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <hr *ngIf="selectedCommentary.mscr">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link {{(selectedTab === 'Commentary')? 'active':''}}" style="cursor:pointer" (click)="selectedTab='Commentary'">Commentary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{(selectedTab === 'Scorecard')? 'active':''}}" style="cursor:pointer" (click)="selectedTab='Scorecard'">Scorecard</a>
+                    </li>
+                </ul>
+                <br>
+
+                <div *ngIf="selectedTab === 'Commentary'">
+                    <!-- Commentry -->
+                    <div *ngFor="let commentry of selectedCommentary.comm">
+                        <div class="alert alert-info" role="alert" *ngFor="let comStmnt of commentry.c">
+                            <span [innerHTML]="comStmnt"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ScoreCard -->
+                <div *ngIf="selectedTab === 'Scorecard'">
+                    <app-cricket-scorecard [scorecardURL]="selectedCommentary.$.datapath">
+                    </app-cricket-scorecard>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

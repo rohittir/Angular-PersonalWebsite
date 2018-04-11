@@ -15,6 +15,7 @@ import { SearchPageComponent } from '../search-page/search-page.component';
 import { CricketViewComponent } from '../cricket-view/cricket-view.component';
 import { ProfileDetailsComponent } from '../profile-page/profile-details/profile-details.component';
 import { TimelinePageComponent } from '../timeline-page/timeline-page.component';
+import { CricketCommentaryComponent } from '../cricket-view/cricket-commentary/cricket-commentary.component';
 // import { CricketNewsComponent } from '../cricket-view/cricket-news/cricket-news.component';
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
     {
       path: 'cricket',
       component: CricketViewComponent,
+    },
+    {
+      path: 'cricket/livecommentary/:matchId',
+      component: CricketCommentaryComponent,
     }
 
 ];

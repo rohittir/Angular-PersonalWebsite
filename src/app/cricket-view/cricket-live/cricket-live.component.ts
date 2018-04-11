@@ -7,6 +7,7 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LiveScoreService } from '../live-score.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cricket-live',
@@ -21,30 +22,49 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   //
   matchesList = null;
   liveMatchesList = [];
-
   selectedMatchInfo = null;
-  selectedCommentary = null;
-  selectedTab = 'Commentary';
   showLive = false;
-
-  showMatchCommentary = false;
   dataFetchInterval = null;
 
-  constructor(public _liveScoreService: LiveScoreService) { }
+  constructor(public _liveScoreService: LiveScoreService, public _router: Router) { }
 
   ngOnInit() {
     this.refresh();
+
+    // refresh data in 1 min interval
+    this.dataFetchInterval = setInterval(this.refresh.bind(this), 60000);
   }
 
   ngOnDestroy() {
     if (this.dataFetchInterval) {
       clearInterval(this.dataFetchInterval);
+      this.dataFetchInterval = null;
     }
   }
 
   //
   // OPERATIONS
   //
+
+  refresh() {
+    this.refreshMatches();
+  }
+
+  private refreshMatches() {
+    // Fetch Live scores
+    this._liveScoreService.fetchCurrentMatches()
+    .then(res => {
+        let matches = res.json().mchdata.match;
+        this.matchesList = [];
+        for (let i = 0; i < matches.length; i++) {
+          if (!this.isDuplicateMatch(matches[i])) {
+            this.matchesList.push(matches[i]);
+          }
+        }
+        // console.log(this.matchesList);
+    })
+    .catch(err => console.error(err));
+  }
 
   private isDuplicateMatch(match): boolean {
 
@@ -56,30 +76,6 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
     return false;
   }
-
-  private refreshMatches() {
-    // Fetch Live scores
-    this._liveScoreService.fetchCurrentMatches()
-    .then(res => {
-        let matches = res.json().mchdata.match;
-        // console.log(matches);
-
-        this.matchesList = [];
-        for (let i = 0; i < matches.length; i++) {
-          if (!this.isDuplicateMatch(matches[i])) {
-            this.matchesList.push(matches[i]);
-          }
-
-          // if (!this.selectedMatchInfo && i == 0) {
-          //   this.selectedMatchInfo = matches[i];
-          // }
-
-          // this.showMatchInfo(this.selectedMatchInfo, false);
-        }
-    })
-    .catch(err => console.error(err));
-  }
-
 
   //
   // LIVE Score From cricscore
@@ -104,90 +100,39 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
   }
 
-  refreshCommentary(match) {
-    if (!match.$.datapath) {
-      return;
-    }
-
-    this._liveScoreService.fetchMatchCommentary(match.$.datapath)
-      .then(res => {
-        this.selectedCommentary = res.json().mchDetails.match[0];
-         if (this.dataFetchInterval && this.selectedCommentary.manofthematch) {
-          clearInterval(this.dataFetchInterval);
-        }
-      })
-      .catch(err => console.error(err));
-  }
-
-  convertGMTtoLocalTime(gmtTime: string) {
-    let time = gmtTime.split(':');
-    if (time.length == 2) {
-      let gmtTimeMin = Math.floor(parseInt(time[0]) * 60) + Math.floor(parseInt(time[1]));
-      let offset = new Date().getTimezoneOffset();
-      let localTimeMin = gmtTimeMin - offset;
-
-      if (localTimeMin < 0 || localTimeMin > (60 * 24)) {
-        return gmtTime + ' Hrs GMT';
-      }
-
-      let localHours = Math.floor(localTimeMin/60);
-      let localMins = Math.floor(localTimeMin%60);
-      let timeDay = 'AM';
-      if (localHours >= 12) {
-        localHours = localHours - 12;
-        timeDay = 'PM';
-      }
-      if (localHours == 0) {
-        localHours = 12;
-      }
-
-      let hours = (localHours < 10)? ('0' + localHours) : localHours;
-      let mins = (localMins < 10)? ('0' + localMins) : localMins;
-
-      return ( hours + ':' + mins + ' ' + timeDay);
-    }
-  }
-
   //
   // EVENTS
   //
   showMatchInfo(match, userEvent = true) {
-
-    // if (match === this.selectedMatchInfo) {
-    //   return;
-    // }
-
-    this.selectedMatchInfo = match;
-
-    // if (!match.$.datapath) {
-    //   this.selectedCommentary = null;
-    //   return;
-    // }
-
-    this.selectedCommentary = null;
-    this.refreshCommentary(match);
-
-    if (userEvent) {
-      this.showMatchCommentary = true;
+    if (match.$.datapath) {
+      let matchId = this.extractMatchIdFromURL(match.$.datapath);
+      this._router.navigate(['/cricket/livecommentary/' + matchId]);
     }
-
-    if (this.dataFetchInterval) {
-      clearInterval(this.dataFetchInterval);
-    }
-
-    this.dataFetchInterval = setInterval(this.refreshCommentary.bind(this), 60000, match);
   }
 
+  extractMatchIdFromURL(url: string): string {
+    let matchId = '';
+    if (url) {
+      // http://synd.cricbuzz.com/j2me/1.0/match/2018/IPL_2018/CSK_KKR_APR10/
 
-  refresh() {
-    // this.refreshLiveScore();
-    // this.selectedMatchInfo = null;
+      let urlElements = url.split('/');
 
-    if (!this.showMatchCommentary) {
-      this.refreshMatches();
-    } else {
-      this.showMatchInfo(this.selectedMatchInfo);
+      if (urlElements.length >= 10) {
+        matchId += urlElements[urlElements.length - 5];
+        matchId += ':';
+        matchId += urlElements[urlElements.length - 4];
+        matchId += ':';
+        matchId += urlElements[urlElements.length - 3];
+        matchId += ':';
+        matchId += urlElements[urlElements.length - 2];
+        matchId += ':';
+      }
+
     }
+
+    return matchId;
+
+
   }
 
 

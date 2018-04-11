@@ -23,6 +23,7 @@ import { CricketLiveComponent } from './cricket-view/cricket-live/cricket-live.c
 import { IPLStatsComponent } from './cricket-view/ipl-stats/ipl-stats.component';
 import { IPLStatsService } from './cricket-view/ipl-stats/ipl-stats.service';
 import { TimelinePageComponent } from './timeline-page/timeline-page.component';
+import { CricketCommentaryComponent } from './cricket-view/cricket-commentary/cricket-commentary.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { TimelinePageComponent } from './timeline-page/timeline-page.component';
     CricketNewsComponent,
     CricketLiveComponent,
     IPLStatsComponent,
-    TimelinePageComponent
+    TimelinePageComponent,
+    CricketCommentaryComponent
   ],
   imports: [
     BrowserModule,
