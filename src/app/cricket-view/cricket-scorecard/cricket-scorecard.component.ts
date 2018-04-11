@@ -66,13 +66,6 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             if (players.length > 11) {
                 players.splice(11, players.length - 11);
             }
-
-            // for (let i = 0; i < players.length; i++) {
-                // if (players[i].lastIndexOf('(S)') === (players[i].length - 3)) {
-                //     players.splice(i, 1);
-                //     i--;
-                // }
-            // }
         }
 
         return players;
@@ -86,13 +79,19 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             if (players.length >= 11) {
                 players.splice(0, 11);
             }
-
-            // for (let i = 0; i < players.length; i++) {
-
-            // }
         }
 
         return players;
+    }
+
+    getStrikeRate(batsman) {
+        if (batsman) {
+            let runs = parseInt(batsman.$.r);
+            let balls = parseInt(batsman.$.b);
+
+            let rate = ((runs/balls) * 100);
+            return rate.toFixed(2);
+        }
     }
 
 

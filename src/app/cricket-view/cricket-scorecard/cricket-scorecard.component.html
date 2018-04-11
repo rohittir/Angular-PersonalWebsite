@@ -5,20 +5,24 @@
 
 <ng-container *ngIf="scoreCard">
 <ng-container *ngIf="!isSquad">
-    <div *ngFor="let inngs of scoreCard.scrs[0].Inngs" style="overflow-x: auto">
+    <div *ngFor="let inngs of scoreCard.scrs[0].Inngs">
 
-        <h6 *ngFor="let bat of inngs.btTm">{{bat.$.sName}} ({{inngs.$.desc}})</h6>
-        <h6>{{inngs.$.r}}/{{inngs.$.wkts}} ({{inngs.$.ovrs}}) <span *ngIf="inngs.$?.Target">Target: {{inngs.$?.Target}}</span></h6>
+        <div class="alert alert-info">
+            <h6 *ngFor="let bat of inngs.btTm">{{bat.$.sName}} ({{inngs.$.desc}})</h6>
+            <h6>{{inngs.$.r}}/{{inngs.$.wkts}} ({{inngs.$.ovrs}} Overs) <span *ngIf="inngs.$?.Target">Target: {{inngs.$?.Target}}</span></h6>
+        </div>
 
+        <div style="overflow-x: auto">
         <table class="table table-sm table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Batsman</th>
                     <th scope="col"></th>
-                    <th scope="col">Runs</th>
-                    <th scope="col">4</th>
-                    <th scope="col">6</th>
-                    <th scope="col">Balls</th>
+                    <th scope="col">R</th>
+                    <th scope="col">B</th>
+                    <th scope="col">4s</th>
+                    <th scope="col">6s</th>
+                    <th scope="col">SR</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,13 +30,26 @@
                     <th scope="row">{{batsman.$.sName}}</th>
                     <td>{{batsman.status[0]}}</td>
                     <th>{{batsman.$.r}}</th>
+                    <td>{{batsman.$.b}}</td>
                     <td>{{batsman.$.frs}}</td>
                     <td>{{batsman.$.six}}</td>
-                    <td>{{batsman.$.b}}</td>
+                    <td>{{getStrikeRate(batsman)}}</td>
+                </tr>
+                <tr *ngIf="inngs.xtras">
+                    <th scope="row">Extras</th>
+                    <td></td>
+                    <td colspan="5"><b>{{inngs.xtras[0].$.total}}</b> (b {{inngs.xtras[0].$.bys}}, lb {{inngs.xtras[0].$.lb}}, w {{inngs.xtras[0].$.wds}}, nb {{inngs.xtras[0].$.nb}}, p {{inngs.xtras[0].$.pnlty}})</td>
+                </tr>
+                <tr>
+                    <th scope="row">Total</th>
+                    <td></td>
+                    <td colspan="5"><b>{{inngs.$.r}}</b> ({{inngs.$.wkts}} wkts, {{inngs.$.ovrs}} Ov)</td>
                 </tr>
             </tbody>
         </table>
+        </div>
 
+        <div style="overflow-x: auto">
         <!-- <h6 *ngFor="let bowl of inngs.blTm">{{bowl.$.sName}}</h6> -->
         <table class="table table-sm table-striped">
             <thead class="thead-dark">
@@ -42,7 +59,9 @@
                     <th scope="col">M</th>
                     <th scope="col">R</th>
                     <th scope="col">W</th>
-                    <th scope="col">Eco</th>
+                    <th scope="col">NB</th>
+                    <th scope="col">WD</th>
+                    <th scope="col">ECO</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,13 +71,16 @@
                     <td>{{bowler.$.mdns}}</td>
                     <td>{{bowler.$.rOff}}</td>
                     <th>{{bowler.$.wkts}}</th>
+                    <td>{{bowler.$.nb}}</td>
+                    <td>{{bowler.$.wds}}</td>
                     <td>{{bowler.$.er}}</td>
                 </tr>
             </tbody>
         </table>
+        </div>
 
         <h6>Fall of Wickets: <span *ngFor="let fow of inngs.FOW[0]?.wkt; let i = index">
-            {{fow.$.btsmn}} {{i+1}}/{{fow.$.r}} ({{fow.$.ovrs}});
+            {{fow.$.r}}-{{i+1}} ({{fow.$.btsmn}}, {{fow.$.ovrs}})<span *ngIf="i < inngs.FOW[0]?.wkt.length-1">,</span>
         </span></h6>
 
         <hr>

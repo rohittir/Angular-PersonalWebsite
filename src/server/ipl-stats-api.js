@@ -17,10 +17,13 @@ module.exports = function(app) {
     setInterval(function () {
         var now = new Date();
         console.log(now.getUTCHours() + ':' + now.getUTCMinutes())
-        if (now.getUTCHours() > 13 && now.getUTCHours() < 18) {
+        if ( (now.getUTCHours() >= 13 && now.getUTCHours() <= 14)
+            || (now.getUTCHours() >= 16 && now.getUTCHours() < 18)
+            || (now.getUTCHours() == 20)
+            || (now.getUTCHours() == 10)) {
             ipl2018Data = null;
         }
-    }, 23 * 60 * 1000);
+    }, 10 * 60 * 1000);
 
 
     function parseHTMLTableWithJSSoup(completeResponse) {
