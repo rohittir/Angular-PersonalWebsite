@@ -4,7 +4,7 @@
 
 
 <ng-container *ngIf="scoreCard">
-
+<ng-container *ngIf="!isSquad">
     <div *ngFor="let inngs of scoreCard.scrs[0].Inngs" style="overflow-x: auto">
 
         <h6 *ngFor="let bat of inngs.btTm">{{bat.$.sName}} ({{inngs.$.desc}})</h6>
@@ -64,6 +64,40 @@
         <hr>
 
     </div>
+</ng-container>
+
+
+<ng-container *ngIf="isSquad">
+    <div class="row">
+        <div *ngFor="let team of scoreCard.squads[0].Team" class="col-6">
+            <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">{{team.$.Name}} - Playing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let plyr of getTeamSquad(team.$.mem)">
+                        <th scope="row">{{plyr}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">{{team.$.Name}} - Bench</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let plyr of getTeamSubs(team.$.mem)">
+                        <th scope="row">{{plyr}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</ng-container>
 
 </ng-container>
 

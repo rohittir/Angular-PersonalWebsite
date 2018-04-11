@@ -95,6 +95,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{(selectedTab === 'Scorecard')? 'active':''}}" style="cursor:pointer" (click)="selectedTab='Scorecard'">Scorecard</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{(selectedTab === 'Squads')? 'active':''}}" style="cursor:pointer" (click)="selectedTab='Squads'">Squads</a>
+                    </li>
                 </ul>
                 <br>
 
@@ -107,12 +110,13 @@
                     </div>
                 </div>
 
-                <!-- ScoreCard -->
-                <div *ngIf="selectedTab === 'Scorecard'">
-                    <app-cricket-scorecard [scorecardURL]="selectedCommentary.$.datapath">
+                <!-- ScoreCard/Squads -->
+                <div *ngIf="selectedTab === 'Scorecard' || selectedTab === 'Squads'" >
+                    <app-cricket-scorecard
+                        [scorecardURL]="selectedCommentary.$.datapath"
+                        [isSquad]="selectedTab === 'Squads'">
                     </app-cricket-scorecard>
                 </div>
-
             </div>
         </div>
     </div>
