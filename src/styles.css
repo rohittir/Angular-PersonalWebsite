@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 @media only screen and (max-width: 500px) {
     .gap-bottom {
@@ -8,3 +8,79 @@
     }
 }
 
+
+.left-animation {
+    -webkit-animation-name: translation-left;
+    -webkit-animation-duration: 2s;
+    animation-name: translation-left;
+    animation-duration: 2s;
+}
+
+.right-animation {
+    -webkit-animation-name: translation-right;
+    -webkit-animation-duration: 2s;
+    animation-name: translation-right;
+    animation-duration: 2s;
+}
+
+.top-animation {
+    -webkit-animation-name: translation-top;
+    -webkit-animation-duration: 2s;
+    animation-name: translation-top;
+    animation-duration: 2s;
+}
+
+.bottom-animation {
+    -webkit-animation-name: translation-bottom;
+    -webkit-animation-duration: 2s;
+    animation-name: translation-bottom;
+    animation-duration: 2s;
+}
+
+@keyframes translation-right {
+    from {transform: translate(100px, 0px);}
+    to {transform: translate(0px, 0px);}
+}
+
+@keyframes translation-left {
+    from {transform: translate(-100px, 0px);}
+    to {transform: translate(0px, 0px);}
+}
+
+@keyframes translation-top {
+    from {transform: translate(0px, -30px);}
+    to {transform: translate(0px, 0px);}
+}
+
+@keyframes translation-bottom {
+    from {transform: translate(0px, 100px);}
+    to {transform: translate(0px, 0px);}
+}
+
+
+.width-animation {
+    -webkit-animation-name: width-increase;
+    -webkit-animation-duration: 1s;
+    animation-name: width-increase;
+    animation-duration: 1s;
+}
+
+@keyframes width-increase {
+    from {display: none;}
+    to {display: block;}
+}
+
+
+.photo-animation {
+    width: 80% !important;
+    -webkit-animation-name: translate-rotate;
+    -webkit-animation-duration: 2s;
+    animation-name: translate-rotate;
+    animation-duration: 2s;
+}
+
+@keyframes translate-rotate {
+    0% {transform: rotate(180deg) translate(200px, 0px); width: 10%}
+    /* 50% {transform: rotate(310deg) translate(100px, 0px);} */
+    100% {transform: rotate(360deg) translate(0px, 0px); width: 80%}
+}

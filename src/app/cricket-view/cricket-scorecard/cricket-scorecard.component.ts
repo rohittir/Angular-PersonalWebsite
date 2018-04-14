@@ -90,7 +90,7 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             let balls = parseInt(batsman.$.b);
 
             if (balls <= 0) {
-                return '';
+                return '-';
             }
 
             let rate = ((runs/balls) * 100);

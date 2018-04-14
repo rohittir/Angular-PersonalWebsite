@@ -16,25 +16,16 @@
     </li>
   </ul> -->
 
-  <div class="btn-group btn-group-md" role="group" aria-label="...">
-        <button type="button" class="btn {{(selectedMainTab === 'Live Score')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='Live Score'">Live Score</button>
-        <button type="button" class="btn {{(selectedMainTab === 'IPL Standings')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='IPL Standings'">IPL XI Stats</button>
-        <button type="button" class="btn {{(selectedMainTab === 'Cricket News')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='Cricket News'">Cricket News</button>
-  </div>
-  <hr>
+<div class="btn-group btn-group-md" role="group" aria-label="...">
+      <button type="button" class="btn {{(selectedMainTab === 'Live Score')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='Live Score'">Live Score</button>
+      <button type="button" class="btn {{(selectedMainTab === 'IPL Standings')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='IPL Standings'">IPL XI Stats</button>
+      <button type="button" class="btn {{(selectedMainTab === 'Cricket News')? 'btn-primary':'btn-light'}}" (click)="selectedMainTab='Cricket News'">Cricket News</button>
+</div>
+<hr>
 
-<ng-container *ngIf="selectedMainTab === 'Cricket News'">
-  <app-cricket-news></app-cricket-news>
-</ng-container>
-
-
-<ng-container *ngIf="selectedMainTab === 'Live Score'">
-  <app-cricket-live></app-cricket-live>
-</ng-container>
-
-<ng-container *ngIf="selectedMainTab === 'IPL Standings'">
-  <app-ipl-stats></app-ipl-stats>
-</ng-container>
+<app-cricket-news *ngIf="selectedMainTab === 'Cricket News'"></app-cricket-news>
+<app-cricket-live *ngIf="selectedMainTab === 'Live Score'"></app-cricket-live>
+<app-ipl-stats *ngIf="selectedMainTab === 'IPL Standings'"></app-ipl-stats>
 
 <div class="mt-3" style="text-align: center">
     Disclaimer: This is not a commercial site. Thanks to

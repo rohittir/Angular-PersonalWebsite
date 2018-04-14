@@ -4,8 +4,8 @@
     @author: Rohit Tirmanwar
  -->
 
-<ng-container *ngIf="jsonData">
-<div class="card" style="width:100%">
+<div *ngIf="jsonData">
+<div class="card top-animation" style="width:100%">
     <div class="card-header">
         <strong>About me!</strong>
 
@@ -30,8 +30,8 @@
 </div>
 <br>
 <div class="row">
-    <div class="col-md-6" *ngFor="let school of schoolList">
-        <div class="card" style="margin-bottom: 2%">
+    <div class="col-md-6" *ngFor="let school of schoolList; let i = index;">
+        <div class="card {{i%2==0? 'left-animation':'right-animation'}}" style="margin-bottom: 2%">
             <div class="card-header">
                 <strong>{{school.course + ' in ' + school.major}}</strong>
             </div>
@@ -45,7 +45,7 @@
     </div>
 </div>
 <br>
-<div class="card">
+<div class="card bottom-animation" >
     <div class="card-header">
         <strong>Experience</strong>
     </div>
@@ -107,4 +107,4 @@
     Disclaimer: All images and logos used here are the property of respective organizations and the copyrights are reserved with them.
 </div>
 
-</ng-container>
+</div>
