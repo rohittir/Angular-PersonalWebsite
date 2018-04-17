@@ -24,6 +24,8 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
     // PROPERTIES
     //
     scoreCard = null;
+    playingSquad = {};
+    substituteSquad = {};
 
     //
     // LIFECYCLE
@@ -49,22 +51,43 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
         this._liveScoreService.fetchMatchScorecard(this.scorecardURL)
         .then(res => {
             this.scoreCard = res.json().scrCard;
-            console.log(this.scoreCard);
+            this.initSquad();
+            // console.log(this.scoreCard);
         })
         .catch(err => console.error(err));
+    }
+
+    initSquad() {
+        if (this.scoreCard && this.scoreCard.squads[0].Team) {
+            this.playingSquad = {};
+            this.substituteSquad = {};
+            for (let i = 0; i < this.scoreCard.squads[0].Team.length; i++) {
+                let name = this.scoreCard.squads[0].Team[i].$.Name;
+                let mem = this.scoreCard.squads[0].Team[i].$.mem;
+                this.playingSquad[name] = this.getTeamSquad(mem);
+                this.substituteSquad[name] = this.getTeamSubs(mem);
+            }
+        }
+
     }
 
     //
     // OPERATIONS
     //
     getTeamSquad(teamSquad: string): Array<string> {
-
         let players: Array<string> = [];
         if (teamSquad) {
             players = teamSquad.split(',');
 
             if (players.length > 11) {
                 players.splice(11, players.length - 11);
+            }
+
+            for (let i = 0; i < players.length; i++) {
+                let index = players[i].lastIndexOf('(S)');
+                if (index >= 0) {
+                    players[i] = players[i].substring(0, index);
+                }
             }
         }
 
@@ -78,6 +101,13 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
 
             if (players.length >= 11) {
                 players.splice(0, 11);
+            }
+
+            for (let i = 0; i < players.length; i++) {
+                let index = players[i].lastIndexOf('(S)');
+                if (index >= 0) {
+                    players[i] = players[i].substring(0, index);
+                }
             }
         }
 

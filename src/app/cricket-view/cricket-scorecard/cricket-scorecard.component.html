@@ -99,7 +99,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let plyr of getTeamSquad(team.$.mem)">
+                    <tr *ngFor="let plyr of playingSquad[team.$.Name]">
                         <th scope="row">{{plyr}}</th>
                     </tr>
                 </tbody>
@@ -111,7 +111,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let plyr of getTeamSubs(team.$.mem)">
+                    <tr *ngFor="let plyr of substituteSquad[team.$.Name]">
                         <th scope="row">{{plyr}}</th>
                     </tr>
                 </tbody>
