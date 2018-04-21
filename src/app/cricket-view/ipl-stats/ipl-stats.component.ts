@@ -25,7 +25,7 @@ export class IPLStatsComponent implements OnInit {
     selectedData = null;
     timeUpdated = null;
 
-    availableStatsCategory = ['Points Table', 'Most Runs', 'Best Batting Average', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
+    availableStatsCategory = ['Points Table', 'Most Runs', 'Best Batting Average', 'Best Batting Strike Rate', 'Most Sixes', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
     'Best Bowling Average', 'Best Bowling Economy'];
 
     //

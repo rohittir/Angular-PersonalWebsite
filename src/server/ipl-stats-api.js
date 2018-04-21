@@ -8,7 +8,7 @@ var JSSoup = require('jssoup').default;
 
 
 var ipl2018Data = null;
-var ipl2018DataUrls = ['', 'most-runs', 'best-batting-average', 'fastest-fifties', 'highest-scores', 'most-wickets',
+var ipl2018DataUrls = ['', 'most-runs', 'best-batting-average', 'best-batting-strike-rate', 'most-sixes', 'fastest-fifties', 'highest-scores', 'most-wickets',
  'best-bowling-average', 'best-bowling-economy'];
 
 module.exports = function(app) {
