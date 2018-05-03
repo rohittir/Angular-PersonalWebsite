@@ -15,7 +15,7 @@
     <div class="col-8 col-sm-8 col-md-8 col-lg-10">
 
     <!-- Stats in table -->
-    <div style="overflow-x: auto" *ngIf="selectedData">
+    <div style="overflow-x: auto" *ngIf="selectedData && selectedMenuIndex >= 1">
         <table class="table table-sm table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -40,6 +40,22 @@
         </table>
         <div class="pull-right">
             Last Updated: <em>{{timeUpdated}}</em>
+        </div>
+    </div>
+
+    <!-- IPL Schedule -->
+    <div *ngIf="selectedMenuIndex == 0 && iplSchedule">
+        <div class="card" *ngFor="let schedule of iplSchedule" style="margin-bottom: 2%;">
+            <div class="card-header">
+                <strong>{{schedule.date}}</strong>
+            </div>
+            <div class="card-body">
+                <div *ngFor="let fixture of schedule.fixtures; let i = index">
+                    <hr *ngIf="i > 0">
+                    <h5 class="card-title">{{fixture.teams}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> {{fixture.fixture}}</h6>
+                </div>
+            </div>
         </div>
     </div>
 

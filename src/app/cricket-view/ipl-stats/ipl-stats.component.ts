@@ -25,7 +25,9 @@ export class IPLStatsComponent implements OnInit {
     selectedData = null;
     timeUpdated = null;
 
-    availableStatsCategory = ['Points Table', 'Most Runs', 'Best Batting Average', 'Best Batting Strike Rate', 'Most Sixes', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
+    iplSchedule = null;
+
+    availableStatsCategory = ['Schedule', 'Points Table', 'Most Runs', 'Best Batting Average', 'Best Batting Strike Rate', 'Most Sixes', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
     'Best Bowling Average', 'Best Bowling Economy'];
 
     //
@@ -38,6 +40,16 @@ export class IPLStatsComponent implements OnInit {
 
     ngOnInit() {
         this.onMenuChange(0);
+        this.fetchIPLSchedule();
+    }
+
+    fetchIPLSchedule() {
+        this._iplStatsService.fetchIPLSchedule()
+        .then(data => {
+            console.log(data.json());
+            this.iplSchedule = data.json();
+        })
+        .catch(err => console.error(err));
     }
 
     //
@@ -45,14 +57,17 @@ export class IPLStatsComponent implements OnInit {
     //
     onMenuChange(index) {
         this.selectedMenuIndex = index;
-        this.selectedData = null;
-        this._iplStatsService.fetchIPLStats(index).then(res => {
-            let resData = res.json();
-            this.selectedData = resData.data;
-            this.timeUpdated = resData.updated;
-            // console.log(this.selectedData);
-        })
-        .catch(err => console.error(err));
+        if (index >= 1) {
+            --index;
+            this.selectedData = null;
+            this._iplStatsService.fetchIPLStats(index).then(res => {
+                let resData = res.json();
+                this.selectedData = resData.data;
+                this.timeUpdated = resData.updated;
+                // console.log(this.selectedData);
+            })
+            .catch(err => console.error(err));
+        }
 
     }
 

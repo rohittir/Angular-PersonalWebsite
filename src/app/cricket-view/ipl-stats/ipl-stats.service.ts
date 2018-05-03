@@ -26,6 +26,12 @@ export class IPLStatsService {
             + '/api/cricket/ipl2018/stats/' + index).toPromise();
     }
 
+     // fetch the ipl schedule
+     public fetchIPLSchedule(): Promise<Response> {
+        return this._http.get(this._serverConfigService.serverUrl
+            + '/api/cricket/ipl2018/schedule/').toPromise();
+    }
+
 
 }
 
