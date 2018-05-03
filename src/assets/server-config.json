@@ -4,7 +4,7 @@
         "host": "localhost",
         "port": "3200",
         "customURL": "",
-        "prod": false
+        "prod": true
     }
 
 }
