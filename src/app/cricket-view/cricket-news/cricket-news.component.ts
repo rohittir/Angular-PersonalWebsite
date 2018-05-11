@@ -86,6 +86,10 @@ export class CricketNewsComponent implements OnInit {
         this.currentHeadline = this.headlinesList[this.currentHeadlineIndex];
     }
 
+    showCurrentIndex() {
+        return '' + (this.currentHeadlineIndex+1) + ' / ' + this.headlinesList.length + '';
+    }
+
     getDate(date: string) {
         return new Date(Date.parse(date)).toLocaleString();
     }

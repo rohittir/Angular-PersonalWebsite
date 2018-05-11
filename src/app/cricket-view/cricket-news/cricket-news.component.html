@@ -8,9 +8,9 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12">
             <div class="card" *ngIf="currentHeadline" style="max-width: 700px; margin: auto">
-
                 <div class="card-body">
                     <button class="btn btn-primary pull-left" (click)="showPrevious()"><span class="fa fa-chevron-circle-left"></span> Previous</button>
+                    <span style="margin-left: 30%">{{showCurrentIndex()}}</span>
                     <button class="btn btn-primary pull-right" (click)="showNext()">Next <span class="fa fa-chevron-circle-right"></span></button>
                     <br>
                     <hr>
