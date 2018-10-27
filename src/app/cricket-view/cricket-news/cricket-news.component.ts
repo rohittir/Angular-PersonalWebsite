@@ -46,8 +46,8 @@ export class CricketNewsComponent implements OnInit {
                 return err;
             })
         ).subscribe((res: any) => {
-            // console.log(res.json());
-            this.headlinesList = res.json().articles;
+            // console.log(res);
+            this.headlinesList = res.articles;
             this.showNext();
         });
     }

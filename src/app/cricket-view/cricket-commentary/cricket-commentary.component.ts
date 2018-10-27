@@ -62,7 +62,7 @@ export class CricketCommentaryComponent implements OnInit, OnDestroy {
                         return err;
                     })
                 ).subscribe((res: any) => {
-                    this.selectedCommentary = res.json().mchDetails.match[0];
+                    this.selectedCommentary = res.mchDetails.match[0];
                 })
         }
     }

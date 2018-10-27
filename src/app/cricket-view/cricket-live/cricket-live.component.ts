@@ -59,7 +59,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
           return err;
         })
       ).subscribe((res: any) => {
-        const matches = res.json().mchdata.match;
+        const matches = res.mchdata.match;
         this.matchesList = [];
         for (let i = 0; i < matches.length; i++) {
           if (!this.isDuplicateMatch(matches[i])) {
@@ -94,7 +94,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
           return err;
         })
       ).subscribe((res: any) => {
-        const matches = res.json();
+        const matches = res;
 
         for (let i = 0; i < matches.length; i++) {
           this._liveScoreService.fetchLiveScore(matches[i].id)
@@ -104,7 +104,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
                 return err;
               })
             ).subscribe((match: any) => {
-              this.liveMatchesList.push(match.json()[0]);
+              this.liveMatchesList.push(match[0]);
             });
         }
 

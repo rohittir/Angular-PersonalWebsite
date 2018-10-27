@@ -56,7 +56,7 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
                 return err;
             })
         ).subscribe((res: any) => {
-            this.scoreCard = res.json().scrCard;
+            this.scoreCard = res.scrCard;
             this.initSquad();
             // console.log(this.scoreCard);
         });

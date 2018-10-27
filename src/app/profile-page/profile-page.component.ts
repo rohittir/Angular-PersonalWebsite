@@ -9,6 +9,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { JSONDataService } from '../services/json-data.service';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-page',
@@ -48,21 +49,30 @@ export class ProfilePageComponent implements OnInit {
     initData() {
          // USER PRofile Data
          this._jsonDataService.fetchUserData()
-         .then(res => {
-             this.jsonData = res.json();
+         .pipe(
+             catchError((err: any) => {
+                console.log(err);
+
+                // retry locally when server is not available
+                this._jsonDataService.readUserProfileDataFromJson()
+                .pipe(
+                    catchError((err1: any) => {
+                        console.error(err1);
+                        return err1;
+                    })
+                )
+                .subscribe(res1 => {
+                    this.jsonData = res1;
+                    this._jsonDataService.setJsonData(this.jsonData);
+                    this.populateUserJSONData();
+                });
+                return err;
+             })
+         )
+         .subscribe((res: any) => {
+             this.jsonData = res;
              this._jsonDataService.setJsonData(this.jsonData);
              this.populateUserJSONData();
-         })
-         .catch(err => {
-             console.error(err);
-
-             // retry locally when server is not available
-             this._jsonDataService.readUserProfileDataFromJson()
-             .then(res1 => {
-                 this.jsonData = res1.json();
-                 this._jsonDataService.setJsonData(this.jsonData);
-                 this.populateUserJSONData();
-             })
          });
     }
 

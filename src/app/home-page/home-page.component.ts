@@ -46,7 +46,7 @@ export class HomePageComponent implements OnInit {
         this._jsonDataService.fetchUserData()
             .pipe(
                 catchError((err: any) => {
-                    console.error(err);
+                    console.log(err);
 
                     // retry locally when server is not available
                     this._jsonDataService.readUserProfileDataFromJson()
@@ -56,14 +56,14 @@ export class HomePageComponent implements OnInit {
                                 return err;
                             })
                         ).subscribe((res1: any) => {
-                            this.userProfile = res1.json().userData.profile;
-                            this._jsonDataService.setJsonData(res1.json());
+                            this.userProfile = res1.userData.profile;
+                            this._jsonDataService.setJsonData(res1);
                         });
                     return err;
                 })
             ).subscribe((res: any) => {
-                this.userProfile = res.json().userData.profile;
-                this._jsonDataService.setJsonData(res.json());
+                this.userProfile = res.userData.profile;
+                this._jsonDataService.setJsonData(res);
             });
 
         // INspirations data
@@ -74,7 +74,7 @@ export class HomePageComponent implements OnInit {
                     return err;
                 })
             ).subscribe((res: any) => {
-                this.inspirationData = res.json();
+                this.inspirationData = res;
             });
     }
 

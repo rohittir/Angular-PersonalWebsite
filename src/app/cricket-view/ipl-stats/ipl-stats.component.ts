@@ -55,8 +55,8 @@ export class IPLStatsComponent implements OnInit {
                 return err;
             })
         ).subscribe((data: any) => {
-            console.log(data.json());
-            this.iplSchedule = data.json();
+            console.log(data);
+            this.iplSchedule = data;
         });
     }
 
@@ -76,7 +76,7 @@ export class IPLStatsComponent implements OnInit {
                 })
             )
             .subscribe((res: any) => {
-                const resData = res.json();
+                const resData = res;
                 this.selectedData = resData.data;
                 this.timeUpdated = resData.updated;
                 // console.log(this.selectedData);

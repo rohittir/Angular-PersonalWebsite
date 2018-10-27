@@ -48,7 +48,7 @@ export class TimelinePageComponent implements OnInit {
         this._jsonDataService.fetchUserTimelineData()
             .pipe(
                 catchError((err: any) => {
-                    console.error(err);
+                    console.log(err);
 
                     // retry locally when server is not available
                     this._jsonDataService.readUserTimelineFromJson()
@@ -58,13 +58,13 @@ export class TimelinePageComponent implements OnInit {
                                 return err;
                             })
                         ).subscribe((res1: any) => {
-                            this.userTimelineData = res1.json();
+                            this.userTimelineData = res1;
                             this.initShowContent();
                         });
                     return err;
                 })
             ).subscribe((res: any) => {
-                this.userTimelineData = res.json();
+                this.userTimelineData = res;
                 this.initShowContent();
             });
 
