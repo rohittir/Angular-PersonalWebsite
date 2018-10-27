@@ -6,6 +6,8 @@
 
 
 import { Component, Input, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
+
 import { IPLStatsService } from './ipl-stats.service';
 
 @Component({
@@ -27,8 +29,10 @@ export class IPLStatsComponent implements OnInit {
 
     iplSchedule = null;
 
-    availableStatsCategory = ['Schedule', 'Points Table', 'Most Runs', 'Best Batting Average', 'Best Batting Strike Rate', 'Most Sixes', 'Fastest Fifties', 'Highest Scores', 'Most Wickets',
-    'Best Bowling Average', 'Best Bowling Economy'];
+    availableStatsCategory = ['Schedule', 'Points Table', 'Most Runs',
+        'Best Batting Average', 'Best Batting Strike Rate', 'Most Sixes',
+        'Fastest Fifties', 'Highest Scores', 'Most Wickets',
+        'Best Bowling Average', 'Best Bowling Economy'];
 
     //
     // LIFECYCLE
@@ -45,11 +49,15 @@ export class IPLStatsComponent implements OnInit {
 
     fetchIPLSchedule() {
         this._iplStatsService.fetchIPLSchedule()
-        .then(data => {
+        .pipe(
+            catchError(err => {
+                console.error(err);
+                return err;
+            })
+        ).subscribe((data: any) => {
             console.log(data.json());
             this.iplSchedule = data.json();
-        })
-        .catch(err => console.error(err));
+        });
     }
 
     //
@@ -60,13 +68,19 @@ export class IPLStatsComponent implements OnInit {
         if (index >= 1) {
             --index;
             this.selectedData = null;
-            this._iplStatsService.fetchIPLStats(index).then(res => {
-                let resData = res.json();
+            this._iplStatsService.fetchIPLStats(index)
+            .pipe(
+                catchError(err => {
+                    console.error(err);
+                    return err;
+                })
+            )
+            .subscribe((res: any) => {
+                const resData = res.json();
                 this.selectedData = resData.data;
                 this.timeUpdated = resData.updated;
                 // console.log(this.selectedData);
-            })
-            .catch(err => console.error(err));
+            });
         }
 
     }

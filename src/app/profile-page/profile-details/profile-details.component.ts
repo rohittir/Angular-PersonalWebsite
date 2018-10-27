@@ -46,10 +46,10 @@ export class ProfileDetailsComponent implements OnInit {
 
   initData() {
 
-    let jsonData = this._jsonDataService.getJsonData();
+    const jsonData = this._jsonDataService.getJsonData();
     if (jsonData) {
 
-      let industries = jsonData.userData.experience.industries;
+      const industries = jsonData.userData.experience.industries;
       for (let i = 0; i < industries.length; i++) {
         if (industries[i].label === this.profileLabel) {
           this.industryInfo = industries[i];

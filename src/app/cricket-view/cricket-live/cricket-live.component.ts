@@ -6,6 +6,7 @@
 
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { LiveScoreService } from '../live-score.service';
 import { Router } from '@angular/router';
 
@@ -52,8 +53,13 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   private refreshMatches() {
     // Fetch Live scores
     this._liveScoreService.fetchCurrentMatches()
-    .then(res => {
-        let matches = res.json().mchdata.match;
+      .pipe(
+        catchError((err: any) => {
+          console.error(err);
+          return err;
+        })
+      ).subscribe((res: any) => {
+        const matches = res.json().mchdata.match;
         this.matchesList = [];
         for (let i = 0; i < matches.length; i++) {
           if (!this.isDuplicateMatch(matches[i])) {
@@ -61,8 +67,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
           }
         }
         // console.log(this.matchesList);
-    })
-    .catch(err => console.error(err));
+    });
   }
 
   private isDuplicateMatch(match): boolean {
@@ -83,19 +88,27 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
 
     this.liveMatchesList = [];
     this._liveScoreService.fetchLiveMatches()
-    .then(res => {
-      let matches = res.json();
-
-      for (let i = 0; i < matches.length; i++) {
-        this._liveScoreService.fetchLiveScore(matches[i].id)
-        .then(match => {
-          this.liveMatchesList.push(match.json()[0]);
+      .pipe(
+        catchError((err: any) => {
+          console.error(err);
+          return err;
         })
-        .catch(err1 => console.error(err1));
-      }
+      ).subscribe((res: any) => {
+        const matches = res.json();
 
-    })
-    .catch(err => console.error(err));
+        for (let i = 0; i < matches.length; i++) {
+          this._liveScoreService.fetchLiveScore(matches[i].id)
+            .pipe(
+              catchError((err: any) => {
+                console.error(err);
+                return err;
+              })
+            ).subscribe((match: any) => {
+              this.liveMatchesList.push(match.json()[0]);
+            });
+        }
+
+    });
 
   }
 
@@ -104,7 +117,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
   //
   showMatchInfo(match, userEvent = true) {
     if (match.$.datapath) {
-      let matchId = this.extractMatchIdFromURL(match.$.datapath);
+      const matchId = this.extractMatchIdFromURL(match.$.datapath);
       this._router.navigate(['/cricket/livecommentary/' + matchId]);
     }
   }
@@ -114,7 +127,7 @@ export class CricketLiveComponent implements OnInit, OnDestroy {
     if (url) {
       // http://synd.cricbuzz.com/j2me/1.0/match/2018/IPL_2018/CSK_KKR_APR10/
 
-      let urlElements = url.split('/');
+      const urlElements = url.split('/');
 
       if (urlElements.length >= 10) {
         matchId += urlElements[urlElements.length - 5];

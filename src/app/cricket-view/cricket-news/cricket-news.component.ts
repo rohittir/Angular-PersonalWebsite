@@ -6,6 +6,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { LiveScoreService } from '../live-score.service';
 
 @Component({
@@ -39,12 +40,16 @@ export class CricketNewsComponent implements OnInit {
 
     initData() {
         this._liveScoreService.fetchCricketNews()
-        .then(res => {
+        .pipe(
+            catchError((err: any) => {
+                console.error(err);
+                return err;
+            })
+        ).subscribe((res: any) => {
             // console.log(res.json());
             this.headlinesList = res.json().articles;
             this.showNext();
-        })
-        .catch(err => console.error(err));
+        });
     }
 
     //
@@ -87,7 +92,7 @@ export class CricketNewsComponent implements OnInit {
     }
 
     showCurrentIndex() {
-        return '' + (this.currentHeadlineIndex+1) + ' / ' + this.headlinesList.length + '';
+        return '' + (this.currentHeadlineIndex + 1) + ' / ' + this.headlinesList.length + '';
     }
 
     getDate(date: string) {

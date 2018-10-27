@@ -7,8 +7,9 @@
  */
 
 
-import { Injectable } from "@angular/core";
-import { Http, Headers, Response, Jsonp, RequestOptions } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable()
@@ -21,7 +22,7 @@ export class ServerConfigService {
     public serverPort = null;
     public serverUrl = null;
 
-    constructor(public _http: Http) {
+    constructor(public _http: HttpClient) {
         this.readServerConfig('assets/server-config.json');
     }
 
@@ -30,23 +31,26 @@ export class ServerConfigService {
     //
 
     private readServerConfig(fileName: string) {
-         this._http.get(fileName).toPromise().then(res => {
-             let jsonData = res.json();
+        this._http.get(fileName).
+        pipe(
+            catchError((err: any) => {
+                console.error(err);
+                return err;
+            })
+        ).subscribe((res: any) => {
+             const jsonData = res;
              this.serverHost = jsonData.serverConfig.host;
              this.serverPort = jsonData.serverConfig.port;
              this.serverUrl = 'http://' + this.serverHost + ':' + this.serverPort;
 
-             if (jsonData.serverConfig.customURL && jsonData.serverConfig.customURL !== "") {
+             if (jsonData.serverConfig.customURL && jsonData.serverConfig.customURL !== '') {
                 this.serverUrl = jsonData.serverConfig.customURL;
              }
 
              if (jsonData.serverConfig.prod === true) {
-                this.serverUrl = "";
+                this.serverUrl = '';
              }
-         })
-         .catch(err => {
-             console.error(err.json());
-         })
+         });
     }
 
 }

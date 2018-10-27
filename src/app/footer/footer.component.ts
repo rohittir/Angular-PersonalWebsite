@@ -31,7 +31,7 @@ export class FooterComponent implements OnInit {
   }
 
   getSocialDataLinks() {
-    let jsonData = this._jsonDataService.getJsonData();
+    const jsonData = this._jsonDataService.getJsonData();
     if (jsonData) {
       return jsonData.userData.social;
     }

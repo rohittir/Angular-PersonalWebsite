@@ -20,9 +20,8 @@ export class HeaderMenuComponent implements OnInit {
     //
     // PROPERTIES
     //
-
-    isCollapsed = true;
-    searchText: string = '';
+    public isCollapsed = true;
+    public searchText: string = '';
 
     //
     // LIFECYCLE
@@ -56,7 +55,7 @@ export class HeaderMenuComponent implements OnInit {
     }
 
     getHeaading(): string {
-        let data = this._jsonDataService.getJsonData();
+        const data = this._jsonDataService.getJsonData();
         if (data) {
             return data.userData.profile.name;
         }

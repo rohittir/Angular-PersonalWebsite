@@ -6,6 +6,7 @@
 
 
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { LiveScoreService } from '../live-score.service';
 
 @Component({
@@ -49,12 +50,16 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
         }
 
         this._liveScoreService.fetchMatchScorecard(this.scorecardURL)
-        .then(res => {
+        .pipe(
+            catchError((err: any) => {
+                console.error(err);
+                return err;
+            })
+        ).subscribe((res: any) => {
             this.scoreCard = res.json().scrCard;
             this.initSquad();
             // console.log(this.scoreCard);
-        })
-        .catch(err => console.error(err));
+        });
     }
 
     initSquad() {
@@ -62,8 +67,8 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             this.playingSquad = {};
             this.substituteSquad = {};
             for (let i = 0; i < this.scoreCard.squads[0].Team.length; i++) {
-                let name = this.scoreCard.squads[0].Team[i].$.Name;
-                let mem = this.scoreCard.squads[0].Team[i].$.mem;
+                const name = this.scoreCard.squads[0].Team[i].$.Name;
+                const mem = this.scoreCard.squads[0].Team[i].$.mem;
                 this.playingSquad[name] = this.getTeamSquad(mem);
                 this.substituteSquad[name] = this.getTeamSubs(mem);
             }
@@ -84,7 +89,7 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             }
 
             for (let i = 0; i < players.length; i++) {
-                let index = players[i].lastIndexOf('(S)');
+                const index = players[i].lastIndexOf('(S)');
                 if (index >= 0) {
                     players[i] = players[i].substring(0, index);
                 }
@@ -104,7 +109,7 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
             }
 
             for (let i = 0; i < players.length; i++) {
-                let index = players[i].lastIndexOf('(S)');
+                const index = players[i].lastIndexOf('(S)');
                 if (index >= 0) {
                     players[i] = players[i].substring(0, index);
                 }
@@ -116,14 +121,14 @@ export class CricketScorecardComponent implements OnInit, OnChanges {
 
     getStrikeRate(batsman) {
         if (batsman) {
-            let runs = parseInt(batsman.$.r);
-            let balls = parseInt(batsman.$.b);
+            const runs = parseInt(batsman.$.r, 10);
+            const balls = parseInt(batsman.$.b, 10);
 
             if (balls <= 0) {
                 return '-';
             }
 
-            let rate = ((runs/balls) * 100);
+            const rate = ((runs / balls) * 100);
             return rate.toFixed(2);
         }
     }

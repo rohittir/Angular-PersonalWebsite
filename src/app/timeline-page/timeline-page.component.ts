@@ -7,6 +7,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { JSONDataService } from '../services/json-data.service';
 
 @Component({
@@ -45,20 +46,28 @@ export class TimelinePageComponent implements OnInit {
 
         // User Timeline Data
         this._jsonDataService.fetchUserTimelineData()
-        .then(res => {
-            this.userTimelineData = res.json();
-            this.initShowContent();
-        })
-        .catch(err => {
-            console.error(err);
+            .pipe(
+                catchError((err: any) => {
+                    console.error(err);
 
-            // retry locally when server is not available
-            this._jsonDataService.readUserTimelineFromJson()
-            .then(res1 => {
-                this.userTimelineData = res1.json();
+                    // retry locally when server is not available
+                    this._jsonDataService.readUserTimelineFromJson()
+                        .pipe(
+                            catchError((err: any) => {
+                                console.error(err);
+                                return err;
+                            })
+                        ).subscribe((res1: any) => {
+                            this.userTimelineData = res1.json();
+                            this.initShowContent();
+                        });
+                    return err;
+                })
+            ).subscribe((res: any) => {
+                this.userTimelineData = res.json();
                 this.initShowContent();
-            })
-        });
+            });
+
     }
 
     initShowContent() {
@@ -71,7 +80,7 @@ export class TimelinePageComponent implements OnInit {
     }
 
 
-};
+}
 
 
 

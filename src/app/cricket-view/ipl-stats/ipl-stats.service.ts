@@ -5,15 +5,20 @@
  */
 
 
-import { Injectable } from "@angular/core";
-import { Http, ResponseContentType, Response, RequestOptionsArgs } from "@angular/http";
-import { ServerConfigService } from "../../services/server-config.service";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+import { ServerConfigService } from '../../services/server-config.service';
 
 
 @Injectable()
 export class IPLStatsService {
 
-    constructor(private _http: Http, private _serverConfigService: ServerConfigService) {
+    constructor(
+        private _http: HttpClient,
+        private _serverConfigService: ServerConfigService) {
     }
 
     //
@@ -21,15 +26,15 @@ export class IPLStatsService {
     //
 
     // fetch the ipl stats data
-    public fetchIPLStats(index): Promise<Response> {
+    public fetchIPLStats(index): Observable<any> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket/ipl2018/stats/' + index).toPromise();
+            + '/api/cricket/ipl2018/stats/' + index);
     }
 
      // fetch the ipl schedule
-     public fetchIPLSchedule(): Promise<Response> {
+     public fetchIPLSchedule(): Observable<any> {
         return this._http.get(this._serverConfigService.serverUrl
-            + '/api/cricket/ipl2018/schedule/').toPromise();
+            + '/api/cricket/ipl2018/schedule/');
     }
 
 

@@ -7,9 +7,12 @@
  */
 
 
-import { Injectable } from "@angular/core";
-import { Http, Headers, Response, Jsonp, RequestOptions } from '@angular/http';
-import { ServerConfigService } from "./server-config.service";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+import { ServerConfigService } from './server-config.service';
 
 
 @Injectable()
@@ -21,33 +24,33 @@ export class JSONDataService {
     //
     userProfileData = null;
 
-    constructor(private _http: Http, private _serverConfigService: ServerConfigService) {
+    constructor(private _http: HttpClient, private _serverConfigService: ServerConfigService) {
     }
 
     //
     // OPERATIONS
     //
 
-    public readUserProfileDataFromJson(): Promise<Response> {
-        let fileName = 'assets/data/user-profile.json';
-        return this._http.get(fileName).toPromise();
+    public readUserProfileDataFromJson(): Observable<any> {
+        const fileName = 'assets/data/user-profile.json';
+        return this._http.get(fileName);
     }
 
-    public readUserTimelineFromJson(): Promise<Response> {
-        let fileName = 'assets/data/user-timeline.json';
-        return this._http.get(fileName).toPromise();
+    public readUserTimelineFromJson(): Observable<any> {
+        const fileName = 'assets/data/user-timeline.json';
+        return this._http.get(fileName);
     }
 
-    public fetchUserData(): Promise<Response> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/').toPromise();
+    public fetchUserData(): Observable<any> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/');
     }
 
-    public fetchUserTimelineData(): Promise<Response> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/timeline/').toPromise();
+    public fetchUserTimelineData(): Observable<any> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/timeline/');
     }
 
-    public fetchCurrentInspiration(): Promise<Response> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/').toPromise();
+    public fetchCurrentInspiration(): Observable<any> {
+        return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/');
     }
 
 

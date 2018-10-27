@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ServerConfigService } from './services/server-config.service';
 
-declare let ga: Function;
+declare const ga: Function;
 
 @Component({
   selector: 'app-root',

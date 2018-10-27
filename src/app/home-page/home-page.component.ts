@@ -7,6 +7,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { JSONDataService } from '../services/json-data.service';
 
 @Component({
@@ -43,27 +44,38 @@ export class HomePageComponent implements OnInit {
 
         // USER PRofile Data
         this._jsonDataService.fetchUserData()
-        .then(res => {
-            this.userProfile = res.json().userData.profile;
-            this._jsonDataService.setJsonData(res.json());
-        })
-        .catch(err => {
-            console.error(err);
+            .pipe(
+                catchError((err: any) => {
+                    console.error(err);
 
-             // retry locally when server is not available
-            this._jsonDataService.readUserProfileDataFromJson()
-            .then(res1 => {
-                this.userProfile = res1.json().userData.profile;;
-                this._jsonDataService.setJsonData(res1.json());
-            })
-        });
+                    // retry locally when server is not available
+                    this._jsonDataService.readUserProfileDataFromJson()
+                        .pipe(
+                            catchError((err: any) => {
+                                console.error(err);
+                                return err;
+                            })
+                        ).subscribe((res1: any) => {
+                            this.userProfile = res1.json().userData.profile;
+                            this._jsonDataService.setJsonData(res1.json());
+                        });
+                    return err;
+                })
+            ).subscribe((res: any) => {
+                this.userProfile = res.json().userData.profile;
+                this._jsonDataService.setJsonData(res.json());
+            });
 
         // INspirations data
         this._jsonDataService.fetchCurrentInspiration()
-        .then(res => {
-            this.inspirationData = res.json();
-        })
-        .catch(err => console.error(err));
+            .pipe(
+                catchError((err: any) => {
+                    console.error(err);
+                    return err;
+                })
+            ).subscribe((res: any) => {
+                this.inspirationData = res.json();
+            });
     }
 
 
