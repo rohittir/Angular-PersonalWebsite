@@ -51,9 +51,9 @@ export class HomePageComponent implements OnInit {
                     // retry locally when server is not available
                     this._jsonDataService.readUserProfileDataFromJson()
                         .pipe(
-                            catchError((err: any) => {
-                                console.error(err);
-                                return err;
+                            catchError((err1: any) => {
+                                console.error(err1);
+                                return err1;
                             })
                         ).subscribe((res1: any) => {
                             this.userProfile = res1.userData.profile;
@@ -77,9 +77,5 @@ export class HomePageComponent implements OnInit {
                 this.inspirationData = res;
             });
     }
-
-
-};
-
-
+}
 

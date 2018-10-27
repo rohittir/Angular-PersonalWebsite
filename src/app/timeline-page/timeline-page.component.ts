@@ -53,9 +53,9 @@ export class TimelinePageComponent implements OnInit {
                     // retry locally when server is not available
                     this._jsonDataService.readUserTimelineFromJson()
                         .pipe(
-                            catchError((err: any) => {
-                                console.error(err);
-                                return err;
+                            catchError((err1: any) => {
+                                console.error(err1);
+                                return err1;
                             })
                         ).subscribe((res1: any) => {
                             this.userTimelineData = res1;

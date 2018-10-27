@@ -21,7 +21,7 @@ export class HeaderMenuComponent implements OnInit {
     // PROPERTIES
     //
     public isCollapsed = true;
-    public searchText: string = '';
+    public searchText = '';
 
     //
     // LIFECYCLE
@@ -71,11 +71,5 @@ export class HeaderMenuComponent implements OnInit {
     onSearch() {
         alert(this.searchText);
     }
-
-
-
-
-};
-
-
+}
 

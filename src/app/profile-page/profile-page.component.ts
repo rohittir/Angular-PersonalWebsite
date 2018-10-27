@@ -84,13 +84,4 @@ export class ProfilePageComponent implements OnInit {
         this.academicProjectList = this.jsonData.userData.academic.projects;
     }
 
-
-
-
-
-
-
-};
-
-
-
+}

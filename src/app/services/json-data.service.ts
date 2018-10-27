@@ -63,6 +63,5 @@ export class JSONDataService {
     getJsonData() {
         return this.userProfileData;
     }
-
-
 }
+
