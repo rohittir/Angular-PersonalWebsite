@@ -1,13 +1,13 @@
 # MyWebApplication
 
-This is my personal website created using Angular 4, Bootstrap and Node.js.
+This is my personal website created using Angular 7, Bootstrap and Node.js.
 
 There are two data files assets/user-profile and assets/user-timeline that provides all the data to this website. Anyone can replace these files and update with their data to make it their website.
 
 This website also shows the live cricket scores using [cricbuzz](http://www.cricbuzz.com/) API and news using [News API](https://newsapi.org).
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This project was generated with the latest [Angular CLI](https://github.com/angular/angular-cli) version.
 
 ## Development server
 
