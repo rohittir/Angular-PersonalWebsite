@@ -23,6 +23,7 @@ export class CricketViewComponent implements OnInit {
 
   selectedMainTab = 'Live Score';
   iplStandings = null;
+  isActive = false;
 
   constructor(public _liveScoreService: LiveScoreService) { }
 

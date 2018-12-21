@@ -3,7 +3,7 @@
 
         "profile" : {
             "name": "Rohit Tirmanwar",
-            "designation": "Software Engineer",
+            "designation": "Front End Engineer",
             "displayImage": "images/profile.jpg",
             "contact": {
                 "email" : [
@@ -14,8 +14,8 @@
                     "+1 (571) 338-1143"
                 ],
                 "address": {
-                    "name": "Fairfax, VA",
-                    "locURL" : "https://goo.gl/maps/egbUvebbTdn"
+                    "name": "Reston, VA",
+                    "locURL" : "https://goo.gl/maps/f6GmwRcvvks"
                 }
             },
             "abstract": [
@@ -40,20 +40,27 @@
 
         "skills" : {
             "keywords": [
-                "Java",
-                "C++",
-                "Angular 2 and above",
+                "Angular 2, 4 and 6",
                 "Typescript",
                 "Javascript",
+                "NativeScript",
+                "Node.js",
+                "Java",
+                "C++",
+                "GraphQL",
+                "Redux",
+                "RxJs",
+                "Angular Material",
                 "HTML5",
                 "CSS3",
                 "SASS",
+                "AmCharts",
                 "Spring",
                 "JPA",
                 "J2EE",
                 "Hibernate",
-                "SQL",
-                "Node.js",
+                "MySQL",
+                "NoSQL",
                 "jQuery",
                 "ES5",
                 "ES6",
@@ -116,11 +123,32 @@
         "experience" : {
             "industries": [
                 {
+                    "label": "Folio",
+                    "name": "Folio Financial, Inc.",
+                    "address": "Mc Lean, VA",
+                    "startDate": "July 2018",
+                    "endDate": null,
+                    "designation": "Front End Engineer",
+                    "logo": "images/folio.png",
+                    "websiteLink": "https://www.folioinvesting.com/folioinvesting/home/",
+                    "abstract": [
+                        "Design and develop front end of financial products",
+                        "Work in Agile to collaborate with design team, QA and back end team for UI requirements and release."
+                    ],
+                    "detailedInfo": [
+                        "Developed the front end of the financial investment web based enterprise product using Angular 4+, Express.js, Node.js, GraphQL, Rxjs, Angular Material, and Redux.",
+                        "Collaborating with various teams including product design and QA in agile environment using JIRA to gather requirements and implement the web interface."
+                    ],
+                    "technologies": [
+                        "Angular 4 and 6", "Typescript", "Javascript", "NativeScript for native mobile", "Angular Material", "Node.js", "GraphQL", "Redux", "RxJs", "CSS3", "HTML5", "Agile", "Karma", "Jasmine", "Webpack", "VS Code"
+                    ]
+                },
+                {
                     "label": "gmu",
                     "name": "George Mason University",
                     "address": "Fairfax, VA",
                     "startDate": "January 2017",
-                    "endDate": null,
+                    "endDate": "May 2018",
                     "designation": "Graduate Research Assistant",
                     "logo": "images/gmu-logo.jpg",
                     "websiteLink": "https://www2.gmu.edu/",

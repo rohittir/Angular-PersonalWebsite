@@ -2,7 +2,7 @@
 
 
 
-
+<ng-container *ngIf="isActive">
  <!-- Main Tabs -->
  <!-- <ul class="nav nav-tabs card-header-tabs">
     <li class="nav-item">
@@ -33,3 +33,8 @@
     <!-- <a href="https://cricscore-api.appspot.com" target="_blank">Cricscore</a> -->
     and <a href="https://newsapi.org" target="_blank">News API</a> for providing this data.
 </div>
+</ng-container>
+
+<ng-container *ngIf="!isActive">
+  <h2>This page is currently under maintainance. Please come back later.</h2>
+</ng-container>

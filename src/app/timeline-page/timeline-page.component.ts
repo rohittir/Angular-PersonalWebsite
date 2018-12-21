@@ -45,10 +45,10 @@ export class TimelinePageComponent implements OnInit {
     initData() {
 
         // User Timeline Data
-        this._jsonDataService.fetchUserTimelineData()
-            .pipe(
-                catchError((err: any) => {
-                    console.log(err);
+        // this._jsonDataService.fetchUserTimelineData()
+        //     .pipe(
+        //         catchError((err: any) => {
+        //             console.log(err);
 
                     // retry locally when server is not available
                     this._jsonDataService.readUserTimelineFromJson()
@@ -61,12 +61,12 @@ export class TimelinePageComponent implements OnInit {
                             this.userTimelineData = res1;
                             this.initShowContent();
                         });
-                    return err;
-                })
-            ).subscribe((res: any) => {
-                this.userTimelineData = res;
-                this.initShowContent();
-            });
+            //         return err;
+            //     })
+            // ).subscribe((res: any) => {
+            //     this.userTimelineData = res;
+            //     this.initShowContent();
+            // });
 
     }
 

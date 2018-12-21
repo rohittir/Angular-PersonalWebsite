@@ -54,7 +54,7 @@
             <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let industry of industryList">
                 <div class="card" style="margin-bottom: 5%">
                     <div class="card-body">
-                        <a href="{{industry.websiteLink}}" target="_blank"><img class="pull-right" style="height: 40px;" src="{{industry.logo}}"></a>
+                        <a href="{{industry.websiteLink}}" target="_blank"><img class="pull-right" style="max-height: 40px;" src="{{industry.logo}}"></a>
                         <h5 class="card-title">{{industry.name}}</h5>
                         <h6 class="card-text">{{industry.designation}}</h6>
                         <p class="card-text">{{(industry.endDate)? industry.startDate + ' - ' + industry.endDate : 'Working since ' + industry.startDate}}</p>

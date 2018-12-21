@@ -1,5 +1,3 @@
-
-
 <!--
     TEMPLATE
     @author: Rohit Tirmanwar
@@ -7,55 +5,55 @@
 
 <ng-container *ngIf="userProfile">
 
-        <div class="card bg-light text-dark" style="width: 100%; text-align: center">
-            <div class="card-body" style="text-align: center">
-                <h4 class="card-title">Welcome to my website!</h4>
-                <br>
+    <div class="card bg-light text-dark" style="width: 100%; text-align: center">
+        <div class="card-body" style="text-align: center">
+            <h4 class="card-title">Welcome to my website!</h4>
+            <br>
 
-                <p class="card-text">I'm glad for taking your time to visit my website. I hope you find this website informative and pleasant.</p>
+            <p class="card-text">I'm glad for taking your time to visit my website. I hope you find this website
+                informative and pleasant.</p>
 
-                <br>
+            <br>
 
-                <div class="card" style="margin: auto">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-4">
-                                <img class="card-img-top pull-left rounded" src="{{userProfile.displayImage}}">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
-                                <h4 class="card-title">{{userProfile.name}}</h4>
-                                <h6 class="card-title">{{userProfile.designation}}</h6>
-                                <p class="card-text"><span class="fa fa-map-marker"></span>
-                                    <a href="{{userProfile.contact.address.locURL}}"
-                                        target="_blank">{{userProfile.contact.address.name}}
-                                    </a>
-                                </p>
-                                <a routerLink="/profile" class="btn btn-primary">See Complete Profile</a>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
-                                <h5 class="card-title">Contact Me</h5>
-                                <p class="card-text"><span class="fa fa-phone"></span> {{userProfile.contact.phone[0]}}</p>
-                                <p class="card-text">
-                                    <span class="fa fa-envelope"></span>
-                                    <a href="mailto:{{userProfile.contact.email[0]}}">{{userProfile.contact.email[0]}}</a>
-                                </p>
-
-
-                            </div>
+            <div class="card" style="margin: auto">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <img class="card-img-top pull-left rounded" src="{{userProfile.displayImage}}">
                         </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
+                            <h4 class="card-title">{{userProfile.name}}</h4>
+                            <h6 class="card-title">{{userProfile.designation}}</h6>
+                            <p class="card-text"><span class="fa fa-map-marker"></span>
+                                <a href="{{userProfile.contact.address.locURL}}" target="_blank"> {{userProfile.contact.address.name}}
+                                </a>
+                            </p>
+                            <a routerLink="/profile" class="btn btn-primary">See Complete Profile</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4" style="margin-top: 5%">
+                            <h5 class="card-title">Contact Me</h5>
+                            <p class="card-text"><span class="fa fa-phone"></span> {{userProfile.contact.phone[0]}}</p>
+                            <p class="card-text">
+                                <span class="fa fa-envelope"></span>
+                                <a href="mailto:{{userProfile.contact.email[0]}}"> {{userProfile.contact.email[0]}}</a>
+                            </p>
 
+
+                        </div>
                     </div>
-                </div>
-                <br>
 
-                <p class="card-text">Today's inspiration:</p>
-                <p class="card-text">
-                    <i *ngIf="inspirationData">{{inspirationData.content}}</i>
-                    <i *ngIf="!inspirationData">Let us sacrifice our today so that our children can have better tomorrow.</i>
-                </p>
-                <p class="card-text" *ngIf="inspirationData">- {{inspirationData.author}}</p>
-                <p class="card-text" *ngIf="!inspirationData">- Dr. A. P. J. Abdul Kalam (Former President of India)</p>
-                <br>
+                </div>
             </div>
+            <br>
+
+            <p class="card-text">Today's inspiration:</p>
+            <p class="card-text">
+                <i *ngIf="inspirationData">{{inspirationData.content}}</i>
+                <i *ngIf="!inspirationData">Let us sacrifice our today so that our children can have better tomorrow.</i>
+            </p>
+            <p class="card-text" *ngIf="inspirationData">- {{inspirationData.author}}</p>
+            <p class="card-text" *ngIf="!inspirationData">- Dr. A. P. J. Abdul Kalam (Former President of India)</p>
+            <br>
         </div>
+    </div>
 </ng-container>

@@ -48,10 +48,10 @@ export class ProfilePageComponent implements OnInit {
 
     initData() {
          // USER PRofile Data
-         this._jsonDataService.fetchUserData()
-         .pipe(
-             catchError((err: any) => {
-                console.log(err);
+        //  this._jsonDataService.fetchUserData()
+        //  .pipe(
+        //      catchError((err: any) => {
+        //         console.log(err);
 
                 // retry locally when server is not available
                 this._jsonDataService.readUserProfileDataFromJson()
@@ -66,14 +66,14 @@ export class ProfilePageComponent implements OnInit {
                     this._jsonDataService.setJsonData(this.jsonData);
                     this.populateUserJSONData();
                 });
-                return err;
-             })
-         )
-         .subscribe((res: any) => {
-             this.jsonData = res;
-             this._jsonDataService.setJsonData(this.jsonData);
-             this.populateUserJSONData();
-         });
+        //         return err;
+        //      })
+        //  )
+        //  .subscribe((res: any) => {
+        //      this.jsonData = res;
+        //      this._jsonDataService.setJsonData(this.jsonData);
+        //      this.populateUserJSONData();
+        //  });
     }
 
     populateUserJSONData() {

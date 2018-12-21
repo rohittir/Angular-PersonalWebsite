@@ -41,17 +41,17 @@ export class JSONDataService {
         return this._http.get(fileName);
     }
 
-    public fetchUserData(): Observable<any> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/');
-    }
+    // public fetchUserData(): Observable<any> {
+    //     return this._http.get(this._serverConfigService.serverUrl + '/api/profile/');
+    // }
 
-    public fetchUserTimelineData(): Observable<any> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/profile/timeline/');
-    }
+    // public fetchUserTimelineData(): Observable<any> {
+    //     return this._http.get(this._serverConfigService.serverUrl + '/api/profile/timeline/');
+    // }
 
-    public fetchCurrentInspiration(): Observable<any> {
-        return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/');
-    }
+    // public fetchCurrentInspiration(): Observable<any> {
+    //     return this._http.get(this._serverConfigService.serverUrl + '/api/inspiration/');
+    // }
 
 
     //

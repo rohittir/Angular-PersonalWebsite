@@ -3,9 +3,14 @@
 {
     "timeline": [
         {
-            "title": "Looking for new oppertunities",
-            "description": "Expecting to graduate in May 2018 and started exploring new oppertunities. Please contact me using the details mentioned on the home page if you are looking for a software developer.",
-            "date": "April-June 2018"
+            "title": "Started working as a Front End Engineer at Folio Financial, Inc.",
+            "description": "Started working as a full time front end developer for web based online financial and investment products using the stack that includes Angular 4, Node.js, GraphQL and Redux.",
+            "date": "July 2018"
+        },
+        {
+            "title": "Graduated from George Mason University, Fairfax",
+            "description": "Graduated with masters degree in Software Engineering with GPA 3.92.",
+            "date": "May 2018"
         },
         {
             "title": "Created this website",
