@@ -1,0 +1,371 @@
+
+{
+"match_id" : "22518",
+"series_id" : "2697",
+"series_name" : "ICC Cricket World Cup 2019",
+"data_path" : "2019/2019_WC/RSA_WI_MAY26/",
+"header" : {
+"start_time" : "1558863000",
+"end_time" : "1558883400",
+"state" : "complete",
+"match_desc" : "5th Warm-up game",
+"type" : "ODI",
+"state_title" : "No Result",
+"toss" : "West Indies elect to bowl",
+"status" : "No result"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "County Ground",
+"location" : "Bristol, England"
+,
+"timezone": "+01:00",
+"lat": "51.477246",
+"long": "-2.584212"
+}
+,
+"over_summary" : {
+"over" : "5",
+"ball_def": "30",
+"rem_over" : "5",
+"runs" : "45",
+"wickets" : "0",
+"fours" : "7",
+"sixes" : "1"
+},
+"bat_team" : {"id" : "11",
+"name" : "RSA",
+"innings":[
+{
+"id" : "1",
+"score" : "95",
+"wkts" : "0"
+,"overs" : "12.4"
+}
+]}
+,
+"batsman" : [
+{
+"id" : "8520",
+"name" : "de Kock",
+"strike":"1",
+"r" : "37",
+"b" : "30",
+"4s" : "7",
+"6s" : "0"
+}
+,{
+"id" : "314",
+"name" : "Amla",
+"strike":"0",
+"r" : "51",
+"b" : "46",
+"4s" : "8",
+"6s" : "1"
+}
+],
+"bowler" : [
+{
+"id" : "7736",
+"name" : "A Russell",
+"o" : "2.2",
+"m" : "0",
+"r" : "18",
+"w" : "0"
+}
+]
+,
+"crr" : "7.5",
+"target" : "",
+"prtshp" : "95(76)",
+"comm_lines" : [
+{
+"timestamp" : "1558881859650",
+"comm" : "<b>That looks done<\/b>. Yes, the players are shaking hands; they're done waiting, warming up in this cold, only to go back inside in less than five minutes. <b>Match called off<\/b>. The only positive that could be drawn out of this contest was the form that Amla and de Kock have carried through. But really nothing apart from that for either side to claim out of this 'practice'. It was all stop-start, stop-start. Do join us then tomorrow, as we line up two more matches, with hopefully some better weather. Until then, on behalf of us, ta ta!!"
+}
+,{
+"timestamp" : "1558881856650",
+"comm" : "<b>15:45 Local Time:<\/b> It's become a habit - rain stops play. Again. Yest another very, very irritating drizzle."
+}
+,{
+"timestamp" : "1558881853650",
+"o_no" : "12.4",
+"i_id" : "1",
+"score" : "95",
+"comm" : "A Russell to Amla, 1 run, knocked away to mid-on, quick legs. Wait, no wait, oh no .."
+}
+,{
+"timestamp" : "1558881817567",
+"o_no" : "12.3",
+"i_id" : "1",
+"score" : "94",
+"comm" : "A Russell to Amla, no run, yorker. Amla falls over a bit, but will squeeze it out"
+}
+,{
+"timestamp" : "1558881790562",
+"o_no" : "12.3",
+"i_id" : "1",
+"score" : "94",
+"comm" : "A Russell to Amla, <b>wide<\/b>, too short. Firey kick up off the pitch, over the leaving Amla, sending the keeper into another hop"
+}
+,{
+"timestamp" : "1558881754686",
+"o_no" : "12.2",
+"i_id" : "1",
+"score" : "93",
+"comm" : "A Russell to de Kock, 1 run, length, stays ramped just outside off to run it down to third man"
+}
+,{
+"timestamp" : "1558881722095",
+"o_no" : "12.1",
+"i_id" : "1",
+"score" : "92",
+"evt" : "four",
+"comm" : "A Russell to de Kock, <b>FOUR<\/b>, delicately cut, Russell keeps it short, and Quinton continues milking them there, teasing third man to the fence, where Cottrell, oh poor old Cottrell chases, dives, loses his pants and can't stop the ball either"
+}
+,{
+"score" : "88",
+"wkts" : "0",
+"o_no" : "11.6",
+"i_id" : "1",
+"o_summary" : "0 1 4 1 6 4 ",
+"runs" : "16",
+"bat_s_name" :"314",
+"bat_s_runs" :"50",
+"bat_s_balls" :"44",
+"bat_ns_name" :"8520",
+"bat_ns_runs" :"32",
+"bat_ns_balls" :"28",
+"bowl_name" :"11442",
+"bowl_overs" :"1",
+"bowl_maidens" :"0",
+"bowl_runs" :"16",
+"bowl_wickets" :"0",
+"timestamp" : "1558881658682",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558881658667",
+"o_no" : "11.6",
+"i_id" : "1",
+"score" : "88",
+"evt" : "fifty",
+"comm" : "Thomas to Amla, <b>FOUR<\/b>, 46 runs of timing .. and four now off the edge. Thomas finally seemed to have hit the right length, drawing Amla into the drive, which he's a little lazy to, sucking the inside edge streakily past his stumps"
+}
+,{
+"timestamp" : "1558881614282",
+"o_no" : "11.5",
+"i_id" : "1",
+"score" : "84",
+"evt" : "six",
+"comm" : "Thomas to Amla, <b>SIX<\/b>, keeps it short. Amla sinks at first, and then goes firmly up to cut it uppishly over third man"
+}
+,{
+"timestamp" : "1558881586648",
+"o_no" : "11.4",
+"i_id" : "1",
+"score" : "78",
+"comm" : "Thomas to de Kock, 1 run, swipes hard off the legs, there's protection in the deep round the corner"
+}
+,{
+"timestamp" : "1558881548897",
+"o_no" : "11.3",
+"i_id" : "1",
+"score" : "77",
+"evt" : "four",
+"comm" : "Thomas to de Kock, <b>FOUR<\/b>, it's Thomas' turn now to fall into the excessive short trap. Predictably dug in into the pitch, but gets up only as far as the shoulder which Quinton hacks away powerfully into deep mid-wicket"
+}
+,{
+"timestamp" : "1558881504617",
+"o_no" : "11.2",
+"i_id" : "1",
+"score" : "73",
+"comm" : "Thomas to Amla, 1 run, cutting back in off a back of a length, dabbed off the tummy to third man"
+}
+,{
+"timestamp" : "1558881468771",
+"o_no" : "11.1",
+"i_id" : "1",
+"score" : "72",
+"comm" : "Thomas to Amla, no run, 133kph, full floater outside off. Amla throws his bat out, but not quite close enough to connect on his drive"
+}
+,{
+"timestamp" : "1558881434779",
+"comm" : "<b>Oshane Thomas, right-arm fast, comes into the attack<\/b>"
+}
+,{
+"score" : "72",
+"wkts" : "0",
+"o_no" : "10.6",
+"i_id" : "1",
+"o_summary" : "1 4 1 0 0 4 ",
+"runs" : "10",
+"bat_s_name" :"8520",
+"bat_s_runs" :"27",
+"bat_s_balls" :"26",
+"bat_ns_name" :"314",
+"bat_ns_runs" :"39",
+"bat_ns_balls" :"40",
+"bowl_name" :"7736",
+"bowl_overs" :"1",
+"bowl_maidens" :"0",
+"bowl_runs" :"11",
+"bowl_wickets" :"0",
+"timestamp" : "1558881392073",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558881392058",
+"o_no" : "10.6",
+"i_id" : "1",
+"score" : "72",
+"evt" : "four",
+"comm" : "A Russell to de Kock, <b>FOUR<\/b>, and one too many .. Russell couldn't resist, getting the better of Quinton with two bouncers. And so he goes for the third, without the earlier venom, allowing Quinton to stand up to it and hook it away behind square"
+}
+,{
+"timestamp" : "1558881354126",
+"o_no" : "10.5",
+"i_id" : "1",
+"score" : "68",
+"comm" : "A Russell to de Kock, no run, 138kph, another cross-seamed bumper, which QdK once again is caught in two minds to as he ducks inside the line now"
+}
+,{
+"timestamp" : "1558881323536",
+"o_no" : "10.4",
+"i_id" : "1",
+"score" : "68",
+"comm" : "A Russell to de Kock, no run, sharp bouncer, head-high, getting Quinton in quite a tangle as he sways out eventually"
+}
+,{
+"timestamp" : "1558881302293",
+"o_no" : "10.3",
+"i_id" : "1",
+"score" : "68",
+"comm" : "A Russell to Amla, 1 run, tightens up closer to the stumps, and Amla deflects the dab, third man"
+}
+,{
+"timestamp" : "1558881254288",
+"o_no" : "10.2",
+"i_id" : "1",
+"score" : "67",
+"evt" : "four",
+"comm" : "A Russell to Amla, <b>FOUR<\/b>, sitting up wide outside off. Amla's in <i>his<\/i> mood today, and never mind the breaks, he keeps going on - staying late and cutting it away backward of point easily"
+}
+,{
+"timestamp" : "1558881218418",
+"o_no" : "10.1",
+"i_id" : "1",
+"score" : "63",
+"comm" : "A Russell to de Kock, 1 run, 132kph, short, quick, which Quinton goes up to and pulls off the splice into backward square leg"
+}
+,{
+"score" : "62",
+"wkts" : "0",
+"o_no" : "9.6",
+"i_id" : "1",
+"o_summary" : "0 0 4 1 0 1 ",
+"runs" : "6",
+"bat_s_name" :"8520",
+"bat_s_runs" :"22",
+"bat_s_balls" :"22",
+"bat_ns_name" :"314",
+"bat_ns_runs" :"34",
+"bat_ns_balls" :"38",
+"bowl_name" :"8313",
+"bowl_overs" :"5",
+"bowl_maidens" :"0",
+"bowl_runs" :"29",
+"bowl_wickets" :"0",
+"timestamp" : "1558881150621",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558881150606",
+"o_no" : "9.6",
+"i_id" : "1",
+"score" : "62",
+"comm" : "Holder to de Kock, 1 run, another half-poke away from his body, again, no feet in this one, nearly drags it onto his stumps, running off the inside edge behind square"
+}
+,{
+"timestamp" : "1558881116190",
+"o_no" : "9.5",
+"i_id" : "1",
+"score" : "61",
+"comm" : "Holder to de Kock, no run, <b>beaten big time<\/b>. A wobbly length delivery, angling across which Quinton stands frozen in his crease and pokes out to at an angle - for the ball to whizz over"
+}
+,{
+"timestamp" : "1558881078983",
+"o_no" : "9.4",
+"i_id" : "1",
+"score" : "61",
+"comm" : "Holder to Amla, 1 run, length, outside off, slapped off the under-half in front of cover, but Quinton's judged and called the quick single well"
+}
+,{
+"timestamp" : "1558868059104",
+"comm" : "A nice cheer from the crowd as the players make their way out. PP1: 1-6, PP2: 7-25, PP3: 26-31. The bowling run-up markings seem to have been washed out in the rains, which Brathwaite has taken upon himself to mark out again with spray paint."
+}
+,{
+"timestamp" : "1558868056104",
+"comm" : "<b>15:16 Local Time:<\/b> We're hearing it has stopped raining and we should have a <b>31-over contest<\/b> starting at <b>15:30 local<\/b> | 8:00pm IST. Yup, it has been confirmed. The sun is out, the West Indian players are practicing around and the floodlights are well and truly shining in full force."
+}
+,{
+"timestamp" : "1558868053104",
+"comm" : "<b>14:34 Local Time:<\/b> Nothing much to report here folks. Just the rain, the covers, the wait, and the dismay .. Also, in some relative positive news, this one hasn't been as boring as the match in Cardiff, where Pakistan and Bangladesh turned up to the ground only to watch it rain all day long."
+}
+,{
+"timestamp" : "1558868050104",
+"comm" : "<b>14:00 Local Time:<\/b> Spoke too soon. <b>Another shower<\/b>, another bout of covers being brought back on, exactly a minute before play was to restart."
+}
+,{
+"timestamp" : "1558868047104",
+"comm" : "<b>13:46 Local Time:<\/b> Good news - the covers are coming off and it looks very bright out there. Play to resume at <b>2pm local time<\/b> .. 39-overs-a-side contest - <b>6:30pm IST<\/b>."
+}
+,{
+"timestamp" : "1558868044104",
+"comm" : "Just an fyi: We are already losing overs by the minute. It's already been over 100 minutes of play stoppage overall."
+}
+,{
+"timestamp" : "1558868041104",
+"comm" : "<b>12:35 Local Time:<\/b> Seriously, there's nothing to report. The drizzle remains a drizzle. The covers which were on, remain on. Google promises a better forecast as we go on, so cross everything .."
+}
+,{
+"timestamp" : "1558868038104",
+"comm" : "<b>11:56 Local Time:<\/b> It started. It stopped. It started. It stopped. This one's courtesy another very slight drizzle."
+}
+,{
+"timestamp" : "1558868035104",
+"o_no" : "9.3",
+"i_id" : "1",
+"score" : "60",
+"evt" : "four",
+"comm" : "Holder to Amla, <b>FOUR<\/b>, 134kph, wobbly overpitch. Amla then goes behind in the crease, to crunch a proper extra cover drive .. and the <b>rains are back<\/b>"
+}
+,{
+"timestamp" : "1558868004911",
+"o_no" : "9.2",
+"i_id" : "1",
+"score" : "56",
+"comm" : "Holder to Amla, no run, 129kph, back of a length, making Amla jump on his back foot, but eventually only to get on top of it and defend"
+}
+,{
+"timestamp" : "1558867969251",
+"o_no" : "9.1",
+"i_id" : "1",
+"score" : "56",
+"comm" : "Holder to Amla, no run, hops, beside the line in yet another steery-defence to cover"
+}
+,{
+"timestamp" : "1558867960353",
+"comm" : "<b>Jason Holder [4.0-0-23-0] is back into the attack<\/b>"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

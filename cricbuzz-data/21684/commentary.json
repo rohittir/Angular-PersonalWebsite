@@ -1,0 +1,51 @@
+
+{
+"match_id" : "21684",
+"series_id" : "2780",
+"series_name" : "County Championship Division One 2019",
+"data_path" : "2019/2019__COUNTY_DIV1/YORKS_HAM_MAY27_MAY30/",
+"header" : {
+"timeDiff" : "14:9",
+"start_time" : "1558951200",
+"end_time" : "1559235600",
+"state" : "preview",
+"match_desc" : "County Div 1",
+"type" : "TEST",
+"state_title" : "Preview",
+"toss" : "",
+"status" : "Starts in 14 hrs 09 mins"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Headingley",
+"location" : "Leeds, England"
+,
+"timezone": "+01:00",
+"lat": "53.817622",
+"long": "-1.58211"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558873378829",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558873370061",
+"comm" : "<b>Yorkshire<\/b> (From): Adam Lyth, Harry Brook, Gary Ballance, Tom Kohler-Cadmore, Jack Leaning, Jonathan Tattersall(w), Dominic Bess, Ben Coad, Duanne Olivier, Mathew Pillans, Steven Patterson(c), Josh Poysden"
+}
+,{
+"timestamp" : "1558873204580",
+"comm" : "<b>Hampshire<\/b> (From): Joe Weatherley, Oliver Soames, Ajinkya Rahane, Sam Northeast(c), Tom Alsop(w), Aneurin Donald, Ian Holland, Keith Barker, Kyle Abbott, Mason Crane, Fidel Edwards, Rilee Rossouw, Gareth Berg, James Fuller, Lewis McManus, Felix Organ"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

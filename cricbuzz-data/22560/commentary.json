@@ -1,0 +1,169 @@
+
+{
+"match_id" : "22560",
+"series_id" : "2825",
+"series_name" : "Sri Lanka A tour of India 2019",
+"data_path" : "2019/2019_INDA_SLA/INDA_SLA_MAY25_MAY28/",
+"header" : {
+"start_time" : "1558756800",
+"end_time" : "1559041200",
+"state" : "stump",
+"match_desc" : "1st Unofficial Test",
+"no_comm" : 1,
+"type" : "TEST",
+"state_title" : "Stumps",
+"toss" : "India A elect to bat",
+"status" : "Day 2: Stumps - SL A trail by 539 runs"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Union Gymkhana Ground",
+"location" : "Belagavi, India"
+,
+"timezone": "+05:30",
+"lat": "15.861890",
+"long": "74.504946"
+}
+,
+"over_summary" : {
+"over" : "0",
+"ball_def": "0",
+"rem_over" : "0",
+"runs" : "0",
+"wickets" : "0",
+"fours" : "0",
+"sixes" : "0"
+},
+"bat_team" : {"id" : "43",
+"name" : "SLA",
+"innings":[
+{
+"id" : "2",
+"score" : "83",
+"wkts" : "4"
+,"overs" : "28"
+}
+]}
+,
+"bow_team" : {"id" : "78",
+"name" : "INDA",
+"innings":[
+{
+"id" : "1",
+"score" : "622",
+"decl" : "true",
+"wkts" : "5"
+,"overs" : "142"
+}
+]}
+,
+"batsman" : [
+{
+"id" : "6727",
+"name" : "Priyanjan",
+"strike":"0",
+"r" : "22",
+"b" : "42",
+"4s" : "3",
+"6s" : "1"
+}
+,{
+"id" : "7884",
+"name" : "Dickwella",
+"strike":"0",
+"r" : "22",
+"b" : "25",
+"4s" : "4",
+"6s" : "0"
+}
+],
+"bowler" : [
+{
+"id" : "8924",
+"name" : "Rajpoot",
+"o" : "7",
+"m" : "4",
+"r" : "3",
+"w" : "0"
+}
+]
+,
+"crr" : "2.96",
+"overs_left" : "0",
+"target" : "",
+"prtshp" : "33(47)",
+"last_wkt" : "9495",
+"last_wkt_name" : "Samarawickrama",
+"last_wkt_score" : "31 (56)",
+"comm_lines" : [
+{
+"timestamp" : "1558870771351",
+"comm" : "<b>Day 2: Stumps<\/b> - Sri Lanka A - 83/4 (28.0), Ashan Priyanjan 22(42), Niroshan Dickwella 22(25), trail by 539 runs"
+}
+,{
+"timestamp" : "1558862282590",
+"comm" : "<b>Day 2: Innings Break <\/b>- India A - 622/5 decl (142.0)"
+}
+,{
+"timestamp" : "1558852489579",
+"comm" : "<b>Day 2: Tea<\/b> - India A - 617/4 (141.0) (113.0), Anmolpreet Singh 113(162), Siddhesh Lad 74(86)"
+}
+,{
+"timestamp" : "1558852442173",
+"comm" : "<b>Day 2: Lunch<\/b> - India A - 482/4 (113.0), Anmolpreet Singh 51(74), Siddhesh Lad 1(6)"
+}
+,{
+"timestamp" : "1558784696855",
+"comm" : "<b>Day 1: Stumps<\/b> - India A - 376/1 (87.0), Abhimanyu Easwaran 189(250), Jayant Yadav 6(14)"
+}
+,{
+"timestamp" : "1558774366710",
+"comm" : "<b>Day 1: Tea<\/b> - India A - 238/0 (53.0), Priyank Panchal 101(158), Abhimanyu Easwaran 125(163)"
+}
+,{
+"timestamp" : "1558764434892",
+"comm" : "<b>Day 1: Lunch<\/b> - India A - 113/0 (25.0), Priyank Panchal 42(69), Abhimanyu Easwaran 65(83)"
+}
+,{
+"timestamp" : "1558757173738",
+"comm" : "<b>Session updates only<\/b>"
+}
+,{
+"timestamp" : "1558757162555",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558757160818",
+"comm" : "<b>Sri Lanka A<\/b> (Playing XI): Niroshan Dickwella(w), Sadeera Samarawickrama, Ashan Priyanjan(c), Bhanuka Rajapaksa, Pathum Nissanka, Sangeeth Cooray, Lahiru Kumara, Vishwa Fernando, Chamika Karunaratne, Lakshan Sandakan, Akila Dananjaya"
+}
+,{
+"timestamp" : "1558757070809",
+"comm" : "<b>India A<\/b> (Playing XI): Priyank Panchal(c), Abhimanyu Easwaran, Anmolpreet Singh, Ricky Bhui, Siddhesh Lad, Srikar Bharat(w), Prashant Chopra, Shivam Dube, Sandeep Warrier, Rahul Chahar, Jayant Yadav, Ankit Rajpoot"
+}
+,{
+"timestamp" : "1558756477314",
+"comm" : "<b>India A have won the toss and have opted to bat<\/b>"
+}
+,{
+"timestamp" : "1558697033411",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558697031963",
+"comm" : "<b>Sri Lanka A<\/b> (From): Niroshan Dickwella(w), Sadeera Samarawickrama, Ashan Priyanjan(c), Bhanuka Rajapaksa, Pathum Nissanka, Priyamal Perera, Sangeeth Cooray, Lahiru Kumara, Dushmantha Chameera, Vishwa Fernando, Chamika Karunaratne, Lakshan Sandakan, Akila Dananjaya, Kamindu Mendis"
+}
+,{
+"timestamp" : "1558696927376",
+"comm" : "<b>India A<\/b> (From): Shubman Gill, Ishan Kishan(w/c), Anmolpreet Singh, Ricky Bhui, Prashant Chopra, Ruturaj Gaikwad, Shivam Dube, Deepak Hooda, Washington Sundar, Shreyas Gopal, Mayank Markande, Sandeep Warrier, Ishan Porel, Tushar Deshpande"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

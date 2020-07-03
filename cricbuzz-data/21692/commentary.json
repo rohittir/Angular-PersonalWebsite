@@ -1,0 +1,51 @@
+
+{
+"match_id" : "21692",
+"series_id" : "2781",
+"series_name" : "County Championship Division Two 2019",
+"data_path" : "2019/2019_COUNTY_DIV2/LEIC_DERBY_MAY27_MAY30/",
+"header" : {
+"timeDiff" : "14:9",
+"start_time" : "1558951200",
+"end_time" : "1559235600",
+"state" : "preview",
+"match_desc" : "County Div 2",
+"type" : "TEST",
+"state_title" : "Preview",
+"toss" : "",
+"status" : "Starts in 14 hrs 09 mins"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Grace Road",
+"location" : "Leicester, England"
+,
+"timezone": "+01:00",
+"lat": "52.607861",
+"long": "-1.142709"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558870714847",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558870705672",
+"comm" : "<b>Derbyshire<\/b> (From): Luis Reece, Billy Godleman(c), Wayne Madsen, Tom Lace, Alex Hughes, Harvey Hosein(w), Matthew Critchley, Anuj Dal, Logan van Beek, Tony Palladino, Ravi Rampaul, James Taylor"
+}
+,{
+"timestamp" : "1558870597758",
+"comm" : "<b>Leicestershire<\/b> (From): Ateeq Javid, Paul Horton(c), Hasan Azad, Mark Cosgrove, Colin Ackermann, Harry Dearden, Lewis Hill(w), Tom Taylor, Ben Mike, Chris Wright, Mohammad Abbas, Will Davis, Callum Parkinson"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

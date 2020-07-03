@@ -1,0 +1,355 @@
+
+{
+"match_id" : "22420",
+"series_id" : "2812",
+"series_name" : "West Indies Women tour of Ireland 2019",
+"data_path" : "2019/2019_IREW_WIW/IREW_WIW_MAY26/",
+"header" : {
+"start_time" : "1558875600",
+"end_time" : "1558886160",
+"state" : "complete",
+"winning_team_id" : 257,
+"match_desc" : "1st T20I",
+"type" : "T20",
+"state_title" : "WIW Won",
+"toss" : "West Indies Women elect to bat",
+"status" : "WI Women won by 64 runs"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "YMCA Cricket Club",
+"location" : "Dublin, Ireland"
+,
+"timezone": "+01:00",
+"lat": "-6.2190865",
+"long": "53.3312968"
+}
+,
+"over_summary" : {
+"over" : "4",
+"ball_def": "24",
+"rem_over" : "4",
+"runs" : "23",
+"wickets" : "3",
+"fours" : "2",
+"sixes" : "0"
+},
+"bat_team" : {"id" : "189",
+"name" : "IREW",
+"innings":[
+{
+"id" : "2",
+"score" : "75",
+"wkts" : "10"
+,"overs" : "18.4"
+}
+]}
+,
+"bow_team" : {"id" : "257",
+"name" : "WIW",
+"innings":[
+{
+"id" : "1",
+"score" : "139",
+"wkts" : "4"
+,"overs" : "20"
+}
+]}
+,
+"batsman" : [
+{
+"id" : "12044",
+"name" : "Celeste Raack",
+"strike":"0",
+"r" : "9",
+"b" : "8",
+"4s" : "1",
+"6s" : "0"
+}
+],
+"bowler" : [
+{
+"id" : "11255",
+"name" : "Afy Fletcher",
+"o" : "3.4",
+"m" : "0",
+"r" : "14",
+"w" : "4"
+}
+]
+,
+"crr" : "4.02",
+"target" : "140",
+"prtshp" : "",
+"last_wkt" : "9475",
+"last_wkt_name" : "Delany",
+"last_wkt_score" : "0 (0)",
+"comm_lines" : [
+{
+"timestamp" : "1558886227989",
+"comm" : "<b>Result<\/b> - West Indies Women won by 64 runs"
+}
+,{
+"timestamp" : "1558886045818",
+"o_no" : "18.4",
+"i_id" : "2",
+"score" : "75",
+"evt" : "wicket",
+"comm" : "Afy Fletcher to Kim Garth, <b>out<\/b> Lbw!! <b>Kim Garth lbw b Afy Fletcher 46(55) [4s-6]<\/b>"
+}
+,{
+"timestamp" : "1558886044375",
+"comm" : "Afy Fletcher to Kim Garth, <b>THAT'S OUT!!<\/b> Lbw!!"
+}
+,{
+"timestamp" : "1558886014231",
+"o_no" : "18.3",
+"i_id" : "2",
+"score" : "75",
+"evt" : "four",
+"comm" : "Afy Fletcher to Kim Garth, <b>FOUR<\/b>, to deep square leg"
+}
+,{
+"timestamp" : "1558885943671",
+"o_no" : "18.2",
+"i_id" : "2",
+"score" : "71",
+"comm" : "Afy Fletcher to Celeste Raack, 1 run, to deep square leg"
+}
+,{
+"timestamp" : "1558885941033",
+"o_no" : "18.1",
+"i_id" : "2",
+"score" : "70",
+"comm" : "Afy Fletcher to Celeste Raack, no run"
+}
+,{
+"score" : "70",
+"wkts" : "8",
+"o_no" : "17.6",
+"i_id" : "2",
+"o_summary" : "0 1 1 1 4 1 ",
+"runs" : "8",
+"bat_s_name" :"12044",
+"bat_s_runs" :"8",
+"bat_s_balls" :"6",
+"bat_ns_name" :"9476",
+"bat_ns_runs" :"42",
+"bat_ns_balls" :"53",
+"bowl_name" :"11256",
+"bowl_overs" :"4",
+"bowl_maidens" :"0",
+"bowl_runs" :"18",
+"bowl_wickets" :"0",
+"timestamp" : "1558885866129",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558885866114",
+"o_no" : "17.6",
+"i_id" : "2",
+"score" : "70",
+"comm" : "Hayley Matthews to Celeste Raack, 1 run, square of the wicket"
+}
+,{
+"timestamp" : "1558885822738",
+"o_no" : "17.5",
+"i_id" : "2",
+"score" : "69",
+"evt" : "four",
+"comm" : "Hayley Matthews to Celeste Raack, <b>FOUR<\/b>, to third man"
+}
+,{
+"timestamp" : "1558885787599",
+"o_no" : "17.4",
+"i_id" : "2",
+"score" : "65",
+"comm" : "Hayley Matthews to Kim Garth, 1 run, to deep mid-wicket"
+}
+,{
+"timestamp" : "1558885771428",
+"o_no" : "17.3",
+"i_id" : "2",
+"score" : "64",
+"comm" : "Hayley Matthews to Celeste Raack, 1 run, to deep backward point"
+}
+,{
+"timestamp" : "1558885748569",
+"o_no" : "17.2",
+"i_id" : "2",
+"score" : "63",
+"comm" : "Hayley Matthews to Kim Garth, 1 run, to long-on"
+}
+,{
+"timestamp" : "1558885742439",
+"o_no" : "17.1",
+"i_id" : "2",
+"score" : "62",
+"comm" : "Hayley Matthews to Kim Garth, no run"
+}
+,{
+"timestamp" : "1558885741018",
+"comm" : "<b>Hayley Matthews [3.0-0-10-0] is back into the attack<\/b>"
+}
+,{
+"score" : "62",
+"wkts" : "8",
+"o_no" : "16.6",
+"i_id" : "2",
+"o_summary" : "W 1 1 1 1 0 ",
+"runs" : "4",
+"bat_s_name" :"12044",
+"bat_s_runs" :"2",
+"bat_s_balls" :"3",
+"bat_ns_name" :"9476",
+"bat_ns_runs" :"40",
+"bat_ns_balls" :"50",
+"bowl_name" :"11255",
+"bowl_overs" :"3",
+"bowl_maidens" :"0",
+"bowl_runs" :"9",
+"bowl_wickets" :"3",
+"timestamp" : "1558885698506",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558885698491",
+"o_no" : "16.6",
+"i_id" : "2",
+"score" : "62",
+"comm" : "Afy Fletcher to Celeste Raack, no run"
+}
+,{
+"timestamp" : "1558885697300",
+"o_no" : "16.5",
+"i_id" : "2",
+"score" : "62",
+"comm" : "Afy Fletcher to Kim Garth, 1 run, to backward square leg"
+}
+,{
+"timestamp" : "1558885668748",
+"o_no" : "16.4",
+"i_id" : "2",
+"score" : "61",
+"comm" : "Afy Fletcher to Celeste Raack, 1 run, to deep backward point"
+}
+,{
+"timestamp" : "1558885654817",
+"o_no" : "16.3",
+"i_id" : "2",
+"score" : "60",
+"comm" : "Afy Fletcher to Kim Garth, 1 run, to long-off"
+}
+,{
+"timestamp" : "1558885532893",
+"o_no" : "16.2",
+"i_id" : "2",
+"score" : "59",
+"comm" : "Afy Fletcher to Celeste Raack, 1 run, to mid-wicket"
+}
+,{
+"timestamp" : "1558885521454",
+"comm" : "<b>Celeste Raack, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558885481503",
+"o_no" : "16.1",
+"i_id" : "2",
+"score" : "58",
+"evt" : "wicket",
+"comm" : "Afy Fletcher to Lara Maritz, <b>out<\/b> Bowled!! <b>Lara Maritz b Afy Fletcher 1(3)<\/b>"
+}
+,{
+"timestamp" : "1558885479312",
+"comm" : "Afy Fletcher to Lara Maritz, <b>THAT'S OUT!!<\/b> Bowled!!"
+}
+,{
+"score" : "58",
+"wkts" : "7",
+"o_no" : "15.6",
+"i_id" : "2",
+"o_summary" : "1 W 0 1 0 Wd 2 ",
+"runs" : "5",
+"bat_s_name" :"9476",
+"bat_s_runs" :"38",
+"bat_s_balls" :"48",
+"bat_ns_name" :"12762",
+"bat_ns_runs" :"1",
+"bat_ns_balls" :"2",
+"bowl_name" :"9101",
+"bowl_overs" :"4",
+"bowl_maidens" :"1",
+"bowl_runs" :"17",
+"bowl_wickets" :"1",
+"timestamp" : "1558885449761",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558885449746",
+"o_no" : "15.6",
+"i_id" : "2",
+"score" : "58",
+"comm" : "Selman to Kim Garth, 2 runs, to third man"
+}
+,{
+"timestamp" : "1558885376103",
+"o_no" : "15.6",
+"i_id" : "2",
+"score" : "56",
+"comm" : "Selman to Kim Garth, <b>wide<\/b>"
+}
+,{
+"timestamp" : "1558885314281",
+"o_no" : "15.5",
+"i_id" : "2",
+"score" : "55",
+"comm" : "Selman to Kim Garth, no run"
+}
+,{
+"timestamp" : "1558885313754",
+"o_no" : "15.4",
+"i_id" : "2",
+"score" : "55",
+"comm" : "Selman to Lara Maritz, 1 run, square of the wicket"
+}
+,{
+"timestamp" : "1558885306493",
+"o_no" : "15.3",
+"i_id" : "2",
+"score" : "54",
+"comm" : "Selman to Lara Maritz, no run"
+}
+,{
+"timestamp" : "1558885232694",
+"comm" : "<b>Lara Maritz, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558885117001",
+"o_no" : "15.2",
+"i_id" : "2",
+"score" : "54",
+"evt" : "wicket",
+"comm" : "Selman to Sophie MacMahon, <b>out<\/b> Caught by Kycia Knight!! <b>Sophie MacMahon c Kycia Knight b Selman 0(2)<\/b>"
+}
+,{
+"timestamp" : "1558885115493",
+"comm" : "Selman to Sophie MacMahon, <b>THAT'S OUT!!<\/b> Caught!!"
+}
+,{
+"timestamp" : "1558885071402",
+"o_no" : "15.1",
+"i_id" : "2",
+"score" : "54",
+"comm" : "Selman to Kim Garth, 1 run, to short mid-wicket"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

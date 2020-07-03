@@ -1,0 +1,59 @@
+
+{
+"match_id" : "22521",
+"series_id" : "2697",
+"series_name" : "ICC Cricket World Cup 2019",
+"data_path" : "2019/2019_WC/ENG_AFG_MAY27/",
+"header" : {
+"timeDiff" : "13:39",
+"start_time" : "1558949400",
+"end_time" : "1558978200",
+"state" : "preview",
+"match_desc" : "8th Warm-up game",
+"type" : "ODI",
+"state_title" : "Preview",
+"toss" : "",
+"status" : "Starts in 13 hrs 39 mins"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Kennington Oval",
+"location" : "London, England"
+,
+"timezone": "+01:00",
+"lat": "51.48368",
+"long": "-0.114885"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558884861286",
+"evt" : "video-embed",
+"img" : "170101",
+"link" : "36592",
+"comm" : "England Preview- Hosts are overwhelming favourites, says Harsha Bhogle",
+"isLive": false
+}
+,{
+"timestamp" : "1558884861177",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558884856026",
+"comm" : "<b>England<\/b> (From): Jason Roy, Jonny Bairstow, James Vince, Ben Stokes, Jos Buttler(w/c), Moeen Ali, Chris Woakes, Tom Curran, Liam Plunkett, Adil Rashid, Jofra Archer, Liam Dawson, Mark Wood, Joe Root, Eoin Morgan"
+}
+,{
+"timestamp" : "1558884734136",
+"comm" : "<b>Afghanistan<\/b> (From): Mohammad Shahzad(w), Hazratullah Zazai, Rahmat Shah, Hashmatullah Shahidi, Samiullah Shinwari, Asghar Afghan, Mohammad Nabi, Gulbadin Naib(c), Najibullah Zadran, Rashid Khan, Dawlat Zadran, Mujeeb Ur Rahman, Noor Ali Zadran, Aftab Alam, Hamid Hassan"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

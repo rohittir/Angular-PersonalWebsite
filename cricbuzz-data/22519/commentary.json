@@ -1,0 +1,90 @@
+
+{
+"match_id" : "22519",
+"series_id" : "2697",
+"series_name" : "ICC Cricket World Cup 2019",
+"data_path" : "2019/2019_WC/PAK_BAN_MAY26/",
+"header" : {
+"start_time" : "1558863000",
+"end_time" : "1558875780",
+"state" : "abandon",
+"match_desc" : "6th Warm-up game",
+"type" : "ODI",
+"state_title" : "Abandon",
+"toss" : "",
+"status" : "Match abandoned without a ball bowled(no toss)"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Sophia Gardens",
+"location" : "Cardiff, Wales"
+,
+"timezone": "+01:00",
+"lat": "51.484257",
+"long": "-3.189187"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558875660687",
+"comm" : "<b>14:02 Local Time:<\/b> Cripes! <b>The match has been called off<\/b>. Gee! That escalated quickly. I for a moment didn't expect that because the conditions were improving but seems like both teams were not ready to take any chances since it's a warm-up game. What a bummer though. Pakistan would've hoped for some game-time considering their poor run in ODIs. But the weather gods showed no mercy. Anyway, time for us to leave now. Until next time, it's a goodbye from us here. Ta-ta!"
+}
+,{
+"timestamp" : "1558875130845",
+"comm" : "<b>13:52 Local Time:<\/b> Some positive news trickling in. Not only the rain has stopped, even the cut-off time has been pushed to 4:15 pm local. Let's hope for the best."
+}
+,{
+"timestamp" : "1558872073520",
+"comm" : "<b>13:01 Local Time:<\/b> Nothing much to update from Cardiff. It's still raining and apparently, they have taken lunch. We are hearing the cut-off time is 3pm, still some time left. So, let's keep our fingers crossed."
+}
+,{
+"timestamp" : "1558868279019",
+"comm" : "<b>11:58 Local Time:<\/b> <b>An update from ICC on Twitter<\/b>: Just as predicted, the shower looks a short one, and the covers are being removed. Fingers crossed the rain stays away!"
+}
+,{
+"timestamp" : "1558861322867",
+"comm" : "<b>10:02 Local Time:<\/b> <b>Bad news folks<\/b>. It's pouring in Cardiff, the covers are firmly in place and looks like the toss is set to be delayed. Stick around for more updates."
+}
+,{
+"timestamp" : "1558799750762",
+"comm" : "Skipper Mashrafe Mortaza has been echoing the same words that he has the best 15 at his disposal that Bangladesh could have offered and that the squad will have to pull up the socks to scale certain heights at the World Cup. A warm up game against Pakistan now and then against India should act as perfect dress rehearsal before the actual tournament begins."
+}
+,{
+"timestamp" : "1558799750661",
+"comm" : "Pakistan apart from Babar Azam had other batters chipping in at irregular intervals. And that has been the root cause of them failing to score wins. Even if the runs have been tall as was the case in England, the bowlers failed to deliver the goods."
+}
+,{
+"timestamp" : "1558799750568",
+"evt" : "video-embed",
+"img" : "170105",
+"link" : "36594",
+"comm" : "Pakistan Preview- Batting key to their slim hopes, says Harsha Bhogle",
+"isLive": false
+}
+,{
+"timestamp" : "1558799750560",
+"comm" : "Pakistan after a blow against Afghanistan have their task cut out. They were reminded of their winless streak, again! Nothing seems to be going right for them. They haven't been able to strike all the chords at the same time. Something or the other has gone wrong at the same time. Bangladesh though are cock-a-hoop after their tri-series win. Their batters have been able to stock the runs and their bowlers managed to scalp timely wickets."
+}
+,{
+"timestamp" : "1558799750459",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558799748387",
+"comm" : "<b>Pakistan<\/b> (From): Imam-ul-Haq, Fakhar Zaman, Babar Azam, Haris Sohail, Mohammad Hafeez, Shoaib Malik, Sarfaraz Ahmed(w/c), Imad Wasim, Hasan Ali, Shadab Khan, Wahab Riaz, Shaheen Afridi, Asif Ali, Mohammad Hasnain, Mohammad Amir"
+}
+,{
+"timestamp" : "1558799696694",
+"comm" : "<b>Bangladesh<\/b> (From): Tamim Iqbal, Liton Das, Shakib Al Hasan, Soumya Sarkar, Mushfiqur Rahim(w), Mahmudullah, Sabbir Rahman, Mohammad Saifuddin, Mashrafe Mortaza(c), Mehidy Hasan, Rubel Hossain, Mustafizur Rahman, Mohammad Mithun, Abu Jayed, Mosaddek Hossain"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

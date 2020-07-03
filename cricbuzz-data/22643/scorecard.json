@@ -1,0 +1,477 @@
+
+{"Innings":[
+{
+"innings_id" : "2",
+"bat_team_id" : "56",
+"bat_team_name" : "Pakistan U19",
+"bowl_team_id" : "172",
+"score" : "208",
+"wkts" : "10",
+"ovr" : "47.3",
+"batsmen": [
+{
+"id":"14241",
+"out_desc":"c Rohan Sanjaya b Ashian Daniel",
+"r":"31",
+"b":"48",
+"4s":"3",
+"6s":"0"
+}
+,{
+"id":"15037",
+"out_desc":"run out (Dilshan Madushanka/Kamil Mishara) ",
+"r":"51",
+"b":"65",
+"4s":"5",
+"6s":"1"
+}
+,{
+"id":"13192",
+"out_desc":"run out (Mohammed Shamaaz) ",
+"r":"47",
+"b":"56",
+"4s":"4",
+"6s":"0"
+}
+,{
+"id":"13193",
+"out_desc":"c Avishka Tharindu b Dilshan Madushanka",
+"r":"36",
+"b":"50",
+"4s":"2",
+"6s":"0"
+}
+,{
+"id":"15043",
+"out_desc":"c Rohan Sanjaya b Sudeera Thilakaratne",
+"r":"18",
+"b":"33",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"12151",
+"out_desc":"not out",
+"r":"18",
+"b":"24",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15039",
+"out_desc":"c Mohammed Shamaaz b Sudeera Thilakaratne",
+"r":"0",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15041",
+"out_desc":"run out (Rohan Sanjaya/Kamil Mishara) ",
+"r":"1",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15040",
+"out_desc":"lbw b Sudeera Thilakaratne",
+"r":"0",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"13246",
+"out_desc":"lbw b Navod Paranavithana",
+"r":"1",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15035",
+"out_desc":"lbw b Navod Paranavithana",
+"r":"0",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+],
+"bowlers": [
+{
+"id": "15065",
+"o":"4",
+"m":"0",
+"r":"30",
+"w":"0",
+"n":"0",
+"wd":"1"
+}
+,{
+"id": "15067",
+"o":"8",
+"m":"0",
+"r":"34",
+"w":"1",
+"n":"1",
+"wd":"1"
+}
+,{
+"id": "15077",
+"o":"10",
+"m":"1",
+"r":"30",
+"w":"1",
+"n":"0",
+"wd":"0"
+}
+,{
+"id": "14250",
+"o":"8",
+"m":"0",
+"r":"34",
+"w":"0",
+"n":"0",
+"wd":"1"
+}
+,{
+"id": "15066",
+"o":"10",
+"m":"0",
+"r":"48",
+"w":"3",
+"n":"0",
+"wd":"0"
+}
+,{
+"id": "13902",
+"o":"7.3",
+"m":"0",
+"r":"31",
+"w":"2",
+"n":"0",
+"wd":"0"
+}
+]
+,"extras":{
+"t":"5",
+"b":"0",
+"lb":"1",
+"wd":"3",
+"nb":"1",
+"p":"0"
+}
+,"fow": [
+{
+"id": "14241",
+"score":"85",
+"wkt_nbr":"1",
+"over":"18.4"
+}
+,{
+"id": "15037",
+"score":"85",
+"wkt_nbr":"2",
+"over":"19"
+}
+,{
+"id": "13193",
+"score":"155",
+"wkt_nbr":"3",
+"over":"34.1"
+}
+,{
+"id": "13192",
+"score":"179",
+"wkt_nbr":"4",
+"over":"39.2"
+}
+,{
+"id": "15043",
+"score":"197",
+"wkt_nbr":"5",
+"over":"44.1"
+}
+,{
+"id": "15039",
+"score":"197",
+"wkt_nbr":"6",
+"over":"44.3"
+}
+,{
+"id": "15041",
+"score":"205",
+"wkt_nbr":"7",
+"over":"46.2"
+}
+,{
+"id": "15040",
+"score":"205",
+"wkt_nbr":"8",
+"over":"46.4"
+}
+,{
+"id": "13246",
+"score":"208",
+"wkt_nbr":"9",
+"over":"47.1"
+}
+,{
+"id": "15035",
+"score":"208",
+"wkt_nbr":"10",
+"over":"47.3"
+}
+]
+,"pplay" : [
+{
+"type" : "mandatory",
+"from" : "0.1",
+"to" : "10",
+"runs" : "55",
+"Wickets" : ""
+}
+]
+}
+,{
+"innings_id" : "1",
+"bat_team_id" : "172",
+"bat_team_name" : "Sri Lanka U19",
+"bowl_team_id" : "56",
+"score" : "234",
+"wkts" : "9",
+"ovr" : "50",
+"batsmen": [
+{
+"id":"13902",
+"out_desc":"c Suleman Shafqat b Saim Ayub",
+"r":"54",
+"b":"94",
+"4s":"3",
+"6s":"0"
+}
+,{
+"id":"13886",
+"out_desc":"c Suleman Shafqat b Mohammad Junaid",
+"r":"65",
+"b":"94",
+"4s":"4",
+"6s":"0"
+}
+,{
+"id":"15076",
+"out_desc":"lbw b Mohammad Taha",
+"r":"42",
+"b":"47",
+"4s":"3",
+"6s":"0"
+}
+,{
+"id":"13237",
+"out_desc":"c Haider Ali b Mohammad Junaid",
+"r":"21",
+"b":"19",
+"4s":"0",
+"6s":"1"
+}
+,{
+"id":"13930",
+"out_desc":"run out (Rohail Nazir)",
+"r":"17",
+"b":"20",
+"4s":"1",
+"6s":"0"
+}
+,{
+"id":"15064",
+"out_desc":"lbw b Mohammad Taha",
+"r":"10",
+"b":"13",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15065",
+"out_desc":"c & b Mohammad Wasim Jr",
+"r":"9",
+"b":"8",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15066",
+"out_desc":"b Mohammad Wasim Jr",
+"r":"0",
+"b":"1",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"14250",
+"out_desc":"run out (Suleman Shafqat)",
+"r":"0",
+"b":"3",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15077",
+"out_desc":"not out",
+"r":"1",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+,{
+"id":"15067",
+"out_desc":"not out",
+"r":"0",
+"b":"2",
+"4s":"0",
+"6s":"0"
+}
+],
+"bowlers": [
+{
+"id": "15035",
+"o":"7",
+"m":"0",
+"r":"34",
+"w":"0",
+"n":"2",
+"wd":"1"
+}
+,{
+"id": "15041",
+"o":"5.1",
+"m":"0",
+"r":"16",
+"w":"0",
+"n":"0",
+"wd":"3"
+}
+,{
+"id": "13246",
+"o":"10",
+"m":"0",
+"r":"52",
+"w":"0",
+"n":"0",
+"wd":"1"
+}
+,{
+"id": "14241",
+"o":"7",
+"m":"0",
+"r":"27",
+"w":"1",
+"n":"0",
+"wd":"0"
+}
+,{
+"id": "15039",
+"o":"10",
+"m":"0",
+"r":"47",
+"w":"2",
+"n":"0",
+"wd":"0"
+}
+,{
+"id": "15040",
+"o":"5",
+"m":"0",
+"r":"28",
+"w":"2",
+"n":"0",
+"wd":"1"
+}
+,{
+"id": "13193",
+"o":"5.5",
+"m":"0",
+"r":"27",
+"w":"2",
+"n":"0",
+"wd":"5"
+}
+]
+,"extras":{
+"t":"15",
+"b":"1",
+"lb":"1",
+"wd":"11",
+"nb":"2",
+"p":"0"
+}
+,"fow": [
+{
+"id": "13902",
+"score":"122",
+"wkt_nbr":"1",
+"over":"30.2"
+}
+,{
+"id": "13886",
+"score":"135",
+"wkt_nbr":"2",
+"over":"33.3"
+}
+,{
+"id": "13237",
+"score":"175",
+"wkt_nbr":"3",
+"over":"39.1"
+}
+,{
+"id": "13930",
+"score":"213",
+"wkt_nbr":"4",
+"over":"45.1"
+}
+,{
+"id": "15076",
+"score":"214",
+"wkt_nbr":"5",
+"over":"45.5"
+}
+,{
+"id": "15065",
+"score":"230",
+"wkt_nbr":"6",
+"over":"48.1"
+}
+,{
+"id": "15066",
+"score":"231",
+"wkt_nbr":"7",
+"over":"48.3"
+}
+,{
+"id": "14250",
+"score":"231",
+"wkt_nbr":"8",
+"over":"49"
+}
+,{
+"id": "15064",
+"score":"234",
+"wkt_nbr":"9",
+"over":"49.3"
+}
+]
+,"pplay" : [
+{
+"type" : "mandatory",
+"from" : "0.1",
+"to" : "10",
+"runs" : "32",
+"Wickets" : ""
+}
+]
+}
+],
+"status" : "SL U19 won by 26 runs",
+"state" : "complete"
+}

@@ -1,0 +1,51 @@
+
+{
+"match_id" : "21680",
+"series_id" : "2780",
+"series_name" : "County Championship Division One 2019",
+"data_path" : "2019/2019__COUNTY_DIV1/ESS_KENT_MAY27_MAY30/",
+"header" : {
+"timeDiff" : "14:9",
+"start_time" : "1558951200",
+"end_time" : "1559235600",
+"state" : "preview",
+"match_desc" : "County Div 1",
+"type" : "TEST",
+"state_title" : "Preview",
+"toss" : "",
+"status" : "Starts in 14 hrs 09 mins"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "County Ground",
+"location" : "Chelmsford, England"
+,
+"timezone": "+01:00",
+"lat": "51.731580",
+"long": "0.469004"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558871976798",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558871967159",
+"comm" : "<b>Kent<\/b> (From): Sean Dickson, Zak Crawley, Daniel Bell-Drummond, Heino Kuhn(c), Ollie Robinson(w), Wiaan Mulder, Alex Blake, Darren Stevens, Harry Podmore, Matt Milnes, Adam Riley, Mitchell Claydon, Fred Klaassen"
+}
+,{
+"timestamp" : "1558871772349",
+"comm" : "<b>Essex<\/b> (From): Nick Browne, Sir Alastair Cook, Tom Westley, Daniel Lawrence, Rishi Patel, Ryan ten Doeschate(c), Robbie White(w), Simon Harmer, James Porter, Samuel Cook, Peter Siddle, Matthew Quinn, Varun Chopra, Ravi Bopara, Feroze Khushi, Matt Coles"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

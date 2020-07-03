@@ -1,0 +1,362 @@
+
+{
+"match_id" : "22643",
+"series_id" : "2836",
+"series_name" : "Pakistan Under 19 tour of Sri Lanka 2019",
+"data_path" : "2019/2019_SLU19_PAKU19/SLU19_PAKU19_MAY26/",
+"header" : {
+"start_time" : "1558845000",
+"end_time" : "1558872120",
+"state" : "complete",
+"winning_team_id" : 172,
+"match_desc" : "1st Youth ODI",
+"type" : "ODI",
+"state_title" : "SLU19 Won",
+"toss" : "Sri Lanka U19 elect to bat",
+"status" : "SL U19 won by 26 runs"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "Mahinda Rajapaksa International Stadium",
+"location" : "Hambantota, Sri Lanka"
+,
+"timezone": "+05:30",
+"lat": "6.353636",
+"long": "81.026801"
+}
+,
+"over_summary" : {
+"over" : "5",
+"ball_def": "30",
+"rem_over" : "5",
+"runs" : "22",
+"wickets" : "6",
+"fours" : "0",
+"sixes" : "0"
+},
+"bat_team" : {"id" : "56",
+"name" : "PAKU19",
+"innings":[
+{
+"id" : "2",
+"score" : "208",
+"wkts" : "10"
+,"overs" : "47.3"
+}
+]}
+,
+"bow_team" : {"id" : "172",
+"name" : "SLU19",
+"innings":[
+{
+"id" : "1",
+"score" : "234",
+"wkts" : "9"
+,"overs" : "50"
+}
+]}
+,
+"batsman" : [
+{
+"id" : "12151",
+"name" : "Khayam Khan",
+"strike":"0",
+"r" : "18",
+"b" : "24",
+"4s" : "0",
+"6s" : "0"
+}
+],
+"bowler" : [
+{
+"id" : "13902",
+"name" : "Navod Paranavithana",
+"o" : "7.3",
+"m" : "0",
+"r" : "31",
+"w" : "2"
+}
+]
+,
+"crr" : "4.38",
+"target" : "235",
+"prtshp" : "",
+"last_wkt" : "15035",
+"last_wkt_name" : "Akhtar Shah",
+"last_wkt_score" : "0 (2)",
+"comm_lines" : [
+{
+"timestamp" : "1558872577347",
+"comm" : "<b>Result: Sri Lanka U19 won by 26 runs<\/b>"
+}
+,{
+"timestamp" : "1558872102378",
+"o_no" : "47.3",
+"i_id" : "2",
+"score" : "208",
+"evt" : "wicket",
+"comm" : "Navod Paranavithana to Akhtar Shah, <b>out<\/b> Lbw!! <b>Akhtar Shah lbw b Navod Paranavithana 0(2)<\/b>"
+}
+,{
+"timestamp" : "1558872101194",
+"comm" : "Navod Paranavithana to Akhtar Shah, <b>THAT'S OUT!!<\/b> Lbw!!"
+}
+,{
+"timestamp" : "1558871923386",
+"o_no" : "47.2",
+"i_id" : "2",
+"score" : "208",
+"comm" : "Navod Paranavithana to Akhtar Shah, no run"
+}
+,{
+"timestamp" : "1558871846330",
+"comm" : "<b>Akhtar Shah, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558871845203",
+"o_no" : "47.1",
+"i_id" : "2",
+"score" : "208",
+"evt" : "wicket",
+"comm" : "Navod Paranavithana to Suleman Shafqat, <b>out<\/b> Lbw!! <b>Suleman Shafqat lbw b Navod Paranavithana 1(2)<\/b>"
+}
+,{
+"timestamp" : "1558871844022",
+"comm" : "Navod Paranavithana to Suleman Shafqat, <b>THAT'S OUT!!<\/b> Lbw!!"
+}
+,{
+"score" : "208",
+"wkts" : "8",
+"o_no" : "46.6",
+"i_id" : "2",
+"o_summary" : "1 W 0 W 1 2 ",
+"runs" : "4",
+"bat_s_name" :"12151",
+"bat_s_runs" :"18",
+"bat_s_balls" :"24",
+"bat_ns_name" :"13246",
+"bat_ns_runs" :"1",
+"bat_ns_balls" :"1",
+"bowl_name" :"15066",
+"bowl_overs" :"10",
+"bowl_maidens" :"0",
+"bowl_runs" :"48",
+"bowl_wickets" :"3",
+"timestamp" : "1558871839614",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558871839599",
+"o_no" : "46.6",
+"i_id" : "2",
+"score" : "208",
+"comm" : "Sudeera Thilakaratne to Khayam Khan, 2 runs"
+}
+,{
+"timestamp" : "1558871825396",
+"o_no" : "46.5",
+"i_id" : "2",
+"score" : "206",
+"comm" : "Sudeera Thilakaratne to Suleman Shafqat, 1 run"
+}
+,{
+"timestamp" : "1558871762209",
+"comm" : "<b>Suleman Shafqat, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558871625585",
+"o_no" : "46.4",
+"i_id" : "2",
+"score" : "205",
+"evt" : "wicket",
+"comm" : "Sudeera Thilakaratne to Mohammad Wasim Jr, <b>out<\/b> Lbw!! <b>Mohammad Wasim Jr lbw b Sudeera Thilakaratne 0(2)<\/b>"
+}
+,{
+"timestamp" : "1558871624334",
+"comm" : "Sudeera Thilakaratne to Mohammad Wasim Jr, <b>THAT'S OUT!!<\/b> Lbw!!"
+}
+,{
+"timestamp" : "1558871609022",
+"o_no" : "46.3",
+"i_id" : "2",
+"score" : "205",
+"comm" : "Sudeera Thilakaratne to Mohammad Wasim Jr, no run"
+}
+,{
+"timestamp" : "1558871583588",
+"comm" : "<b>Mohammad Wasim Jr, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558871544402",
+"o_no" : "46.2",
+"i_id" : "2",
+"score" : "205",
+"evt" : "wicket",
+"comm" : "Sudeera Thilakaratne to Niaz Khan, <b>out<\/b> Niaz Khan Run Out!! <b>Niaz Khan run out (Rohan Sanjaya/Kamil Mishara) 1(2)<\/b>"
+}
+,{
+"timestamp" : "1558871542855",
+"comm" : "Sudeera Thilakaratne to Niaz Khan, <b>THAT'S OUT!!<\/b> Run Out!!"
+}
+,{
+"timestamp" : "1558871432064",
+"o_no" : "46.1",
+"i_id" : "2",
+"score" : "205",
+"comm" : "Sudeera Thilakaratne to Khayam Khan, 1 run"
+}
+,{
+"score" : "204",
+"wkts" : "6",
+"o_no" : "45.6",
+"i_id" : "2",
+"o_summary" : "1 1 1 0 0 1 ",
+"runs" : "4",
+"bat_s_name" :"12151",
+"bat_s_runs" :"15",
+"bat_s_balls" :"22",
+"bat_ns_name" :"15041",
+"bat_ns_runs" :"1",
+"bat_ns_balls" :"1",
+"bowl_name" :"13902",
+"bowl_overs" :"7",
+"bowl_maidens" :"0",
+"bowl_runs" :"31",
+"bowl_wickets" :"0",
+"timestamp" : "1558871414540",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558871414525",
+"o_no" : "45.6",
+"i_id" : "2",
+"score" : "204",
+"comm" : "Navod Paranavithana to Khayam Khan, 1 run"
+}
+,{
+"timestamp" : "1558871412243",
+"o_no" : "45.5",
+"i_id" : "2",
+"score" : "203",
+"comm" : "Navod Paranavithana to Khayam Khan, no run"
+}
+,{
+"timestamp" : "1558871411379",
+"o_no" : "45.4",
+"i_id" : "2",
+"score" : "203",
+"comm" : "Navod Paranavithana to Khayam Khan, no run"
+}
+,{
+"timestamp" : "1558871406872",
+"o_no" : "45.3",
+"i_id" : "2",
+"score" : "203",
+"comm" : "Navod Paranavithana to Khayam Khan, 1 run"
+}
+,{
+"timestamp" : "1558871404799",
+"o_no" : "45.2",
+"i_id" : "2",
+"score" : "202",
+"comm" : "Navod Paranavithana to Niaz Khan, 1 run"
+}
+,{
+"timestamp" : "1558871214583",
+"o_no" : "45.1",
+"i_id" : "2",
+"score" : "201",
+"comm" : "Navod Paranavithana to Khayam Khan, 1 run"
+}
+,{
+"score" : "200",
+"wkts" : "6",
+"o_no" : "44.6",
+"i_id" : "2",
+"o_summary" : "W 0 W 2 0 1 ",
+"runs" : "3",
+"bat_s_name" :"12151",
+"bat_s_runs" :"12",
+"bat_s_balls" :"17",
+"bat_ns_name" :"15041",
+"bat_ns_runs" :"0",
+"bat_ns_balls" :"0",
+"bowl_name" :"15066",
+"bowl_overs" :"9",
+"bowl_maidens" :"0",
+"bowl_runs" :"44",
+"bowl_wickets" :"2",
+"timestamp" : "1558871141985",
+"evt" : "over-break"
+}
+,{
+"timestamp" : "1558871141970",
+"o_no" : "44.6",
+"i_id" : "2",
+"score" : "200",
+"comm" : "Sudeera Thilakaratne to Khayam Khan, 1 run"
+}
+,{
+"timestamp" : "1558871138795",
+"o_no" : "44.5",
+"i_id" : "2",
+"score" : "199",
+"comm" : "Sudeera Thilakaratne to Khayam Khan, no run"
+}
+,{
+"timestamp" : "1558871108910",
+"o_no" : "44.4",
+"i_id" : "2",
+"score" : "199",
+"comm" : "Sudeera Thilakaratne to Khayam Khan, 2 runs"
+}
+,{
+"timestamp" : "1558871096177",
+"comm" : "<b>Niaz Khan, right handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558871010678",
+"o_no" : "44.3",
+"i_id" : "2",
+"score" : "197",
+"evt" : "wicket",
+"comm" : "Sudeera Thilakaratne to Mohammad Junaid, <b>out<\/b> Caught by Mohammed Shamaaz!! <b>Mohammad Junaid c Mohammed Shamaaz b Sudeera Thilakaratne 0(2)<\/b>"
+}
+,{
+"timestamp" : "1558871009717",
+"comm" : "Sudeera Thilakaratne to Mohammad Junaid, <b>THAT'S OUT!!<\/b> Caught!!"
+}
+,{
+"timestamp" : "1558871005081",
+"o_no" : "44.2",
+"i_id" : "2",
+"score" : "197",
+"comm" : "Sudeera Thilakaratne to Mohammad Junaid, no run"
+}
+,{
+"timestamp" : "1558870983301",
+"comm" : "<b>Mohammad Junaid, left handed bat, comes to the crease<\/b>"
+}
+,{
+"timestamp" : "1558870967387",
+"o_no" : "44.1",
+"i_id" : "2",
+"score" : "197",
+"evt" : "wicket",
+"comm" : "Sudeera Thilakaratne to Qasim Akram, <b>out<\/b> Caught by Rohan Sanjaya!! <b>Qasim Akram c Rohan Sanjaya b Sudeera Thilakaratne 18(33)<\/b>"
+}
+,{
+"timestamp" : "1558870966164",
+"comm" : "Sudeera Thilakaratne to Qasim Akram, <b>THAT'S OUT!!<\/b> Caught!!"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}

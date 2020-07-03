@@ -1,0 +1,51 @@
+
+{
+"match_id" : "21689",
+"series_id" : "2781",
+"series_name" : "County Championship Division Two 2019",
+"data_path" : "2019/2019_COUNTY_DIV2/SUS_GLAM_MAY27_MAY30/",
+"header" : {
+"timeDiff" : "14:9",
+"start_time" : "1558951200",
+"end_time" : "1559235600",
+"state" : "preview",
+"match_desc" : "County Div 2",
+"type" : "TEST",
+"state_title" : "Preview",
+"toss" : "",
+"status" : "Starts in 14 hrs 09 mins"
+}
+,
+"alerts" : "1",
+"venue" : {
+"name" : "County Ground",
+"location" : "Hove, England"
+,
+"timezone": "+01:00",
+"lat": "50.830995",
+"long": "-0.163522"
+}
+,
+"comm_lines" : [
+{
+"timestamp" : "1558869607169",
+"comm" : "<b>Teams:<\/b>"
+}
+,{
+"timestamp" : "1558869601904",
+"comm" : "<b>Glamorgan<\/b> (From): Nicholas Selman, Charlie Hemphrey, Marnus Labuschagne, David Lloyd(c), Billy Root, Jeremy Lawlor, Daniel Douthwaite, Tom Cullen(w), Andrew Salter, Graham Wagg, Timm van der Gugten, Kiran Carlson, Marchant de Lange"
+}
+,{
+"timestamp" : "1558869435156",
+"comm" : "<b>Sussex<\/b> (From): Philip Salt, Tom Haines, Luke Wells, Stiaan van Zyl, Harry Finch, Ben Brown(w/c), David Wiese, Chris Jordan, Danny Briggs, Abidine Sakande, Mir Hamza, Laurie Evans, Michael Burgess, Ollie Robinson, Adam Barton, Will Beer"
+}
+]
+,
+"range" : "5",
+"pulltoRefreshStopRate" : 5,
+"burst_cache_id" : 0,
+"burst_cache" : true,
+"burst_cache_time" : 3600,
+"ads" :
+{}
+}
